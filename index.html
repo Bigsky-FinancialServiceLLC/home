@@ -15,6 +15,7 @@
   <!-- Topcoat UI Styles -->
   <link id="topcoat-stylesheet" rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-desktop-light.min.css" />
+
   <!-- Icomatic Icon font -->
   <link rel="stylesheet" type="text/css" href="./css/vendor/icomatic.css" />
   <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300" rel="stylesheet" type="text/css">
@@ -39,36 +40,34 @@
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#0078d4">
-
-
 </head>
 
 <body data-bs-theme="light" data-bs-core="modern" class="bg-body with-custom-scrollbar">
   <!-- PRIMARY NAVIGATION (Top Nav with Teal Gradient) for Large Screens -->
-  <nav class="top-nav d-none d-md-block">
+  <nav class="top-nav d-none d-lg-block">
     <div class="container">
       <div class="row">
         <div class="col-6 nav-social">
-          <a href="#">
+          <a href="#" class="text-decoration-none fs-5">
             <span class="icomatic icon">facebook</span>
           </a>
-          <a href="#">
+          <a href="#" class="text-decoration-none fs-5">
             <span class="icomatic icon">twitter</span>
           </a>
-          <a href="#">
+          <a href="#" class="text-decoration-none fs-5">
             <span class="icomatic icon">linkedin</span>
           </a>
         </div>
         <div class="col-6 text-end nav-contact">
-          <a href="#">
+          <a href="#" class="text-decoration-none fs-5">
             <span class="icomatic icon">user</span>
             <span class="icon-label">Login</span>
           </a>
-          <a href="#">
+          <a href="#" class="text-decoration-none fs-5">
             <span class="icomatic icon">email</span>
             <span class="icon-label">Subscribe</span>
           </a>
-          <span>
+          <span class="text-decoration-none fs-5">
             <span class="icomatic icon">call</span>
             <span class="icon-label">(&nbsp;406&nbsp;)&nbsp;475&nbsp;-&nbsp;2009</span>
           </span>
@@ -90,9 +89,9 @@
             About
           </a>
           <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-            <li><a class="dropdown-item" href="about.html">Our Story</a></li>
-            <li><a class="dropdown-item" href="mission.html">Mission &amp; Values</a></li>
-            <li><a class="dropdown-item" href="team.html">Team</a></li>
+            <li><a class="dropdown-item" href="#story">Our Story</a></li>
+            <li><a class="dropdown-item" href="#mission">Mission &amp; Values</a></li>
+            <li><a class="dropdown-item" href="#team">Team</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -138,32 +137,43 @@
     <div class="container">
       <div class="row text-center align-items-center">
         <div class="col-3 nav-icon">
-          <a href="#"><span class="icomatic icon">user</span></a>
+          <a href="#" class="text-decoration-none">
+            <span class="icomatic icon">user</span>
+            <span class="icon-label d-none d-md-inline-block">Login</span>
+          </a>
         </div>
         <div class="col-3 nav-icon">
-          <a href="#"><span class="icomatic icon">email</span></a>
+          <a href="#" class="text-decoration-none">
+            <span class="icomatic icon">email</span>
+            <span class="icon-label d-none d-md-inline-block">Subscribe</span>
+          </a>
         </div>
         <div class="col-3 nav-icon">
-          <a href="#"><span class="icomatic icon">call</span></a>
+          <a href="#" class="text-decoration-none">
+            <span class="icomatic icon">call</span>
+          </a>
         </div>
         <div class="col-3 nav-icon">
-          <button class="btn btn-link"><span class="icomatic icon">listview</span></button>
+          <button class="btn btn-link topcoat-button">
+            <span class="icomatic icon">listview</span>
+          </button>
         </div>
       </div>
     </div>
   </nav>
+
   <!-- Hidden Mobile Menu -->
   <div id="mobile-menu" class="mobile-menu d-lg-none">
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="tax-center.html">Tax Center</a>
-    <a href="resources.html">Resources</a>
-    <a href="contact.html">Contact</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#tax-center">Tax Center</a>
+    <a href="#resources">Resources</a>
+    <a href="#contact">Contact</a>
   </div>
 
   <!-- HERO / SPLASH SECTION -->
-  <header class="hero">
+  <header id="home" class="hero">
     <div class="hero-content container">
       <div class="row py-5">
         <!-- Two columns on large screens; stacked on smaller screens -->
@@ -185,7 +195,7 @@
               <label for="commentsInput" class="form-label">Comments</label>
               <textarea id="commentsInput" class="form-control"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Schedule a Consultation</button>
+            <button type="submit" class="btn cta-btn">Schedule a Consultation</button>
           </form>
         </div>
       </div>
@@ -222,22 +232,66 @@
   <section id="about" class="about-section bg-body-secondary">
     <div class="container">
       <h2>About Us</h2>
-      <p>[At Big Sky Financial, we pride ourselves on delivering comprehensive accounting and bookkeeping solutions for
-        small and medium-sized businesses.]</p>
+      <p>At Big Sky Financial, we pride ourselves on delivering comprehensive accounting and bookkeeping solutions for
+        small and medium-sized businesses.</p>
       <div class="about-grid">
-        <img src="about-placeholder.jpg" alt="Office photo or team photo">
-        <div>
-          <h3>Our Mission</h3>
-          <p>[To provide reliable financial expertise that empowers entrepreneurs, streamlines operations, and fosters
-            growth in the local business community.]</p>
-          <h3>Our Values</h3>
-          <ul>
-            <li><strong>Integrity:</strong> We prioritize honesty and transparency in every interaction.</li>
-            <li><strong>Quality:</strong> Meticulous attention to detail ensures your books are accurate and compliant.
-            </li>
-            <li><strong>Client Focus:</strong> We tailor our services to suit your unique needs and goals.</li>
-          </ul>
-        </div>
+        <!-- Our Story -->
+        <figure class="figure card">
+          <h3 class="card-header">Our Story</h3>
+          <img src="https://placehold.co/600x400/99999999/0078d4" class="figure-img" alt="Office photo or team photo">
+          <figcaption class="figure-caption card-body">
+            <hgroup id="story" class="">
+              <h3 class="card-header">Where We Come From</h3>
+              <p class="card-body">Battle-tested combat veteran with 10+ years experience in small business accounting.
+              </p>
+            </hgroup>
+          </figcaption>
+        </figure>
+        <!-- Our Mission -->
+        <figure class="figure card">
+          <figcaption class="figure-caption card-body">
+            <hgroup class="card-text">
+              <h3 class="card-header">Our Mission</h3>
+              <p class="card-body">To provide reliable financial expertise that empowers entrepreneurs, streamlines
+                operations, and fosters
+                growth in the local business community.</p>
+            </hgroup>
+          </figcaption>
+          <img src="https://placehold.co/600x400/99999999/0078d4" class="figure-image" alt="Office photo or team photo">
+        </figure>
+        <!-- Our Values -->
+        <figure class="figure card">
+          <h3 class="card-header">Our Values</h3>
+          <img src="https://placehold.co/600x400/99999999/0078d4" class="figuree-img" alt="Office photo or team photo">
+          <figcaption class="figure-caption card-body">
+            <hgroup class="card-body">
+              <h4>We Stand For</h4>
+              <ul class="card-text list-group">
+                <li class="list-group-item">
+                  <strong>Integrity:</strong>
+                  <br />
+                  We prioritize honesty and transparency in
+                  every
+                  interaction.
+                </li>
+                <li class="list-group-item">
+                  <strong>Quality:</strong>
+                  <br />
+                  Meticulous attention to detail ensures your
+                  books
+                  are accurate and compliant.
+                </li>
+                <li class="list-group-item">
+                  <strong>Client Focus:</strong>
+                  <br />
+                  We tailor our services to suit your unique
+                  needs and goals.
+                </li>
+              </ul>
+            </hgroup>
+          </figcaption>
+        </figure>
+
       </div>
     </div>
   </section>
