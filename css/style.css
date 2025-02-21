@@ -286,7 +286,6 @@ body {
   top: 40px; /* placed just below the primary nav */
   width: 100%;
   z-index: 998;
-  background-color: var(--bs-secondary);
   border-top: 1px solid var(--bs-body-color);
   border-bottom: 1px solid var(--bs-body-color);
 }
@@ -305,6 +304,7 @@ body {
   text-decoration: none;
   padding: 0.5rem 1rem;
   transition: color 0.3s ease;
+  color: var(--bs-body-color);
 }
 .sticky-secondary .nav-link:hover {
   color: #0078d4;
