@@ -255,6 +255,7 @@ body {
 /* ---------- Navigation ---------- */
 /* Primary (Top) Nav: Teal gradient background */
 .top-nav {
+  font-size: 1rem;
   height: 40px;
   position: fixed;
   top: 0;
@@ -279,6 +280,7 @@ body {
 
 /* Secondary Nav: Branding & Dropdown Page Links */
 .sticky-secondary {
+  font-size: 0.875rem;
   position: fixed;
   top: 40px; /* placed just below the primary nav */
   width: 100%;
@@ -367,8 +369,7 @@ body {
   min-height: 80vh;
   /* Teal gradient overlay behind the (placeholder) splash image */
   background-color: #0078d499;
-  background: linear-gradient(66deg, #0078d411, #0078d411), linear-gradient(66deg, #00000000 11%, #ffffff11 33%, #00000022 44%, #ffffff11 55%, #00000000 88%), linear-gradient(66deg, #20c997ff, #17a2b8ff),
-    url("splash-image.jpg") center/cover no-repeat;
+  background:    url("https://placehold.co/1440x900/00000000/00000000") center/cover no-repeat, linear-gradient(66deg, #0078d411, #0078d411), linear-gradient(66deg, #00000000 11%, #ffffff11 33%, #00000022 44%, #ffffff11 55%, #00000000 88%), linear-gradient(66deg, #20c997ff, #17a2b8ff);
   color: #fff;
   text-align: center;
   display: flex;
