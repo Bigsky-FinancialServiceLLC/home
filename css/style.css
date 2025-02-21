@@ -270,7 +270,7 @@ body {
   color: #fff;
 }
 .top-nav .nav-social a:hover {
-  color: #e0f7fa;
+  color: #0078d4;
 }
 .top-nav .nav-contact a,
 .top-nav .nav-contact span {
@@ -350,6 +350,9 @@ body {
   text-align: center;
   color: #333;
 }
+.mobile-nav a {
+  color: white;
+}
 .mobile-menu {
   display: none;
   background-color: #fff;
@@ -369,7 +372,11 @@ body {
   min-height: 80vh;
   /* Teal gradient overlay behind the (placeholder) splash image */
   background-color: #0078d499;
-  background:    url("https://placehold.co/1440x900/00000000/00000000") center/cover no-repeat, linear-gradient(66deg, #0078d411, #0078d411), linear-gradient(66deg, #00000000 11%, #ffffff11 33%, #00000022 44%, #ffffff11 55%, #00000000 88%), linear-gradient(66deg, #20c997ff, #17a2b8ff);
+  background-image: url("https://placehold.co/1440x900/00000000/00000000");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: linear-gradient(156deg, #0078d433, #0078d466), linear-gradient(66deg, #00000000 11%, #ffffff11 33%, #00000022 44%, #ffffff11 55%, #00000000 88%), linear-gradient(66deg, #20c99766, #17a2b866);
   color: #fff;
   text-align: center;
   display: flex;
@@ -378,6 +385,7 @@ body {
   position: relative;
   border-top-right-radius: 30%;
   border-bottom-left-radius: 30%;
+  backdrop-filter: blur(6px);
 }
 .hero .hero-content {
   max-width: 700px;
