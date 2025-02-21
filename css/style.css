@@ -12,7 +12,7 @@
    ========================================================================== */
 
 html {
-  color: #222;
+  color: var(--bs-body-color);
   font-size: 1em;
   line-height: 1.4;
 }
@@ -42,7 +42,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--bs-body-color);
   margin: 1em 0;
   padding: 0;
 }
@@ -249,7 +249,7 @@ body {
 }
 /* ---------- Teal Accent Class ---------- */
 .text-teal {
-  color: #20c997; /* Adjust this value if needed */
+  color: #20c997 !important; /* Adjust this value if needed */
 }
 
 /* ---------- Navigation ---------- */
@@ -280,7 +280,6 @@ body {
 
 /* Secondary Nav: Branding & Dropdown Page Links */
 .sticky-secondary {
-  color: red;
   font-size: 0.875rem;
   position: fixed;
   top: 40px; /* placed just below the primary nav */
@@ -313,7 +312,7 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-  border: 1px solid var(--bs-body-color);
+  border: 1px solid var(--bs-border-color);
   border-radius: 4px;
   display: none;
   min-width: 200px;
@@ -323,21 +322,23 @@ body {
   display: block;
   padding: 0.5rem 1rem;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: background 0.6s ease;
+  background-color: var(--bs-body-bg);
   color: var(--bs-body-color);
 }
 .sticky-secondary .dropdown-menu a:hover {
   background-color: #0078d499;
-  background: linear-gradient(66deg, #20c99799, #17a2b899);
+  background: linear-gradient(66deg, #00000000 11%, #ffffff11 33%, #00000022 44%, #ffffff11 55%, #00000000 88%), linear-gradient(66deg, #20c997ee, #17a2b8ee);
 }
+
 .sticky-secondary .nav-item:hover .dropdown-menu {
   display: block;
 }
 
 /* Mobile Navigation (for medium/small screens) */
 .mobile-nav {
-  background-color: #0078d4;
-  background: linear-gradient(66deg, #20c997, #17a2b8);
+  background-color: #0078d499;
+  background: linear-gradient(66deg, #00000000 11%, #ffffff11 33%, #00000022 44%, #ffffff11 55%, #00000000 88%), linear-gradient(66deg, #20c997ee, #17a2b8ee);
   padding: 0.5rem 0;
   position: fixed;
   top: 0;
@@ -368,14 +369,15 @@ body {
 /* ---------- Hero / Splash Section ---------- */
 .hero {
   margin-top: 10vh;
-  min-height: 80vh;
+  min-height: 50vh;
+  max-height: 65vh;
   /* Teal gradient overlay behind the (placeholder) splash image */
   background-color: #0078d499;
   background-image: url("https://placehold.co/1440x900/00000000/00000000");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background: linear-gradient(156deg, #0078d433, #0078d466), linear-gradient(66deg, #00000000 11%, #ffffff11 33%, #00000022 44%, #ffffff11 55%, #00000000 88%), linear-gradient(66deg, #20c99766, #17a2b866);
+  background: linear-gradient(66deg, #00000000 11%, #ffffff11 33%, #00000022 44%, #ffffff11 55%, #00000000 88%), linear-gradient(66deg, #20c997ee, #17a2b8ee);
   color: var(--bs-body-bg);
   text-align: center;
   display: flex;
@@ -401,8 +403,8 @@ body {
   color: var(--bs-body-bg);
 }
 .hero .cta-btn {
-  background-color: #0078d4;
-  background: linear-gradient(66deg, #20c997, #17a2b8);
+  background-color: #0078d499;
+  background: linear-gradient(66deg, #00000000 11%, #ffffff11 33%, #00000022 44%, #ffffff11 55%, #00000000 88%), linear-gradient(66deg, #20c997ee, #17a2b8ee);
   color: var(--bs-body-bg);
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
@@ -557,15 +559,13 @@ section {
 }
 
 /* ---------- Footer ---------- */
-.footer {
+.page-footer {
   padding: 1.5rem 0;
   border-top: 1px solid var(--bs-body-color);
   text-align: center;
-}
-
-.page-footer {
-  background-color: #0078d4;
-  background: linear-gradient(66deg, #20c997, #17a2b8);
+  color: var(--bs-body-bg);
+  background-color: #0078d499;
+  background: linear-gradient(66deg, #00000000 11%, #ffffff11 33%, #00000022 44%, #ffffff11 55%, #00000000 88%), linear-gradient(66deg, #20c997ee, #17a2b8ee);
 }
 
 .section-fade {

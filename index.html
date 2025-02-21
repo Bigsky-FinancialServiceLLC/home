@@ -259,25 +259,26 @@
 
     <!-- Hidden Mobile Menu -->
     <div id="mobile-menu" class="mobile-menu d-lg-none">
-      <a href="index.html">Home</a>
+      <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
-      <a href="#tax-center">Tax Center</a>
+      <a href="#taxes">Tax Center</a>
       <a href="#resources">Resources</a>
       <a href="#contact">Contact</a>
     </div>
 
     <main class="text-body container-fluid">
+      <hr id="home">
       <!-- HERO / SPLASH SECTION -->
-      <header id="home" class="hero">
+      <header class="hero">
         <div class="hero-content container">
-          <div class="row py-5">
+          <div class="row">
             <!-- Two columns on large screens; stacked on smaller screens -->
-            <div class="col-lg-6 mb-4">
+            <div class="col-lg-6">
               <!-- Accent the word "value" with teal -->
-              <h1 class="hero-title my-5 py-5">
-                Turning vision<br />into <span class="text-teal">value</span>
-              </h1>
+              <h2 class="hero-title">
+                Turning vision into <span class="text-teal">value</span>
+              </h2>
             </div>
             <div class="col-lg-6">
               <form class="card p-3 w-md-75 w-lg-100 mx-auto">
@@ -303,13 +304,13 @@
                   <textarea
                     id="comments-input"
                     class="topcoat-text-input form-control"
-                    style="height: 8rem"
+                    style="height: 6rem"
                   ></textarea>
                   <label for="comments-input" class="form-label"
                     >Comments</label
                   >
                 </div>
-                <button type="submit" class="btn cta-btn">
+                <button type="submit" class="btn topcoat-button--cta cta-btn">
                   Schedule a Consultation
                 </button>
               </form>
@@ -360,6 +361,8 @@
         </div>
       </section>
 
+      <hr/>
+      
       <!-- ABOUT SECTION -->
       <section id="about" class="about-section container-fluid">
         <div class="container">
@@ -375,83 +378,89 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="container-fluid p-0">
-              <div class="row no-gutters shadow my-5">
-                <div
-                  class="col-lg-6 order-lg-2 text-white showcase-img rounded shadow-sm"
-                  style="
-                    background-image: url('https://placehold.co/600x400/99999999/0078d4');
-                    height: 400px;
-                    background-repeat: no-repeat;
-                  "
-                ></div>
+              <div class="row no-gutters my-5">
+                <div class="col-lg-6 order-lg-2 showcase-img text-center">
+                  <figure class="figure">
+                    <img
+                      class="rounded figure-img"
+                      src="https://placehold.co/360x240/99999999/0078d4"
+                      alt=""
+                    />
+                    <figcaption class="figure-caption">Caption</figcaption>
+                  </figure>
+                </div>
                 <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                   <!-- Our Story -->
-                   <hgroup class="bg-body-tertiary shadow-sm card">
-                  <h3 class="card-header">Our Story</h3>
-                  <p class="card-body">
-                    Battle-tested combat veteran with 10+ years experience in
-                    small business accounting.
-                  </p>
+                  <hgroup class="bg-body-tertiary shadow-sm card">
+                    <h3 class="card-header text-center">Our Story</h3>
+                    <p class="card-body">
+                      Battle-tested combat veteran with 10+ years experience in
+                      small business accounting.
+                    </p>
                   </hgroup>
                 </div>
               </div>
               <div class="row no-gutters my-5">
-                <div
-                  class="col-lg-6 text-white showcase-img rounded shadow-sm"
-                  style="
-                    background-image: url('https://placehold.co/600x400/99999999/0078d4');
-                    height: 400px;
-                    background-repeat: no-repeat;
-                  "
-                ></div>
+                <div class="col-lg-6 text-white showcase-img text-center">
+                  <figure class="figure">
+                    <img
+                      class="rounded figure-img"
+                      src="https://placehold.co/360x240/99999999/0078d4"
+                      alt=""
+                    />
+                    <figcaption class="figure-caption">Caption</figcaption>
+                  </figure>
+                </div>
                 <div class="col-lg-6 my-auto showcase-text">
                   <!-- Our Mission -->
-                   <hgroup class="bg-body-tertiary shadow-sm card">
-                  <h3 class="card-header">Our Mission</h3>
-                  <p class="card-body">
-                    To provide reliable financial expertise that empowers
-                    entrepreneurs, streamlines operations, and fosters growth in
-                    the local business community.
-                  </p>
+                  <hgroup class="bg-body-tertiary shadow-sm card">
+                    <h3 class="card-header text-center">Our Mission</h3>
+                    <p class="card-body">
+                      To provide reliable financial expertise that empowers
+                      entrepreneurs, streamlines operations, and fosters growth
+                      in the local business community.
+                    </p>
                   </hgroup>
                 </div>
               </div>
-              <div class="row no-gutters shadow my-5">
-                <div
-                  class="col-lg-6 order-lg-2 showcase-img rounded shadow-sm"
-                  style="
-                    background-image: url('https://placehold.co/600x400/99999999/0078d4');
-                    min-height: 300px;
-                    background-repeat: no-repeat;
-                  "
-                ></div>
+              <div class="row no-gutters my-5">
+                <div class="col-lg-6 order-lg-2 showcase-img text-center">
+                  <figure class="figure">
+                    <img
+                      class="rounded figure-img"
+                      src="https://placehold.co/360x240/99999999/0078d4"
+                      alt=""
+                    />
+                    <figcaption class="figure-caption">Caption</figcaption>
+                  </figure>
+                </div>
                 <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                   <!-- Our Values -->
-                   <hgroup class="bg-body-tertiary shadow-sm card">
-                  <h3 class="card-header">Our Values</h3>
-                  <ul class="list-group">
-                    <li class="list-group-item">
-                      <span class="icon icomatic text-success fs-1"
-                        >checkmark</span
-                      >
-                      <strong>Integrity:</strong><br />We prioritize honesty and
-                      transparency in every interaction.
-                    </li>
-                    <li class="list-group-item">
-                      <span class="icon icomatic text-success fs-1"
-                        >checkmark</span
-                      >
-                      <strong>Quality:</strong><br />Meticulous attention to
-                      detail ensures your books are accurate and compliant.
-                    </li>
-                    <li class="list-group-item">
-                      <span class="icon icomatic text-success fs-1"
-                        >checkmark</span
-                      >
-                      <strong>Client Focus:</strong><br />We tailor our services
-                      to suit your unique needs and goals.
-                    </li>
-                  </ul>
+                  <hgroup class="bg-body-tertiary shadow-sm card">
+                    <h3 class="card-header text-center">Our Values</h3>
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <span class="icon icomatic text-success fs-1"
+                          >checkmark</span
+                        >
+                        <strong>Integrity:</strong><br />We prioritize honesty
+                        and transparency in every interaction.
+                      </li>
+                      <li class="list-group-item">
+                        <span class="icon icomatic text-success fs-1"
+                          >checkmark</span
+                        >
+                        <strong>Quality:</strong><br />Meticulous attention to
+                        detail ensures your books are accurate and compliant.
+                      </li>
+                      <li class="list-group-item">
+                        <span class="icon icomatic text-success fs-1"
+                          >checkmark</span
+                        >
+                        <strong>Client Focus:</strong><br />We tailor our
+                        services to suit your unique needs and goals.
+                      </li>
+                    </ul>
                   </hgroup>
                 </div>
               </div>
@@ -617,16 +626,34 @@
           <h2>Meet the Team</h2>
           <div class="team-grid">
             <div class="team-member">
-              <img src="team-member-placeholder.jpg" alt="Team Member Photo" />
+             <figure class="figure">
+                <img
+                  class="rounded-circle figure-img"
+                  src="https://placehold.co/240x240/99999999/0078d4"
+                  alt=""
+                />
+                <figcaption class="figure-caption">
               <h4>[Name, Title]</h4>
               <p>
                 [CPA with 10+ years experience in small business accounting.]
               </p>
+              </figcaption>
+              </figure>
             </div>
             <div class="team-member">
-              <img src="team-member-placeholder.jpg" alt="Team Member Photo" />
+              <figure class="figure">
+                <img
+                  class="rounded-circle figure-img"
+                  src="https://placehold.co/240x240/99999999/0078d4"
+                  alt=""
+                />
+                <figcaption class="figure-caption">
               <h4>[Name, Title]</h4>
-              <p>[Short bio / Expertise]</p>
+              <p>
+                [CPA with 10+ years experience in small business accounting.]
+              </p>
+              </figcaption>
+              </figure>
             </div>
           </div>
         </div>
@@ -638,14 +665,20 @@
           <h2>Frequently Asked Questions</h2>
           <div class="faqs">
             <div class="faq-item">
+              <dl class="card">
+                <dt class="card-header">
               <h3>
-                <span class="icon icomatic text-info">question</span>How do I
+                <span class="icon icomatic text-info m-1">question</span>How do I
                 get started?
               </h3>
-              <p>
-                A: [Contact us to schedule a consultation. We’ll discuss your
-                needs and recommend the right services for your business.]
+              </dt>
+              <dd class="card-body">
+              <p class="text-center fs-5">
+                A: Contact us to schedule a consultation. We’ll discuss your
+                needs and recommend the right services for your business.
               </p>
+              </dd>
+              </dl>
             </div>
             <div class="faq-item">
               <h3>
