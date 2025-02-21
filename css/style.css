@@ -327,8 +327,8 @@ body {
   color: var(--bs-body-color);
 }
 .sticky-secondary .dropdown-menu a:hover {
-  background-color: #0078d433;
-  background: linear-gradient(66deg, #20c99733, #17a2b833);
+  background-color: #0078d499;
+  background: linear-gradient(66deg, #20c99799, #17a2b899);
 }
 .sticky-secondary .nav-item:hover .dropdown-menu {
   display: block;
@@ -385,7 +385,6 @@ body {
   border-radius: 3%;
   border-top-right-radius: 30%;
   border-bottom-left-radius: 30%;
-  backdrop-filter: blur(6px);
 }
 .hero .hero-content {
   max-width: 700px;
@@ -409,6 +408,7 @@ body {
   border-radius: 4px;
   text-decoration: none;
   font-weight: 700;
+  font-size: 21px;
   transition: background-color 0.3s ease;
 }
 .hero .cta-btn:hover {
@@ -566,4 +566,15 @@ section {
 .page-footer {
   background-color: #0078d4;
   background: linear-gradient(66deg, #20c997, #17a2b8);
+}
+
+.section-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-fade.section-show {
+  opacity: 1;
+  transform: translateY(0);
 }
