@@ -43,31 +43,32 @@
 </head>
 
 <body data-bs-theme="light" data-bs-core="modern" class="bg-body with-custom-scrollbar">
+
   <!-- PRIMARY NAVIGATION (Top Nav with Teal Gradient) for Large Screens -->
   <nav class="top-nav d-none d-lg-block">
     <div class="container">
       <div class="row">
         <div class="col-6 nav-social">
-          <a href="#" class="text-decoration-none fs-5">
+          <a href="#" class="text-decoration-none">
             <span class="icomatic icon">facebook</span>
           </a>
-          <a href="#" class="text-decoration-none fs-5">
+          <a href="#" class="text-decoration-none">
             <span class="icomatic icon">twitter</span>
           </a>
-          <a href="#" class="text-decoration-none fs-5">
+          <a href="#" class="text-decoration-none">
             <span class="icomatic icon">linkedin</span>
           </a>
         </div>
         <div class="col-6 text-end nav-contact">
-          <a href="#" class="text-decoration-none fs-5">
+          <a href="#" class="text-decoration-none">
             <span class="icomatic icon">user</span>
             <span class="icon-label">Login</span>
           </a>
-          <a href="#" class="text-decoration-none fs-5">
+          <a href="#" class="text-decoration-none">
             <span class="icomatic icon">email</span>
             <span class="icon-label">Subscribe</span>
           </a>
-          <span class="text-decoration-none fs-5">
+          <span class="text-decoration-none">
             <span class="icomatic icon">call</span>
             <span class="icon-label">(&nbsp;406&nbsp;)&nbsp;475&nbsp;-&nbsp;2009</span>
           </span>
@@ -77,7 +78,7 @@
   </nav>
 
   <!-- SECONDARY NAVIGATION (Branding & Dropdown Page Links) for Large Screens -->
-  <nav class="sticky-secondary d-none d-lg-block text-end">
+  <nav class="sticky-secondary d-none d-lg-block text-end lh-1">
     <div class="container">
       <ul class="nav">
         <li class="nav-item">
@@ -151,6 +152,7 @@
         <div class="col-3 nav-icon">
           <a href="#" class="text-decoration-none">
             <span class="icomatic icon">call</span>
+            <span class="icon-label d-none d-md-inline-block">(&nbsp;406&nbsp;)&nbsp;475&nbsp;-&nbsp;2009</span>
           </a>
         </div>
         <div class="col-3 nav-icon">
@@ -172,294 +174,315 @@
     <a href="#contact">Contact</a>
   </div>
 
-  <!-- HERO / SPLASH SECTION -->
-  <header id="home" class="hero">
-    <div class="hero-content container">
-      <div class="row py-5">
-        <!-- Two columns on large screens; stacked on smaller screens -->
-        <div class="col-lg-6 mb-4">
-          <!-- Accent the word "value" with teal -->
-          <h1 class="hero-title">Turning vision<br />into <span class="text-teal">value</span></h1>
+  <main class="container-fluid">
+
+    <!-- HERO / SPLASH SECTION -->
+    <header id="home" class="hero">
+      <div class="hero-content container">
+        <div class="row py-5">
+          <!-- Two columns on large screens; stacked on smaller screens -->
+          <div class="col-lg-6 mb-4">
+            <!-- Accent the word "value" with teal -->
+            <h1 class="hero-title">Turning vision<br />into <span class="text-teal">value</span></h1>
+          </div>
+          <div class="col-lg-6">
+            <form class="card p-3 w-md-75 w-lg-100 mx-auto">
+              <div class="mb-3 form-floating">
+                <input type="text" id="name-input" class="topcoat-text-input form-control" placeholder="Name">
+                <label for="name-input" class="form-label">Name</label>
+              </div>
+              <div class="mb-3 form-floating">
+                <input type="email" id="email-input" class="topcoat-text-input form-control" placeholder="Email">
+                <label for="email-input" class="form-label">Email</label>
+              </div>
+              <div class="mb-3 form-floating">
+                <textarea id="comments-input" class="topcoat-text-input form-control" style="height: 8rem;"></textarea>
+                <label for="comments-input" class="form-label">Comments</label>
+              </div>
+              <button type="submit" class="btn cta-btn">Schedule a Consultation</button>
+            </form>
+          </div>
         </div>
-        <div class="col-lg-6">
-          <form class="card p-3 w-md-75 w-lg-100 mx-auto">
-            <div class="mb-3">
-              <label for="nameInput" class="form-label">Name</label>
-              <input type="text" id="nameInput" class="form-control">
+      </div>
+    </header>
+
+    <!-- FOUR MAIN PAGE LINKS SECTION -->
+    <section class="main-links container my-4">
+      <div class="row g-0">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <a href="individual-services.html" class="btn rounded-5 rounded-bottom-1 rounded-end-1 link-card d-block">
+            <span class="icon icomatic">user</span>
+            <span class="icon-label">Individual Services</span>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <a href="business-services.html" class="btn rounded link-card d-block">Business Services</a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <a href="tax-services.html" class="btn rounded link-card d-block">
+            <span class="icon icomatic">calendar</span>
+            <span class="icon-label">Tax Services</span>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <a href="quickbooks-services.html"
+            class="btn rounded-5 rounded-start-1 rounded-top-1 link-card d-block">QuickBooks Services</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section bg-body-secondary">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>At Big Sky Financial, we pride ourselves on delivering comprehensive accounting and bookkeeping solutions for
+          small and medium-sized businesses.</p>
+        <div class="row g-5">
+          <!-- Our Story -->
+          <figure class="figure card col-sm-12 col-md-5 m-5 p-0">
+            <h3 class="card-header">Our Story</h3>
+            <img src="https://placehold.co/600x400/99999999/0078d4" class="figure-img" alt="Office photo or team photo">
+            <figcaption class="figure-caption card-body">
+              <hgroup id="story" class="">
+                <h3 class="card-header">Where We Come From</h3>
+                <p class="card-body">Battle-tested combat veteran with 10+ years experience in small business
+                  accounting.
+                </p>
+              </hgroup>
+            </figcaption>
+          </figure>
+          <!-- Our Mission -->
+          <figure class="figure card col-sm-12 col-md-5 m-5 p-0">
+            <figcaption class="figure-caption card-body">
+              <hgroup class="card-text">
+                <h3 class="card-header">Our Mission</h3>
+                <p class="card-body">To provide reliable financial expertise that empowers entrepreneurs, streamlines
+                  operations, and fosters
+                  growth in the local business community.</p>
+              </hgroup>
+            </figcaption>
+            <img src="https://placehold.co/600x400/99999999/0078d4" class="figure-image"
+              alt="Office photo or team photo">
+          </figure>
+          <!-- Our Values -->
+          <figure class="figure card col-sm-12 col-md-5 m-5 p-0">
+            <h3 class="card-header">Our Values</h3>
+            <img src="https://placehold.co/600x400/99999999/0078d4" class="figuree-img"
+              alt="Office photo or team photo">
+            <figcaption class="figure-caption card-body">
+              <hgroup class="card-body">
+                <h4>We Stand For</h4>
+                <ul class="card-text list-group">
+                  <li class="list-group-item">
+                    <strong>Integrity:</strong>
+                    <br />
+                    We prioritize honesty and transparency in
+                    every
+                    interaction.
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Quality:</strong>
+                    <br />
+                    Meticulous attention to detail ensures your
+                    books
+                    are accurate and compliant.
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Client Focus:</strong>
+                    <br />
+                    We tailor our services to suit your unique
+                    needs and goals.
+                  </li>
+                </ul>
+              </hgroup>
+            </figcaption>
+          </figure>
+          <!-- Our Mission -->
+          <figure class="figure card col-sm-12 col-md-5 m-5 p-0">
+            <figcaption class="figure-caption card-body">
+              <hgroup class="card-text">
+                <h3 class="card-header">Our Mission</h3>
+                <p class="card-body">To provide reliable financial expertise that empowers entrepreneurs, streamlines
+                  operations, and fosters
+                  growth in the local business community.</p>
+              </hgroup>
+            </figcaption>
+            <img src="https://placehold.co/600x400/99999999/0078d4" class="figure-image"
+              alt="Office photo or team photo">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services-section bg-body-secondary">
+      <div class="container">
+        <h2>Our Services</h2>
+        <p class="section-intro">We offer tailored bookkeeping and accounting services to help you focus on growing your business instead of managing the numbers.</p>
+        <div class="service-cards">
+          <div class="service-card bg-body-tertiary">
+            <h3>Bookkeeping</h3>
+            <p>Keep your financial records up-to-date with daily/monthly bookkeeping, reconciliations, and detailed reporting.</p>
+          </div>
+          <div class="service-card bg-body-tertiary">
+            <h3>Tax Preparation</h3>
+            <p>Ensure compliance and maximize savings with professional tax planning, filing, and advisory services.</p>
+          </div>
+          <div class="service-card bg-body-tertiary">
+            <h3>Payroll Management</h3>
+            <p>Streamline payroll and stay compliant with federal and state regulations, including tax forms and
+              employee
+              records.</p>
+          </div>
+          <div class="service-card bg-body-tertiary">
+            <h3>Financial Consulting</h3>
+            <p>Gain insights with customized financial analysis, budgeting, and forecasting for sustainable growth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="testimonials-section bg-body-secondary">
+      <div class="container">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <p class="quote">“I used to dread doing the books each month, but Big Sky Financial made the process easy
+              and
+              stress-free. They’re lifesavers!”</p>
+            <p class="author">– [Client Name], [Business Name/Title]</p>
+          </div>
+          <div class="testimonial">
+            <p class="quote">“Their team genuinely cares about my success. My finances are finally organized, and I can
+              focus on growing my business.”</p>
+            <p class="author">– [Client Name], [Business Name/Title]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="team-section bg-body-secondary">
+      <div class="container">
+        <h2>Meet the Team</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="team-member-placeholder.jpg" alt="Team Member Photo">
+            <h4>[Name, Title]</h4>
+            <p>[CPA with 10+ years experience in small business accounting.]</p>
+          </div>
+          <div class="team-member">
+            <img src="team-member-placeholder.jpg" alt="Team Member Photo">
+            <h4>[Name, Title]</h4>
+            <p>[Short bio / Expertise]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faqs" class="faq-section bg-body-secondary">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faqs">
+          <div class="faq-item">
+            <h3>Q: How do I get started?</h3>
+            <p>A: [Contact us to schedule a consultation. We’ll discuss your needs and recommend the right services for
+              your business.]</p>
+          </div>
+          <div class="faq-item">
+            <h3>Q: Do you work with businesses outside Montana?</h3>
+            <p>A: [Yes, we offer remote bookkeeping and accounting services nationwide.]</p>
+          </div>
+          <div class="faq-item">
+            <h3>Q: What are your pricing plans?</h3>
+            <p>A: [We provide transparent, customized packages based on your financial needs. Contact us for a
+              personalized quote.]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section bg-body-secondary">
+      <div class="container">
+        <h2>Ready to Get Started?</h2>
+        <p>Contact us or schedule an appointment to discuss your accounting and bookkeeping needs.</p>
+        <p>
+          <strong>Email:</strong> <a
+            href="mailto:Brandon.lake@bigskyfinancialservicellc.com">Brandon.lake@bigskyfinancialservicellc.com</a><br>
+          <strong>Phone:</strong> 406-475-2009
+        </p>
+        <a href="[SCHEDULING_LINK]" class="cta-btn">Schedule a Consultation</a>
+        <!-- Contact Form with Expandable Accordion -->
+        <form class="mt-4">
+          <div class="mb-3">
+            <label for="contactName" class="form-label">Name</label>
+            <input type="text" id="contactName" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="contactPhone" class="form-label">Phone</label>
+            <input type="text" id="contactPhone" class="form-control">
+          </div>
+          <div class="accordion" id="contactAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne">
+                  Tell me about your business and what you're looking for help with?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#contactAccordion">
+                <div class="accordion-body">
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="emailInput" class="form-label">Email</label>
-              <input type="email" id="emailInput" class="form-control">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo">
+                  How did you find me and what encouraged you to reach out?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#contactAccordion">
+                <div class="accordion-body">
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="commentsInput" class="form-label">Comments</label>
-              <textarea id="commentsInput" class="form-control"></textarea>
-            </div>
-            <button type="submit" class="btn cta-btn">Schedule a Consultation</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- FOUR MAIN PAGE LINKS SECTION -->
-  <section class="main-links container my-4">
-    <div class="row g-0">
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <a href="individual-services.html" class="btn rounded-5 rounded-bottom-1 rounded-end-1 link-card d-block">
-          <span class="icon icomatic">user</span>
-          <span class="icon-label">Individual Services</span>
-        </a>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <a href="business-services.html" class="btn rounded link-card d-block">Business Services</a>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <a href="tax-services.html" class="btn rounded link-card d-block">
-          <span class="icon icomatic">calendar</span>
-          <span class="icon-label">Tax Services</span>
-        </a>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <a href="quickbooks-services.html"
-          class="btn rounded-5 rounded-start-1 rounded-top-1 link-card d-block">QuickBooks Services</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ABOUT SECTION -->
-  <section id="about" class="about-section bg-body-secondary">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>At Big Sky Financial, we pride ourselves on delivering comprehensive accounting and bookkeeping solutions for
-        small and medium-sized businesses.</p>
-      <div class="about-grid">
-        <!-- Our Story -->
-        <figure class="figure card">
-          <h3 class="card-header">Our Story</h3>
-          <img src="https://placehold.co/600x400/99999999/0078d4" class="figure-img" alt="Office photo or team photo">
-          <figcaption class="figure-caption card-body">
-            <hgroup id="story" class="">
-              <h3 class="card-header">Where We Come From</h3>
-              <p class="card-body">Battle-tested combat veteran with 10+ years experience in small business accounting.
-              </p>
-            </hgroup>
-          </figcaption>
-        </figure>
-        <!-- Our Mission -->
-        <figure class="figure card">
-          <figcaption class="figure-caption card-body">
-            <hgroup class="card-text">
-              <h3 class="card-header">Our Mission</h3>
-              <p class="card-body">To provide reliable financial expertise that empowers entrepreneurs, streamlines
-                operations, and fosters
-                growth in the local business community.</p>
-            </hgroup>
-          </figcaption>
-          <img src="https://placehold.co/600x400/99999999/0078d4" class="figure-image" alt="Office photo or team photo">
-        </figure>
-        <!-- Our Values -->
-        <figure class="figure card">
-          <h3 class="card-header">Our Values</h3>
-          <img src="https://placehold.co/600x400/99999999/0078d4" class="figuree-img" alt="Office photo or team photo">
-          <figcaption class="figure-caption card-body">
-            <hgroup class="card-body">
-              <h4>We Stand For</h4>
-              <ul class="card-text list-group">
-                <li class="list-group-item">
-                  <strong>Integrity:</strong>
-                  <br />
-                  We prioritize honesty and transparency in
-                  every
-                  interaction.
-                </li>
-                <li class="list-group-item">
-                  <strong>Quality:</strong>
-                  <br />
-                  Meticulous attention to detail ensures your
-                  books
-                  are accurate and compliant.
-                </li>
-                <li class="list-group-item">
-                  <strong>Client Focus:</strong>
-                  <br />
-                  We tailor our services to suit your unique
-                  needs and goals.
-                </li>
-              </ul>
-            </hgroup>
-          </figcaption>
-        </figure>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES SECTION -->
-  <section id="services" class="services-section bg-body-secondary">
-    <div class="container">
-      <h2>Our Services</h2>
-      <p class="section-intro">[We offer tailored bookkeeping and accounting services to help you focus on growing your
-        business instead of managing the numbers.]</p>
-      <div class="service-cards">
-        <div class="service-card">
-          <h3>Bookkeeping</h3>
-          <p>[Keep your financial records up-to-date with daily/monthly bookkeeping, reconciliations, and detailed
-            reporting.]</p>
-        </div>
-        <div class="service-card bg-body-tertiary">
-          <h3>Tax Preparation</h3>
-          <p>[Ensure compliance and maximize savings with professional tax planning, filing, and advisory services.]</p>
-        </div>
-        <div class="service-card">
-          <h3>Payroll Management</h3>
-          <p>[Streamline payroll and stay compliant with federal and state regulations, including tax forms and employee
-            records.]</p>
-        </div>
-        <div class="service-card">
-          <h3>Financial Consulting</h3>
-          <p>[Gain insights with customized financial analysis, budgeting, and forecasting for sustainable growth.]</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS SECTION -->
-  <section id="testimonials" class="testimonials-section bg-body-secondary">
-    <div class="container">
-      <h2>What Our Clients Say</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial">
-          <p class="quote">“I used to dread doing the books each month, but Big Sky Financial made the process easy and
-            stress-free. They’re lifesavers!”</p>
-          <p class="author">– [Client Name], [Business Name/Title]</p>
-        </div>
-        <div class="testimonial">
-          <p class="quote">“Their team genuinely cares about my success. My finances are finally organized, and I can
-            focus on growing my business.”</p>
-          <p class="author">– [Client Name], [Business Name/Title]</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TEAM SECTION -->
-  <section class="team-section bg-body-secondary">
-    <div class="container">
-      <h2>Meet the Team</h2>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="team-member-placeholder.jpg" alt="Team Member Photo">
-          <h4>[Name, Title]</h4>
-          <p>[CPA with 10+ years experience in small business accounting.]</p>
-        </div>
-        <div class="team-member">
-          <img src="team-member-placeholder.jpg" alt="Team Member Photo">
-          <h4>[Name, Title]</h4>
-          <p>[Short bio / Expertise]</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ SECTION -->
-  <section id="faqs" class="faq-section bg-body-secondary">
-    <div class="container">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faqs">
-        <div class="faq-item">
-          <h3>Q: How do I get started?</h3>
-          <p>A: [Contact us to schedule a consultation. We’ll discuss your needs and recommend the right services for
-            your business.]</p>
-        </div>
-        <div class="faq-item">
-          <h3>Q: Do you work with businesses outside Montana?</h3>
-          <p>A: [Yes, we offer remote bookkeeping and accounting services nationwide.]</p>
-        </div>
-        <div class="faq-item">
-          <h3>Q: What are your pricing plans?</h3>
-          <p>A: [We provide transparent, customized packages based on your financial needs. Contact us for a
-            personalized quote.]</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="contact-section bg-body-secondary">
-    <div class="container">
-      <h2>Ready to Get Started?</h2>
-      <p>Contact us or schedule an appointment to discuss your accounting and bookkeeping needs.</p>
-      <p>
-        <strong>Email:</strong> <a
-          href="mailto:Brandon.lake@bigskyfinancialservicellc.com">Brandon.lake@bigskyfinancialservicellc.com</a><br>
-        <strong>Phone:</strong> 406-475-2009
-      </p>
-      <a href="[SCHEDULING_LINK]" class="cta-btn">Schedule a Consultation</a>
-      <!-- Contact Form with Expandable Accordion -->
-      <form class="mt-4">
-        <div class="mb-3">
-          <label for="contactName" class="form-label">Name</label>
-          <input type="text" id="contactName" class="form-control">
-        </div>
-        <div class="mb-3">
-          <label for="contactPhone" class="form-label">Phone</label>
-          <input type="text" id="contactPhone" class="form-control">
-        </div>
-        <div class="accordion" id="contactAccordion">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseOne">
-                Tell me about your business and what you're looking for help with?
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#contactAccordion">
-              <div class="accordion-body">
-                <textarea class="form-control" rows="3"></textarea>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree">
+                  When would be the best time to call you to go over everything?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#contactAccordion">
+                <div class="accordion-body">
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
               </div>
             </div>
           </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo">
-                How did you find me and what encouraged you to reach out?
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#contactAccordion">
-              <div class="accordion-body">
-                <textarea class="form-control" rows="3"></textarea>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseThree">
-                When would be the best time to call you to go over everything?
-              </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#contactAccordion">
-              <div class="accordion-body">
-                <textarea class="form-control" rows="3"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary mt-3">Submit</button>
-      </form>
-      <p class="mt-2"><small>Leads will be sent directly to Brandon.lake@bigskyfinancialservicellc.com.</small></p>
-    </div>
-  </section>
+          <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+        <p class="mt-2"><small>Leads will be sent directly to Brandon.lake@bigskyfinancialservicellc.com.</small></p>
+      </div>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 Big Sky Financial LLC. All Rights Reserved.</p>
-    </div>
-  </footer>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <p>© 2025 Big Sky Financial LLC. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+  </main>
+
   <!-- Separate Popper and Bootstrap JS -->
   <script src="./js/vendor/popper.min.js"></script>
   <script src="./js/vendor/bootstrap.min.js"></script>
