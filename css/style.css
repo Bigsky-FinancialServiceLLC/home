@@ -1,0 +1,323 @@
+/* ---------- Base Reset & Typography ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1.6;
+  /* Account for both fixed navs (primary + secondary) */
+  padding-top: 130px;
+}
+
+/*!
+ * Custom Banner - My Project
+ * Version: 1.0.0
+ */
+
+
+/* ---------- Teal Accent Class ---------- */
+.text-teal {
+  color: #20c997; /* Adjust this value if needed */
+}
+
+/* ---------- Navigation ---------- */
+/* Primary (Top) Nav: Teal gradient background */
+.top-nav {
+  height: 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(66deg, #20c997, #17a2b8);
+  padding: 0.5rem 0;
+}
+.top-nav .nav-social a {
+  margin-right: 1rem;
+  color: #fff;
+}
+.top-nav .nav-social a:hover {
+  color: #e0f7fa;
+}
+.top-nav .nav-contact a,
+.top-nav .nav-contact span {
+  margin-left: 1rem;
+  color: #fff;
+}
+
+/* Secondary Nav: Branding & Dropdown Page Links */
+.sticky-secondary {
+  position: fixed;
+  top: 40px; /* placed just below the primary nav */
+  width: 100%;
+  z-index: 998;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.sticky-secondary .nav {
+  display: flex;
+  list-style: none;
+  justify-content: right;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.sticky-secondary .nav-item {
+  position: relative;
+}
+.sticky-secondary .nav-link {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+.sticky-secondary .nav-link:hover {
+  color: #0078d4;
+  font-weight: bold;
+}
+.sticky-secondary .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  display: none;
+  min-width: 200px;
+  z-index: 999;
+}
+.sticky-secondary .dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.sticky-secondary .dropdown-menu a:hover {
+  background-color: #0078d499;
+  background: linear-gradient(66deg, #20c99799, #17a2b899)
+}
+.sticky-secondary .nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+/* Mobile Navigation (for medium/small screens) */
+.mobile-nav {
+  background-color: #f8f9fa;
+  padding: 0.5rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.mobile-nav .nav-icon {
+  width: 25%;
+  text-align: center;
+  color: #333;
+}
+.mobile-menu {
+  display: none;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+.mobile-menu a {
+  display: block;
+  padding: 0.5rem 0;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+/* ---------- Hero / Splash Section ---------- */
+.hero {
+  min-height: 80vh;
+  /* Teal gradient overlay behind the (placeholder) splash image */
+  background: linear-gradient(66deg, #20c99799, #17a2b899), url('splash-image.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.hero .hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.hero .hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero .hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #f0f0f0;
+}
+.hero .cta-btn {
+  background-color: #0078d4;
+  background: linear-gradient(66deg, #20c997, #17a2b8);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+.hero .cta-btn:hover {
+  background-color: #005bb5;
+}
+
+/* ---------- Main Page Links ---------- */
+.main-links .link-card {
+  /* Teal gradient background for the 4 link buttons */
+  background: linear-gradient(66deg, #20c997, #17a2b8);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.main-links .link-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* ---------- Sections ---------- */
+section {
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+  border-radius: 6px;
+}
+
+/* ---------- About Section ---------- */
+.about-section .about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.about-grid img {
+  width: 100%;
+  border-radius: 6px;
+}
+.about-grid h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Services Section ---------- */
+.services-section .section-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #555;
+}
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.service-card {
+  background-color: #f0f4f8;
+  border-radius: 6px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+.service-card h3 {
+  margin-bottom: 1rem;
+}
+.service-card p {
+  color: #555;
+}
+
+/* ---------- Testimonials Section ---------- */
+.testimonials-section .testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.testimonial {
+  background-color: #f0f4f8;
+  border-radius: 6px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.testimonial .quote {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.testimonial .author {
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* ---------- Team Section ---------- */
+.team-section .team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.team-member {
+  text-align: center;
+}
+.team-member img {
+  width: 100%;
+  border-radius: 50%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.team-member h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.team-member p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ---------- FAQ Section ---------- */
+.faq-section .faqs {
+  margin-top: 1.5rem;
+}
+.faq-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.faq-item h3 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.faq-item p {
+  color: #555;
+}
+
+/* ---------- Contact Section ---------- */
+.contact-section {
+  text-align: center;
+  padding: 2rem 0;
+}
+.contact-section p {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background-color: #fff;
+  padding: 1.5rem 0;
+  border-top: 1px solid #eee;
+  text-align: center;
+  color: #666;
+}
