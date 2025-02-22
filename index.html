@@ -44,6 +44,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+<link href="./css/vendor/mercury.css" />
+
     <!-- Halfmoon CSS Framework -->
     <link
       rel="stylesheet"
@@ -67,7 +70,7 @@
     <!-- Icomatic Icon Font -->
     <link rel="stylesheet" href="./css/vendor/icomatic.css" />
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/style.css?v=3" />
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- Google Fonts -->
     <link
@@ -77,23 +80,6 @@
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="site.webmanifest" />
-
-    <!-- Bootstrap & Popper.js -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha256-3gQJhtmj7YnV1fmtbVcnAV6eI4ws0Tr48bVZCThtCGQ="
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Main App Script -->
-    <script defer src="./js/app.js?v=3"></script>
   </head>
 
   <body
@@ -101,11 +87,12 @@
     data-bs-core="modern"
     class="bg-body with-custom-scrollbar"
   >
+  <!-- Mode Toggle -->
     <button
       id="mode-toggle"
-      class="btn topcoat-button topcoat-icon-button bg-gradient"
+      class="btn topcoat-button topcoat-icon-button bg-gradient fa-moon fa-sun"
       data-bs-toggle="tooltip"
-      data-bs-title="Dark/Light Toggle"
+      data-bs-title="Toggle Dark Mode"
     >
       <span class="icomatic icon fs-4 mx-auto text-primary">view</span>
     </button>
@@ -307,7 +294,7 @@
             <div class="col-lg-6 bg-secondary h-100 cta">
               <!-- Accent the word "value" with teal -->
               <h2 class="hero-title">
-                Making sense of your <span class="text-teal">¢ents</span>
+                Making sense of your <span class="text-primary">cents</span>
               </h2>
             </div>
             <div class="col-lg-6">
@@ -512,6 +499,7 @@
           </div>
         </div>
       </section>
+
       <!-- SERVICES SECTION -->
       <hr id="services" />
       <section class="container bg-body-secondary border shadow-lg">
@@ -640,8 +628,7 @@
                   type="button"
                   data-bs-target="#faq-carousel"
                   data-bs-slide-to="0"
-                  class="active btn topcoat-icon-button"
-                  aria-current="true"
+                  class="btn topcoat-icon-button"
                   aria-label="Slide 1"
                 >
                   <span class="icon icomatic">favorite</span>
@@ -657,12 +644,13 @@
                   type="button"
                   data-bs-target="#faq-carousel"
                   data-bs-slide-to="2"
-                  class="btn topcoat-icon-button"
+                  class="btn topcoat-icon-button active"
                   aria-label="Slide 3"
+                  aria-current="true"
                 ></button>
               </div>
               <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item">
                   <div class="faq-item">
                     <dl class="card">
                       <dt class="card-header">
@@ -701,7 +689,7 @@
                     </dl>
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item active">
                   <div class="faq-item">
                     <dl class="card">
                       <dt class="card-header">
@@ -866,22 +854,42 @@
         </div>
       </footer>
     </main>
-    <div class="clip"></div>
+
+    <div
+      class="clip"
+      data-bs-theme="light"
+      style="
+        display: none;
+        clip-path: circle(0% at 1342px 737px);
+        transition: none;
+      "
+    >
+      <!-- Topcoat UI Styles -->
+      <link
+        id=""
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-desktop-light.min.css"
+      />
+    </div>
+
     <!-- Popper.js -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I="
       crossorigin="anonymous"
     ></script>
+
     <!-- Bootstrap.js -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
       integrity="sha256-3gQJhtmj7YnV1fmtbVcnAV6eI4ws0Tr48bVZCThtCGQ="
       crossorigin="anonymous"
     ></script>
+
     <!-- Icomatic.js -->
     <script defer src="./js/vendor/icomatic.js"></script>
-    <!-- Custom JavaScript -->
-    <script src="./js/app.js?v=3"></script>
+
+    <!-- Custom Script -->
+    <script src="./js/app.js"></script>
   </body>
 </html>

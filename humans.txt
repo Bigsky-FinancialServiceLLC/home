@@ -1,46 +1,14 @@
 /* TEAM */
+Your title: PhobiaCide
+Site: aamason86@gmail.com
+Github: https://github.com/PhobiaCide
+Location: Little Rock, AR, USA
 
-                            
-Your title: Your name.
-
-                            
-Site: email, link to a contact form, etc.
-
-                            
-Twitter: your Twitter username.
-
-                            
-Location: City, Country.
-
-                         
-                 
-                        [...]
-						
-
-							
 /* THANKS */
+Name: PhobiaCide
 
-							
-Name: name or url
-
-						
-                 
-                        [...]
-                        
-
-                            
 /* SITE */
-
-                            
-Last update: YYYY/MM/DD 
-
-                            
-Standards: HTML5, CSS3,..
-
-                            
-Components: Modernizr, jQuery, etc.
-
-                            
-Software: Software used for the development
-   
-     
+Last update: 2025/02/22
+Standards: HTML5, CSS3, ES6
+Components: Normalize.css, Halfmoon.css, Topcoat UI, Icomatic Icon Font, Popper.js, Bootstrap.js
+Software: Webpack
