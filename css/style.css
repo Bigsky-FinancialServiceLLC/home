@@ -327,9 +327,11 @@ body {
   display: block;
   text-decoration: none;
   transition: background 0.6s ease;
-  background-color: var(--bs-body-bg);
+  background-color: var(--bs-secondary-color);
+  color: var(--bs-body-bg);
 }
 .sticky-secondary .dropdown-menu a:hover {
+  color: var(--bs-body-color);
   background-color: #0078d499;
   background: linear-gradient(
       66deg,
