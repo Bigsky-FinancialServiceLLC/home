@@ -305,7 +305,6 @@ body {
   text-decoration: none;
   padding: 0.5rem 1rem;
   transition: color 0.3s ease;
-  color: var(--bs-body-bg);
 }
 .sticky-secondary .nav-link:hover {
   color: #0078d4;
@@ -326,7 +325,6 @@ body {
   text-decoration: none;
   transition: background 0.6s ease;
   background-color: var(--bs-body-bg);
-  color: var(--bs-body-bg);
 }
 .sticky-secondary .dropdown-menu a:hover {
   background-color: #0078d499;
