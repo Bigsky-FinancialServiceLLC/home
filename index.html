@@ -3,19 +3,58 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Big Sky Financial| Accounting &amp; Bookkeeping</title>
+    <title>Big Sky Financial | Accounting &amp; Bookkeeping</title>
 
-    <!-- Halfmoon CSS -->
+    <!-- SEO Meta Description -->
+    <meta
+      name="description"
+      content="Big Sky Financial provides expert accounting, bookkeeping, payroll, and financial consulting services for businesses of all sizes. Let us handle your finances so you can focus on growth."
+    />
+
+    <!-- Open Graph (OG) Meta for Social Sharing -->
+    <meta
+      property="og:title"
+      content="Big Sky Financial | Trusted Accounting & Bookkeeping"
+    />
+    <meta
+      property="og:description"
+      content="Comprehensive accounting and bookkeeping solutions tailored for small and medium-sized businesses."
+    />
+    <meta property="og:url" content="https://bigskyfinancial.com" />
+    <meta
+      property="og:image"
+      content="https://bigskyfinancial.com/images/branding.jpg"
+    />
+    <meta property="og:image:alt" content="Big Sky Financial Logo" />
+    <meta property="og:type" content="website" />
+
+    <!-- Authorship -->
+    <link type="text/plain" rel="author" href="http://domain/humans.txt" />
+
+    <!-- Favicon and Theme Color -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <meta name="theme-color" content="#0078d4" />
+    <!-- Normalize.css Reset-->
     <link
-      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/halfmoon.min.css"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Halfmoon CSS Framework -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/halfmoon.min.css"
       integrity="sha256-SsJizWSIG9JT9Qxbiy8xnYJfjCAkhEQ0hihxRn7jt2M="
       crossorigin="anonymous"
     />
-    <!-- Or just include all the core themes together: -->
+    <!-- Halfmoon Cores -->
     <link
-      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/cores/halfmoon.cores.css"
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/cores/halfmoon.cores.css"
       integrity="sha256-MAzAVJMU/ze52ZHcA8CeqRrCOVndMZlHwNeS2c73vP4="
       crossorigin="anonymous"
     />
@@ -25,42 +64,36 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-desktop-light.min.css"
     />
-
-    <!-- Icomatic Icon font -->
-    <link rel="stylesheet" type="text/css" href="./css/vendor/icomatic.css" />
-    <link
-      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="http://fonts.googleapis.com/css?family=Source+Code+Pro"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <!-- Icomatic Javascript Fallback -->
-    <script type="text/javascript" src="./js/vendor/icomatic.js"></script>
-    <script>
-      window.onload = function () {
-        IcomaticUtils.run();
-      };
-    </script>
-
+    <!-- Icomatic Icon Font -->
+    <link rel="stylesheet" href="./css/vendor/icomatic.css" />
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="css/style.css?v=3" />
-    <meta name="description" content="" />
 
-    <meta property="og:title" content="" />
-    <meta property="og:type" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:image:alt" content="" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Source+Code+Pro"
+      rel="stylesheet"
+    />
 
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="icon.png" />
-
+    <!-- Web App Manifest -->
     <link rel="manifest" href="site.webmanifest" />
-    <meta name="theme-color" content="#0078d4" />
+
+    <!-- Bootstrap & Popper.js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha256-3gQJhtmj7YnV1fmtbVcnAV6eI4ws0Tr48bVZCThtCGQ="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Main App Script -->
+    <script defer src="./js/app.js?v=3"></script>
   </head>
 
   <body
@@ -834,18 +867,21 @@
       </footer>
     </main>
     <div class="clip"></div>
-    <!-- Separate Popper and Bootstrap JS -->
+    <!-- Popper.js -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I="
       crossorigin="anonymous"
     ></script>
+    <!-- Bootstrap.js -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
       integrity="sha256-3gQJhtmj7YnV1fmtbVcnAV6eI4ws0Tr48bVZCThtCGQ="
       crossorigin="anonymous"
     ></script>
-
+    <!-- Icomatic.js -->
+    <script defer src="./js/vendor/icomatic.js"></script>
+    <!-- Custom JavaScript -->
     <script src="./js/app.js?v=3"></script>
   </body>
 </html>

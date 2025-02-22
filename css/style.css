@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/source-sans-pro');
 /*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
 
 /* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
@@ -244,27 +245,76 @@ textarea {
     page-break-after: avoid;
   }
 }
+/* Preserve the original body layout */
+html, body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* Force scrollbar presence in both body and .clip */
+html, body, .clip {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/* 🚀 Ensure fonts do not change weight unexpectedly */
+body, .clip {
+  font-family: var(--font-family, "Source Sans Pro", sans-serif);
+  font-weight: var(--font-weight, 400);
+  font-synthesis: none; /* Prevents the browser from making weight adjustments */
+}
+/* Prevents width changes during animation */
+/* 🚀 Prevents navbar/sticky elements from shifting during theme switch */
+.navbar, .sticky-secondary, .hero {
+  height: auto; /* Avoid forcing a fixed height */
+  contain: layout paint; /* Prevents reflow issues but keeps visibility */
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* 🚀 Keep `.clip` visible and fully covering content */
 .clip {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   clip-path: circle(0% at 50% 50%);
-  z-index: 1000; /* Ensure it overlays everything */
-  display: none; /* Initially hidden */
-  overflow: hidden; /* Prevents scrollbar flash */
-  background: var(--bs-body-bg); /* Ensures correct background */
+  z-index: 1000;
+  display: none;
+  overflow: hidden;
+  background: var(--bs-body-bg, white); /* Ensure a default background */
+  contain: layout paint; /* 🚀 Prevents reflow while keeping elements visible */
 }
 
-/* Expanding effect */
+/* 🚀 Prevent minor layout shifts */
+body.animating {
+  overflow-y: scroll;
+  width: 100vw; /* Locks width to prevent flickering */
+  padding-right: var(--scrollbar-width, 0px);
+}
+
+/* 🚀 Ensure `.clip` smoothly covers and disappears */
 .clip.anim {
   clip-path: circle(150% at 50% 50%);
 }
 
-body {
-  font-family: "Source Sans Pro", sans-serif;
+
+/* The `.clip` layer sits on top of everything */
+.clip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  clip-path: circle(0% at 50% 50%);
+  z-index: 1000;
+  display: none;
+  overflow: hidden;
+  background: var(--bs-body-bg);
+  contain: strict;
 }
+
+
 /* ---------- Teal Accent Class ---------- */
 .text-teal {
   color: #20c997 !important; /* Adjust this value if needed */
@@ -320,7 +370,12 @@ body {
   font-size: 1.3rem;
   color: var(--bs-body-bg);
 }
-
+/* Ensure navbar and sticky elements do not shift */
+.navbar, .sticky-secondary {
+  position: relative; /* Prevents layout shifts */
+  min-height: var(--nav-height); /* Locks height during animation */
+  contain: layout; /* Prevents reflow jumps */
+}
 /* Secondary Nav: Branding & Dropdown Page Links */
 .sticky-secondary {
   background-color: var(--bs-body-bg);
