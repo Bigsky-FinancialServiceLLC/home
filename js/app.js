@@ -27,6 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const savedMode = localStorage.getItem("mode") || "dark";
   setMode(savedMode);
 
+  // Function to sync scrolling during animation
+  function syncScroll() {
+      clipContainer.scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  }
+
   // Handle mode toggle with animation
   if (modeToggle) {
       modeToggle.addEventListener("click", () => {
@@ -51,6 +56,9 @@ document.addEventListener("DOMContentLoaded", function () {
           // Ensure `.clip` is visible before animation starts
           clipContainer.style.display = "block";
           clipContainer.scrollTop = scrollTop;
+
+          // Start listening for scroll events
+          window.addEventListener("scroll", syncScroll);
 
           // Reset the clip animation
           clipContainer.style.clipPath = `circle(0% at ${centerX}px ${centerY}px)`;
@@ -83,6 +91,9 @@ document.addEventListener("DOMContentLoaded", function () {
                   clipContainer.innerHTML = "";
                   clipContainer.style.display = "none";
                   buttonEnabled = true;
+
+                  // 🚀 Stop listening for scroll events
+                  window.removeEventListener("scroll", syncScroll);
               }, 50); // Tiny delay to ensure smooth transition reset
           }, 1000); // Animation duration
       });
