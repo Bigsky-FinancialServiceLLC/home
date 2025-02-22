@@ -288,7 +288,7 @@ body {
   top: 40px; /* placed just below the primary nav */
   width: 100%;
   z-index: 998;
-  border-bottom: 2px outset var(--bs-body-color);
+  border-bottom: 2px outset var(--bs-border-color);
 }
 .sticky-secondary .nav {
   display: flex;
@@ -304,24 +304,27 @@ body {
 .sticky-secondary .nav-link {
   text-decoration: none;
   padding: 0.5rem 1rem;
-  transition: color 0.3s ease;
+  transition: color 0.6s ease;
+  color: #20c997;
 }
 .sticky-secondary .nav-link:hover {
   color: #0078d4;
 }
 .sticky-secondary .dropdown-menu {
+  border: none;
   position: absolute;
   top: 100%;
   left: 0;
-  border: 1px solid var(--bs-border-color);
   border-radius: 4px;
   display: none;
   min-width: 200px;
   z-index: 999;
 }
+
 .sticky-secondary .dropdown-menu a {
+  border: none;
+  background: transparent;
   display: block;
-  padding: 0.5rem 1rem;
   text-decoration: none;
   transition: background 0.6s ease;
   background-color: var(--bs-body-bg);
@@ -340,7 +343,9 @@ body {
 }
 
 .sticky-secondary .nav-item:hover .dropdown-menu {
+  border: none;
   display: block;
+  background: transparent;
 }
 
 /* Mobile Navigation (for medium/small screens) */
