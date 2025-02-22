@@ -252,6 +252,9 @@ body {
   color: #20c997 !important; /* Adjust this value if needed */
 }
 
+#mode-toggle {
+  background-color: var(--bs-body-color);
+}
 /* ---------- Navigation ---------- */
 /* Primary (Top) Nav: Teal gradient background */
 .top-nav {
@@ -323,11 +326,10 @@ body {
 
 .sticky-secondary .dropdown-menu a {
   border: none;
-  background: transparent;
   display: block;
   text-decoration: none;
   transition: background 0.6s ease;
-  background-color: var(--bs-secondary-color);
+  background-color: var(--bs-body-color);
   color: var(--bs-body-bg);
 }
 .sticky-secondary .dropdown-menu a:hover {
