@@ -56,3 +56,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const defaultMode = localStorage.getItem("mode") || (systemPrefersDark ? "dark" : "light");
   setMode(defaultMode);
 });
+
+const tooltipTriggerList = document.querySelectorAll(
+  "[data-bs-toggle='tooltip']"
+);
+const tooltipList = [...tooltipTriggerList].map(
+  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+);

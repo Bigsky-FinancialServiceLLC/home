@@ -266,7 +266,8 @@ body {
   padding: 0.5rem 0;
 }
 .top-nav .nav-social a {
-  color: var(--bs-body-color);
+  color: var(--bs-body-bg);
+  font-size: 1.3rem;
   margin-right: 1rem;
 }
 .top-nav .nav-social a:hover {
@@ -275,18 +276,19 @@ body {
 .top-nav .nav-contact a,
 .top-nav .nav-contact span {
   margin-left: 1rem;
+  font-size: 1.3rem;
   color: var(--bs-body-bg);
 }
 
 /* Secondary Nav: Branding & Dropdown Page Links */
 .sticky-secondary {
-  font-size: 0.875rem;
+  background-color: var(--bs-body-bg);
+  font-size: 1rem;
   position: fixed;
   top: 40px; /* placed just below the primary nav */
   width: 100%;
   z-index: 998;
-  border-top: 1px solid var(--bs-body-color);
-  border-bottom: 1px solid var(--bs-body-color);
+  border-bottom: 2px outset var(--bs-body-color);
 }
 .sticky-secondary .nav {
   display: flex;
@@ -303,7 +305,7 @@ body {
   text-decoration: none;
   padding: 0.5rem 1rem;
   transition: color 0.3s ease;
-  color: var(--bs-body-color);
+  color: var(--bs-body-bg);
 }
 .sticky-secondary .nav-link:hover {
   color: #0078d4;
@@ -324,11 +326,19 @@ body {
   text-decoration: none;
   transition: background 0.6s ease;
   background-color: var(--bs-body-bg);
-  color: var(--bs-body-color);
+  color: var(--bs-body-bg);
 }
 .sticky-secondary .dropdown-menu a:hover {
   background-color: #0078d499;
-  background: linear-gradient(66deg, #00000000 11%, #ffffff11 33%, #00000022 44%, #ffffff11 55%, #00000000 88%), linear-gradient(66deg, #20c997ee, #17a2b8ee);
+  background: linear-gradient(
+      66deg,
+      #00000000 11%,
+      #ffffff11 33%,
+      #00000022 44%,
+      #ffffff11 55%,
+      #00000000 88%
+    ),
+    linear-gradient(66deg, #20c997ee, #17a2b8ee);
 }
 
 .sticky-secondary .nav-item:hover .dropdown-menu {
@@ -338,7 +348,15 @@ body {
 /* Mobile Navigation (for medium/small screens) */
 .mobile-nav {
   background-color: #0078d499;
-  background: linear-gradient(66deg, #00000000 11%, #ffffff11 33%, #00000022 44%, #ffffff11 55%, #00000000 88%), linear-gradient(66deg, #20c997ee, #17a2b8ee);
+  background: linear-gradient(
+      66deg,
+      #00000000 11%,
+      #ffffff11 33%,
+      #00000022 44%,
+      #ffffff11 55%,
+      #00000000 88%
+    ),
+    linear-gradient(66deg, #20c997ee, #17a2b8ee);
   padding: 0.5rem 0;
   position: fixed;
   top: 0;
@@ -348,10 +366,9 @@ body {
 .mobile-nav .nav-icon {
   width: 25%;
   text-align: center;
-  color: var(--bs-body-color);
 }
 .mobile-nav a {
-  color: var(--bs-body-color);
+  color: var(--bs-body-bg);
 }
 .mobile-menu {
   display: none;
@@ -362,7 +379,8 @@ body {
 .mobile-menu a {
   display: block;
   padding: 0.5rem 0;
-  color: var(--bs-body-color);
+  font-size: 1.5rem;
+  color: var(--bs-body-bg);
   border-bottom: 1px solid var(--bs-body-color);
 }
 
@@ -377,7 +395,15 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background: linear-gradient(66deg, #00000000 11%, #ffffff11 33%, #00000022 44%, #ffffff11 55%, #00000000 88%), linear-gradient(66deg, #20c997ee, #17a2b8ee);
+  background: linear-gradient(
+      66deg,
+      #00000000 11%,
+      #ffffff11 33%,
+      #00000022 44%,
+      #ffffff11 55%,
+      #00000000 88%
+    ),
+    linear-gradient(66deg, #20c997ee, #17a2b8ee);
   color: var(--bs-body-bg);
   text-align: center;
   display: flex;
@@ -402,9 +428,22 @@ body {
   margin-bottom: 2rem;
   color: var(--bs-body-bg);
 }
+.hero div div .cta {
+  border-radius: 3%;
+  border-top-right-radius: 30%;
+  border-bottom-left-radius: 30%;
+}
 .hero .cta-btn {
   background-color: #0078d499;
-  background: linear-gradient(66deg, #00000000 11%, #ffffff11 33%, #00000022 44%, #ffffff11 55%, #00000000 88%), linear-gradient(66deg, #20c997ee, #17a2b8ee);
+  background: linear-gradient(
+      66deg,
+      #00000000 11%,
+      #ffffff11 33%,
+      #00000022 44%,
+      #ffffff11 55%,
+      #00000000 88%
+    ),
+    linear-gradient(66deg, #20c997ee, #17a2b8ee);
   color: var(--bs-body-bg);
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
@@ -565,7 +604,15 @@ section {
   text-align: center;
   color: var(--bs-body-bg);
   background-color: #0078d499;
-  background: linear-gradient(66deg, #00000000 11%, #ffffff11 33%, #00000022 44%, #ffffff11 55%, #00000000 88%), linear-gradient(66deg, #20c997ee, #17a2b8ee);
+  background: linear-gradient(
+      66deg,
+      #00000000 11%,
+      #ffffff11 33%,
+      #00000022 44%,
+      #ffffff11 55%,
+      #00000000 88%
+    ),
+    linear-gradient(66deg, #20c997ee, #17a2b8ee);
 }
 
 .section-fade {
