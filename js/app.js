@@ -1,65 +1,114 @@
-// Fade-in on scroll using IntersectionObserver
-const fadeSections = document.querySelectorAll('.section-fade');
-const options = { threshold: 0.2 };
-const revealOnScroll = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('section-show');
-      observer.unobserve(entry.target);
-    }
-  });
-}, options);
-
-fadeSections.forEach(sec => revealOnScroll.observe(sec));
-
 document.addEventListener("DOMContentLoaded", function () {
-  /*** 🌓 Theme Toggle: Updates data-bs-theme & Stylesheets ***/
+  /*** 🌓 Theme Toggle: Updates `data-bs-theme` & Stylesheets ***/
   const modeToggle = document.getElementById("mode-toggle");
-  const topcoatStylesheet = document.getElementById("topcoat-stylesheet"); // Must be set in HTML
-  const modes = ["dark", "light"];
+  const topcoatStylesheet = document.getElementById("topcoat-stylesheet"); // Ensure this exists in HTML
+  const clipContainer = document.querySelector(".clip");
+  let buttonEnabled = true;
 
   function handleStylesheetChange() {
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    const currentMode = document.body.dataset.bsTheme; // "dark" or "light"
-    const topcoatVersion = isMobile ? `mobile-${currentMode}` : `desktop-${currentMode}`;
-    
-    if (topcoatStylesheet) {
-      topcoatStylesheet.href = `https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-${topcoatVersion}.min.css`;
-    }
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
+      const currentMode = document.body.dataset.bsTheme;
+      const topcoatVersion = isMobile ? `mobile-${currentMode}` : `desktop-${currentMode}`;
+
+      if (topcoatStylesheet) {
+          topcoatStylesheet.href = `https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-${topcoatVersion}.min.css`;
+      }
   }
 
-  window.addEventListener('resize', handleStylesheetChange);
-  
+  window.addEventListener("resize", handleStylesheetChange);
 
   function setMode(mode) {
-    document.body.dataset.bsTheme = mode;
-    localStorage.setItem("mode", mode);
-
-    handleStylesheetChange();
+      document.body.dataset.bsTheme = mode;
+      localStorage.setItem("mode", mode);
+      handleStylesheetChange();
   }
 
   // Load saved mode preference, defaulting to dark if none
   const savedMode = localStorage.getItem("mode") || "dark";
   setMode(savedMode);
 
-  // Handle mode toggle clicks
+  // Handle mode toggle with animation
   if (modeToggle) {
-    modeToggle.addEventListener("click", function () {
-      const currentMode = document.body.dataset.bsTheme;
-      const newMode = currentMode === "dark" ? "light" : "dark";
-      setMode(newMode);
-    });
+      modeToggle.addEventListener("click", () => {
+          if (!buttonEnabled) return;
+          buttonEnabled = false;
+
+          const currentMode = document.body.dataset.bsTheme;
+          const newMode = currentMode === "dark" ? "light" : "dark";
+
+          // 🚀 Get the button's position to center the animation
+          const rect = modeToggle.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+
+          // Preserve the scroll position
+          const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+          // 🚀 Clone the body into `.clip` and apply the NEW theme
+          clipContainer.innerHTML = document.body.innerHTML;
+          clipContainer.dataset.bsTheme = newMode; // Apply the new theme to the clone
+
+          // Ensure `.clip` is visible before animation starts
+          clipContainer.style.display = "block";
+          clipContainer.scrollTop = scrollTop;
+
+          // Reset the clip animation
+          clipContainer.style.clipPath = `circle(0% at ${centerX}px ${centerY}px)`;
+          clipContainer.style.transition = "none"; // Ensure it's instantly reset before animation
+
+          // 🚀 Force reflow so the animation starts properly
+          void clipContainer.offsetHeight;
+
+          requestAnimationFrame(() => {
+              clipContainer.style.transition = "clip-path 1s ease-in-out"; // Reapply transition
+              clipContainer.style.clipPath = `circle(150% at ${centerX}px ${centerY}px)`;
+          });
+
+          // Toggle moon/sun icon immediately
+          modeToggle.classList.toggle("fa-moon");
+          modeToggle.classList.toggle("fa-sun");
+
+          setTimeout(() => {
+              // 🚀 Once animation completes, apply the new theme to the real body
+              setMode(newMode);
+
+              // 🚀 Reverse the animation to make it look smooth
+              requestAnimationFrame(() => {
+                  clipContainer.style.transition = "none"; // Disable transition momentarily
+                  clipContainer.style.clipPath = `circle(0% at ${centerX}px ${centerY}px)`;
+              });
+
+              setTimeout(() => {
+                  // Hide `.clip` completely after animation finishes
+                  clipContainer.innerHTML = "";
+                  clipContainer.style.display = "none";
+                  buttonEnabled = true;
+              }, 50); // Tiny delay to ensure smooth transition reset
+          }, 1000); // Animation duration
+      });
   }
 
-  // Optional: Check system preference and set mode if desired
+  // Optional: Check system preference and set mode if no saved preference
   const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const defaultMode = localStorage.getItem("mode") || (systemPrefersDark ? "dark" : "light");
   setMode(defaultMode);
-});
 
-const tooltipTriggerList = document.querySelectorAll(
-  "[data-bs-toggle='tooltip']"
-);
-const tooltipList = [...tooltipTriggerList].map(
-  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-);
+  /*** 🎭 Fade-in on scroll using IntersectionObserver ***/
+  const fadeSections = document.querySelectorAll(".section-fade");
+  const observerOptions = { threshold: 0.2 };
+
+  const revealOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add("section-show");
+              observer.unobserve(entry.target);
+          }
+      });
+  }, observerOptions);
+
+  fadeSections.forEach(section => revealOnScroll.observe(section));
+
+  /*** 🛠️ Bootstrap Tooltips Initialization ***/
+  const tooltipTriggerList = document.querySelectorAll("[data-bs-toggle='tooltip']");
+  tooltipTriggerList.forEach(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+});
