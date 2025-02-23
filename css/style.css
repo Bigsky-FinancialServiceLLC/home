@@ -482,9 +482,9 @@ body, .clip {
   align-items: center;
   justify-content: center;
   position: relative;
-  border-radius: 3%;
-  border-top-right-radius: 33%;
-  border-bottom-left-radius: 33%;
+  border-radius: 4%;
+  border-top-right-radius: 44%;
+  border-bottom-left-radius: 44%;
   background-blend-mode: soft-light;
   filter: contrast(1.2) blur(0.5px);
 }
@@ -534,11 +534,10 @@ body, .clip {
 }
 /* --- Hero Section --- */
 
-.hero form {
-  border-radius: 8px;
-  border-radius: 3%;
-  border-top-right-radius: 33%;
-  border-bottom-left-radius: 33%;
+main, .hero form {
+  border-radius: 2%;
+  border-top-right-radius: 22%;
+  border-bottom-left-radius: 22%;
   backdrop-filter: blur(8px);
 }
 
@@ -561,12 +560,15 @@ body, .clip {
 }
 
 /* ---------- Sections ---------- */
-section {
+section, {
   margin-bottom: 2rem;
   padding: 2rem 0;
   border-radius: 6px;
 }
 
+section, .hero, .page-footer {
+  min-width: 320px;
+}
 /* ---------- About Section ---------- */
 .about-section .about-grid {
   display: grid;
