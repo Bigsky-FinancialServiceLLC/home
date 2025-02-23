@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
       this.systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       this.defaultMode = localStorage.getItem("mode") || (systemPrefersDark ? "dark" : "light");
       this.setMode(this.defaultMode);
-      window.addEventListener("resize", () => ColorMode.modifyStylesheetHref(currentMode));
+      window.addEventListener("resize", () => this.modifyStylesheetHref(this.currentMode));
       this.modeToggle.addEventListener("click", () => {
         if (!this.buttonEnabled) return;
         this.buttonEnabled = false;
