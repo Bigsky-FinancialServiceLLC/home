@@ -1,14 +1,15 @@
 /* TEAM */
-Your title: PhobiaCide
-Site: aamason86@gmail.com
-Github: https://github.com/PhobiaCide
+Role: Developer
+Name: PhobiaCide
+Email: aamason86@gmail.com
+GitHub: https://github.com/PhobiaCide
 Location: Little Rock, AR, USA
 
 /* THANKS */
 Name: PhobiaCide
 
 /* SITE */
-Last update: 2025/02/22
+Last update: 2025-02-22
 Standards: HTML5, CSS3, ES6
-Components: Normalize.css, Halfmoon.css, Topcoat UI, Icomatic Icon Font, Popper.js, Bootstrap.js
-Software: Webpack
+Components: Normalize.css, Halfmoon.css, Topcoat.css, Icomatic Icon Font, Popper.js, Bootstrap.js
+Build Tools: Webpack
