@@ -5,10 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const clipContainer = document.querySelector(".clip");
   let buttonEnabled = true;
 
-  function handleStylesheetChange() {
+  function handleStylesheetChange(mode) {
       const isMobile = window.matchMedia("(max-width: 768px)").matches;
-      const currentMode = document.body.dataset.bsTheme;
-      const topcoatVersion = isMobile ? `mobile-${currentMode}` : `desktop-${currentMode}`;
+      const topcoatVersion = isMobile ? `mobile-${mode}` : `desktop-${mode}`;
 
       if (topcoatStylesheet) {
           topcoatStylesheet.href = `https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-${topcoatVersion}.min.css`;
@@ -20,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function setMode(mode) {
       document.body.dataset.bsTheme = mode;
       localStorage.setItem("mode", mode);
-      handleStylesheetChange();
+      handleStylesheetChange(mode);
   }
 
   // Load saved mode preference, defaulting to dark if none

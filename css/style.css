@@ -503,10 +503,10 @@ body, .clip {
   margin-bottom: 2rem;
   color: var(--bs-body-bg);
 }
-.hero div div .cta {
+.hero div .cta {
   border-radius: 3%;
-  border-top-right-radius: 30%;
-  border-bottom-left-radius: 30%;
+  border-top-right-radius: 33%;
+  border-bottom-left-radius: 33%;
 }
 .hero .cta-btn {
   background-color: #0078d499;
@@ -531,6 +531,15 @@ body, .clip {
 }
 .hero .cta-btn:hover {
   background-color: #005bb5;
+}
+/* --- Hero Section --- */
+
+.hero form {
+  border-radius: 8px;
+  border-radius: 3%;
+  border-top-right-radius: 33%;
+  border-bottom-left-radius: 33%;
+  backdrop-filter: blur(8px);
 }
 
 /* ---------- Main Page Links ---------- */
