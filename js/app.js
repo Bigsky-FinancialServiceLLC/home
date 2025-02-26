@@ -1,151 +1,167 @@
 document.addEventListener("DOMContentLoaded", function () {
-  /*** 🌓 Theme Toggle: Updates `data-bs-theme` & Stylesheets ***/
-  const modeToggle = document.getElementById("mode-toggle");
-  const topcoatStylesheet = document.getElementById("topcoat-stylesheet");
-  const clipContainer = document.querySelector(".clip");
-  let buttonEnabled = true;
-  let finalScrollTop = window.scrollY; // Keep track of latest scroll position
 
-  function handleStylesheetChange() {
+
+  class ColorMode {
+    static getCurrentMode() {
+      return document.body.dataset.bsTheme;
+    }
+    setMode() {
+      document.body.dataset.bsTheme = this.newMode;
+      localStorage.setItem("mode", this.mode);
+      this.currentMode = this.mode || ColorMode.getCurrentMode();
+      this.modifyStylesheetHref(this.currentMode);
+    }
+    modifyStylesheetHref(mode) {
       const isMobile = window.matchMedia("(max-width: 768px)").matches;
-      const currentMode = document.body.dataset.bsTheme;
-      const topcoatVersion = isMobile ? `mobile-${currentMode}` : `desktop-${currentMode}`;
+      const topcoatVersion = isMobile ? `mobile-${mode}` : `desktop-${mode}`;
+        this.topcoatStylesheet.href = `https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-${topcoatVersion}.min.css`;
+    }
+    static reverse(mode) {
+      return mode === "dark" ? "light" : "dark";
+    }
+    // Function to sync scrolling during animation
+    syncScroll() {
+      this.clipContainer.scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    }
+    constructor() {
+      this.modeToggle = document.getElementById("mode-toggle");
+      this.topcoatStylesheet = document.getElementById("topcoat-stylesheet");
+      this.clipContainer = document.querySelector(".clip");
+      this.buttonEnabled = true;
+      // Optional: Check system preference and set mode if no saved preference
+      this.systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      this.defaultMode = localStorage.getItem("mode") || (systemPrefersDark ? "dark" : "light");
+      this.setMode(this.defaultMode);
+      window.addEventListener("resize", () => this.modifyStylesheetHref(this.currentMode));
+      this.modeToggle.addEventListener("click", () => {
+        if (!this.buttonEnabled) return;
+        this.buttonEnabled = false;
 
-      if (topcoatStylesheet) {
-          topcoatStylesheet.href = `https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-${topcoatVersion}.min.css`;
-      }
-  }
+        this.currentMode = ColorMode.getCurrentMode();
+        this.newMode = ColorMode.reverse(this.currentMode);
 
-  window.addEventListener("resize", handleStylesheetChange);
+        // 🚀 Get the button's position to center the animation
+        this.rect = this.modeToggle.getBoundingClientRect();
+        this.centerX = this.rect.left + this.rect.width / 2;
+        this.centerY = this.rect.top + this.rect.height / 2;
 
-  function setMode(mode) {
-      document.body.dataset.bsTheme = mode;
-      localStorage.setItem("mode", mode);
-      handleStylesheetChange();
-  }
+        // Preserve the scroll position
+        this.scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
-  // Load saved mode preference, defaulting to dark if none
-  const savedMode = localStorage.getItem("mode") || "dark";
-  setMode(savedMode);
+        // 🚀 Clone the body into `.clip` and apply the NEW theme
+        this.clipContainer.innerHTML = document.body.innerHTML;
+        this.clipContainer.dataset.bsTheme = this.newMode; // Apply the new theme to the clone
 
-  // Function to sync scrolling dynamically during animation
-  function syncScroll() {
-      clipContainer.scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  }
+        // Ensure `.clip` is visible before animation starts
+        this.clipContainer.style.display = "block";
+        this.clipContainer.scrollTop = this.scrollTop;
 
-  function reverseSyncScroll() {
-      document.documentElement.scrollTop = clipContainer.scrollTop;
-      document.body.scrollTop = clipContainer.scrollTop;
-  }
+        // Start listening for scroll events
+        window.addEventListener("scroll", this.syncScroll);
 
-  // Track the latest scroll position while animation is running
-  function trackFinalScroll() {
-      finalScrollTop = window.scrollY;
-  }
+        // Reset the clip animation
+        this.clipContainer.style.clipPath = `circle(0% at ${this.centerX}px ${this.centerY}px)`;
+        this.clipContainer.style.transition = "none"; // Ensure it's instantly reset before animation
 
-  // Handle mode toggle with animation
-  if (modeToggle) {
-      modeToggle.addEventListener("click", () => {
-          if (!buttonEnabled) return;
-          buttonEnabled = false;
+        // 🚀 Force reflow so the animation starts properly
+        void this.clipContainer.offsetHeight;
 
-          const currentMode = document.body.dataset.bsTheme;
-          const newMode = currentMode === "dark" ? "light" : "dark";
+        requestAnimationFrame(() => {
+          this.clipContainer.style.transition = "clip-path 1s ease-in-out"; // Reapply transition
+          this.clipContainer.style.clipPath = `circle(150% at ${this.centerX}px ${this.centerY}px)`;
+        });
 
-          // 🚀 Get the button's current position in the viewport and adjust for scroll position
-          const rect = modeToggle.getBoundingClientRect();
-          const centerX = rect.left + rect.width / 2;
-          const centerY = rect.top + rect.height / 2 + window.scrollY; // Adjust for scroll
+        setTimeout(() => {
+          // 🚀 Once animation completes, apply the new theme to the real body
+          this.setMode(this.newMode);
 
-          // Start tracking scroll position during animation
-          window.addEventListener("scroll", trackFinalScroll);
-
-          // 🚀 Clone the body into `.clip` and apply the NEW theme
-          clipContainer.innerHTML = document.body.innerHTML;
-          clipContainer.dataset.bsTheme = newMode;
-
-          // Ensure `.clip` is visible before animation starts
-          clipContainer.style.display = "block";
-          clipContainer.style.position = "absolute"; 
-          clipContainer.style.top = "0"; 
-          clipContainer.style.left = "0";
-          clipContainer.style.width = "100%";
-          clipContainer.style.height = "auto"; 
-          clipContainer.style.overflowY = "auto"; 
-          clipContainer.scrollTop = finalScrollTop; // Sync initial scroll position
-
-          // Enable two-way scroll sync
-          clipContainer.addEventListener("scroll", reverseSyncScroll);
-          document.addEventListener("scroll", syncScroll);
-
-          // Reset the clip animation
-          clipContainer.style.clipPath = `circle(0% at ${centerX}px ${centerY}px)`;
-          clipContainer.style.transition = "none"; 
-
-          // 🚀 Force reflow to ensure animation starts correctly
-          void clipContainer.offsetHeight;
-
+          // 🚀 Reverse the animation to make it look smooth
           requestAnimationFrame(() => {
-              clipContainer.style.transition = "clip-path 1s ease-in-out"; 
-              clipContainer.style.clipPath = `circle(150% at ${centerX}px ${centerY}px)`;
+            this.clipContainer.style.transition = "none"; // Disable transition momentarily
+            this.clipContainer.style.clipPath = `circle(0% at ${this.centerX}px ${this.centerY}px)`;
           });
 
-          // Toggle moon/sun icon immediately
-          modeToggle.classList.toggle("fa-moon");
-          modeToggle.classList.toggle("fa-sun");
-
           setTimeout(() => {
-              // 🚀 Apply the new theme to the real body
-              setMode(newMode);
+            // Hide `.clip` completely after animation finishes
+            this.clipContainer.innerHTML = "";
+            this.clipContainer.style.display = "none";
+            this.buttonEnabled = true;
 
-              // 🚀 Reverse the animation smoothly
-              requestAnimationFrame(() => {
-                  clipContainer.style.transition = "none"; 
-                  clipContainer.style.clipPath = `circle(0% at ${centerX}px ${centerY}px)`;
-              });
-
-              setTimeout(() => {
-                  // Hide `.clip` completely after animation finishes
-                  clipContainer.innerHTML = "";
-                  clipContainer.style.display = "none";
-
-                  // Restore the exact final scroll position
-                  setTimeout(() => {
-                      window.scrollTo({ top: finalScrollTop, behavior: "instant" });
-                      window.removeEventListener("scroll", trackFinalScroll); // Stop tracking scroll
-                  }, 10); 
-
-                  // Remove event listeners to prevent interference
-                  clipContainer.removeEventListener("scroll", reverseSyncScroll);
-                  document.removeEventListener("scroll", syncScroll);
-
-                  buttonEnabled = true;
-              }, 50);
-          }, 550); 
+            // 🚀 Stop listening for scroll events
+            window.removeEventListener("scroll", this.syncScroll);
+          }, 50); // Tiny delay to ensure smooth transition reset
+        }, 1000); // Animation duration
       });
+    }
   }
-
-  // Optional: Check system preference and set mode if no saved preference
-  const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const defaultMode = localStorage.getItem("mode") || (systemPrefersDark ? "dark" : "light");
-  setMode(defaultMode);
-
-  /*** 🎭 Fade-in on scroll using IntersectionObserver ***/
-  const fadeSections = document.querySelectorAll(".section-fade");
-  const observerOptions = { threshold: 0.2 };
-
-  const revealOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              entry.target.classList.add("section-show");
-              observer.unobserve(entry.target);
-          }
-      });
-  }, observerOptions);
-
-  fadeSections.forEach(section => revealOnScroll.observe(section));
 
   /*** 🛠️ Bootstrap Tooltips Initialization ***/
   const tooltipTriggerList = document.querySelectorAll("[data-bs-toggle='tooltip']");
   tooltipTriggerList.forEach(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+  /* Icomatic Initialization */
+  IcomaticUtils.run();
+  new ColorMode();
+
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 8, density: { enable: true, value_area: 800 } },
+      color: { value: "#6699cc" },
+      shape: {
+        type: "circle",
+        stroke: { width: 1, color: "#000000" },
+        polygon: { nb_sides: 1 },
+        image: { src: "img/github.svg", width: 100, height: 100 }
+      },
+      opacity: {
+        value: 1,
+        random: false,
+        anim: { enable: false, speed: 1, opacity_min: 1, sync: false }
+      },
+      size: {
+        value: 0,
+        random: false,
+        anim: { enable: false, speed: 4, size_min: 0, sync: false }
+      },
+      line_linked: {
+        enable: true,
+        distance: 1500,
+        color: "#6699cc",
+        opacity: 1,
+        width: 7
+      },
+      move: {
+        enable: true,
+        speed: 1,
+        direction: "none",
+        random: true,
+        straight: true,
+        out_mode: "out",
+        bounce: true,
+        attract: { enable: false, rotateX: 600, rotateY: 1200 }
+      }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: { enable: true, mode: "repulse" },
+        onclick: { enable: true, mode: "push" },
+        resize: true
+      },
+      modes: {
+        grab: { distance: 400, line_linked: { opacity: 1 } },
+        bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+        repulse: { distance: 200, duration: 0.4 },
+        push: { particles_nb: 4 },
+        remove: { particles_nb: 2 }
+      }
+    },
+    retina_detect: true
+  });
+  var update;
+  update = function () {
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+
 });
