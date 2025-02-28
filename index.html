@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="">
+<html class="no-js container-fluid p-0 m-0 w-100 d-block" lang="en-us">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -64,6 +64,12 @@
       href="https://www.bigskyfinancialservicellc.com/icon.png"
     />
     <meta name="theme-color" content="#0078d4" />
+    
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300&Source+Code+Pro"
+      rel="stylesheet"
+    />
     <!-- Normalize.css Reset-->
     <link
       rel="stylesheet"
@@ -73,7 +79,7 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="./css/vendor/mercury.css" />
+    <link type="text/css" rel="stylesheet" href="https://wmeredith.github.io/MercuryCSS/css/min/mercury.min.csss" />
 
     <!-- Halfmoon CSS Framework -->
     <link
@@ -90,19 +96,10 @@
       crossorigin="anonymous"
     />
     <!-- Topcoat UI Styles -->
-    <link
-      id="topcoat-stylesheet"
-      rel="stylesheet"
-      href=""
-    />
+    <link id="topcoat-stylesheet" rel="stylesheet" href="" />
     <!-- Icomatic Icon Font -->
     <link rel="stylesheet" href="./css/vendor/icomatic.css" />
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300&Source+Code+Pro"
-      rel="stylesheet"
-    />
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/style.css?v=4" />
@@ -114,12 +111,12 @@
   <body
     data-bs-theme=""
     data-bs-core="modern"
-    class="bg-body with-custom-scrollbar"
+    class="with-custom-scrollbar bg-gradient"
   >
     <!-- Mode Toggle -->
     <button
       id="mode-toggle"
-      class="btn topcoat-button topcoat-icon-button bg-gradient fa-moon fa-sun"
+      class="btn topcoat-button topcoat-icon-button"
       data-bs-toggle="tooltip"
       data-bs-title="Toggle Dark Mode"
     >
@@ -181,7 +178,10 @@
             >
               About
             </a>
-            <menu class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <menu
+              class="dropdown-menu vstack gap-2"
+              aria-labelledby="aboutDropdown"
+            >
               <li class="">
                 <a class="btn dropdown-item" href="#story">Our Story</a>
               </li>
@@ -207,7 +207,10 @@
             >
               Services
             </a>
-            <menu class="dropdown-menu" aria-labelledby="servicesDropdown">
+            <menu
+              class="dropdown-menu vstack gap-2"
+              aria-labelledby="servicesDropdown"
+            >
               <li>
                 <a class="btn dropdown-item" href="#bookkeeping">Bookkeeping</a>
               </li>
@@ -233,7 +236,10 @@
             >
               Tax Center
             </a>
-            <menu class="dropdown-menu" aria-labelledby="taxDropdown">
+            <menu
+              class="dropdown-menu vstack gap-2"
+              aria-labelledby="taxDropdown"
+            >
               <li>
                 <a class="btn dropdown-item" href="tax-prep.html"
                   >Tax Preparation</a
@@ -257,8 +263,13 @@
             >
               Resources
             </a>
-            <menu class="dropdown-menu" aria-labelledby="resourcesDropdown">
-              <li><a class="btn dropdown-item" href="blog.html">Blog</a></li>
+            <menu
+              class="dropdown-menu vstack gap-2"
+              aria-labelledby="resourcesDropdown"
+            >
+              <li>
+                <a class="btn dropdown-item" href="blog.html">Blog</a>
+              </li>
               <li>
                 <a class="btn dropdown-item" href="guides.html">Guides</a>
               </li>
@@ -305,7 +316,7 @@
     </nav>
 
     <!-- Hidden Mobile Menu -->
-    <menu id="mobile-menu" class="mobile-menu d-lg-none">
+    <menu id="mobile-menu" class="mobile-menu d-lg-none vstack gap-2">
       <li>
         <a href="#home">Home</a>
       </li>
@@ -326,13 +337,15 @@
       </li>
     </menu>
 
-    <main class="text-body container-fluid">
+    <main class="text-body bg-teal bg-opacity-50 border border-primary-subtle border-5 border-start-0 border-end-0 w-100 mx-auto container-fluid">
       <!-- HERO / SPLASH SECTION -->
       <hr id="home" />
       <header
         class="hero border py-1 mb-5 w-100 mx-auto text-center px-sm-1 px-md-2 px-lg-3"
       >
-        <div class="hero-content container mx-auto py-2 px-sm-1 px-md-2 px-lg-3">
+        <div
+          class="hero-content container mx-auto py-2 px-sm-1 px-md-2 px-lg-3"
+        >
           <div
             class="row cta bg-primary-subtle bg-gradient shadow-lg py-3 px-sm-0 px-md-1 px-lg-2 mx-auto"
           >
@@ -349,7 +362,7 @@
                   <input
                     type="text"
                     id="name-input"
-                    class="topcoat-text-input form-control bg-body border-primary"
+                    class="topcoat-text-input form-control"
                     placeholder="Name"
                     data-bs-toggle="tooltip"
                     data-bs-title="How should we refer to yourself?"
@@ -365,7 +378,7 @@
                   />
                   <label for="email-input" class="form-label">Email</label>
                 </div>
-                <div class="mb-3 form-floating">
+                <div class="mb-3 form-floating d-none">
                   <select
                     id="service-input"
                     class="form-select bg-body border-primary"
@@ -417,7 +430,7 @@
           <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <a
               href="individual-services.html"
-              class="btn rounded-5 rounded-bottom-0 rounded-end-0 link-card d-block shadow"
+              class="btn rounded-5 subpizel-antialiased rounded-bottom-0 rounded-end-0 link-card d-block shadow"
             >
               <span class="icon icomatic fs-4 m-1">user</span>
               <span class="icon-label">Individual Services</span>
@@ -454,15 +467,15 @@
       </section>
 
       <!-- ABOUT SECTION -->
-      <hr id="about" />
-      <section class="container bg-body-secondary border rounded-5 shadow-lg">
+      <hr id="about" class="my-5 py-5 w-50 mx-auto" />
+      <section class="container bg-body-secondary border bg-opacity-50 rounded-5 shadow-lg my-5">
         <div class="container">
           <hgroup class="bg-body-tertiary shadow-sm card my-5">
             <h2 class="card-header">About Us</h2>
             <p class="card-body">
-              At <span class="text-teal fs-5">Big Sky Financial</span>, we pride
-              ourselves on delivering comprehensive accounting and bookkeeping
-              solutions for small and medium-sized businesses.
+              At <strong class="text-teal fs-5">Big Sky Financial</strong>, we
+              pride ourselves on delivering comprehensive accounting and
+              bookkeeping solutions for small and medium-sized businesses.
             </p>
           </hgroup>
         </div>
@@ -575,7 +588,7 @@
       </section>
 
       <!-- SERVICES SECTION -->
-      <hr id="services" />
+      <hr id="services" class="my-5 py-5 w-50 mx-auto" />
       <section class="container bg-body-secondary border shadow-lg">
         <div class="container">
           <hgroup class="bg-body-tertiary shadow-sm card">
@@ -927,24 +940,12 @@
         </div>
       </footer>
     </main>
-
-    <div
-      class="clip"
-      data-bs-theme="light"
-      style="
-        display: none;
-        clip-path: circle(0% at 1342px 737px);
-        transition: none;
-      "
-    >
-      <!-- Topcoat UI Styles -->
-      <link
-        id=""
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-desktop-light.min.css"
-      />
-    </div>
-
+    <template id="shadow-template">
+      <div data-bs-theme="">
+        <link rel="stylesheet" href="" />
+        <div style="display: none;clip-path: circle(0% at 1342px 737px);transition: none;" class="shadow-body"></div>
+      </div>
+    </template>
     <!-- Popper.js -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -966,6 +967,6 @@
     <!--<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     -->
     <!-- Custom Script -->
-    <script src="./js/app.js"></script>
+    <script src="./js/app.js" defer></script>
   </body>
 </html>
