@@ -1,4 +1,42 @@
-@import url("https://fonts.cdnfonts.com/css/source-sans-pro");
+
+@import url('https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Pridi:wght@200;300;400;500;600;700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+.pridi-extralight {
+  font-family: "Pridi", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.pridi-light {
+  font-family: "Pridi", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.pridi-regular {
+  font-family: "Pridi", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pridi-medium {
+  font-family: "Pridi", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.pridi-semibold {
+  font-family: "Pridi", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.pridi-bold {
+  font-family: "Pridi", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
 /*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
 
 /* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
@@ -302,8 +340,7 @@ body,
 .bg-teal {
   background-color: #0078d4;
   background: linear-gradient(66deg, #20c997, #17a2b8);
-  background-blend-mode: soft-light;
-  filter: contrast(1.2) blur(0.5px);
+  background-blend-mode: overlay;
 }
 
 #mode-toggle {
@@ -317,7 +354,9 @@ body,
   background: var(--bs-body-color);
   color: var(--bs-primary);
   border: 1px solid var(--button-border, #ddd);
-  border-radius: 50%;
+  border-radius: 2%;
+  border-top-right-radius: 22%;
+  border-bottom-left-radius: 22%;
   cursor: pointer;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -338,23 +377,25 @@ body,
   z-index: 1000;
   background-color: #0078d4;
   background: linear-gradient(66deg, #20c997, #17a2b8);
-  padding: 0.5rem 0;
   background-blend-mode: soft-light;
-  filter: contrast(1.2) blur(0.5px);
 }
-.top-nav .nav-social a {
+
+.top-nav .branding:hover,
+.top-nav .nav-social a:hover,
+.top-nav .nav-contact a:hover {
   color: var(--bs-body-bg);
-  font-size: 1.3rem;
-  margin-right: 1rem;
 }
-.top-nav .nav-social a:hover {
-  color: #0078d4;
-}
+.branding,
+.top-nav .nav-social a,
 .top-nav .nav-contact a,
 .top-nav .nav-contact span {
-  margin-left: 1rem;
+  color: var(--bs-body-color);
+}
+
+.top-nav .nav-social a,
+.top-nav .nav-contact a,
+.top-nav .nav-contact span {
   font-size: 1.3rem;
-  color: var(--bs-body-bg);
 }
 /* Ensure navbar and sticky elements do not shift */
 .navbar,
@@ -390,9 +431,7 @@ body,
   transition: color 0.6s ease;
   color: #20c997;
 }
-.sticky-secondary .nav-link:hover {
-  color: #0078d4;
-}
+
 .sticky-secondary .dropdown-menu {
   border: none;
   position: absolute;
@@ -409,9 +448,8 @@ body,
   display: block;
   text-decoration: none;
   transition: background 0.6s ease;
-  background-color: var(--bs-body-color);
-  color: var(--bs-body-bg);
 }
+.sticky-secondary .nav-link:hover,
 .sticky-secondary .dropdown-menu a:hover {
   color: var(--bs-body-color);
   background-color: #0078d499;
@@ -423,15 +461,12 @@ body,
       #ffffff11 55%,
       #00000000 88%
     ),
-    linear-gradient(66deg, #20c997ee, #17a2b8ee);
+    linear-gradient(66deg, #20c99799, #17a2b899);
   background-blend-mode: soft-light;
-  filter: contrast(1.2) blur(0.5px);
 }
 
 .sticky-secondary .nav-item:hover .dropdown-menu {
-  border: none;
   display: block;
-  background: transparent;
 }
 
 /* Mobile Navigation (for medium/small screens) */
@@ -445,14 +480,13 @@ body,
       #ffffff11 55%,
       #00000000 88%
     ),
-    linear-gradient(66deg, #20c997ee, #17a2b8ee);
+    linear-gradient(66deg, #20c99733, #17a2b833);
   padding: 0.5rem 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
   background-blend-mode: soft-light;
-  filter: contrast(1.2) blur(0.5px);
 }
 .mobile-nav .nav-icon {
   width: 25%;
@@ -477,9 +511,9 @@ body,
 
 /* ---------- Hero / Splash Section ---------- */
 .hero {
-  margin-top: 10vh;
+  margin-top: 7vh;
   min-height: 50vh;
-  max-height: 65vh;
+  max-height: 0.75rem5vh;
   /* Teal gradient overlay behind the (placeholder) splash image */
   background-color: #0078d499;
   background-image: url("https://placehold.co/1440x900/00000000/00000000");
@@ -495,7 +529,7 @@ body,
       #00000000 88%
     ),
     linear-gradient(66deg, #20c997ee, #17a2b8ee);
-  color: var(--bs-body-bg);
+  color: var(--bs-body-color);
   text-align: center;
   display: flex;
   align-items: center;
@@ -505,7 +539,6 @@ body,
   border-top-right-radius: 44%;
   border-bottom-left-radius: 44%;
   background-blend-mode: soft-light;
-  filter: contrast(1.2) blur(0.5px);
 }
 .hero .hero-content {
   max-width: 700px;
@@ -515,12 +548,12 @@ body,
 .hero .hero-title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--bs-body-bg);
+  color: var(--bs-body-color);
 }
 .hero .hero-subtitle {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  color: var(--bs-body-bg);
+  color: var(--bs-body-color);
 }
 .hero div .cta {
   border-radius: 3%;
@@ -538,7 +571,7 @@ body,
       #00000000 88%
     ),
     linear-gradient(66deg, #20c997ee, #17a2b8ee);
-  color: var(--bs-body-bg);
+  color: var(--bs-body-color);
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   text-decoration: none;
@@ -546,33 +579,40 @@ body,
   font-size: 1rem;
   transition: background-color 0.3s ease;
   background-blend-mode: soft-light;
-  filter: contrast(1.2) blur(0.5px);
 }
 .hero .cta-btn:hover {
   background-color: #005bb5;
 }
 /* --- Hero Section --- */
 
-main,
-.hero form {
+main {
+
+  border-radius: 0%;
+  border-top-right-radius: 55%;
+  border-bottom-left-radius: 55%;
+}
+img, .showcase-img, mark, .hero-title {
   border-radius: 2%;
   border-top-right-radius: 22%;
   border-bottom-left-radius: 22%;
-  backdrop-filter: blur(8px);
+}
+.hero form, article {
+  border-radius: 2%;
+  border-top-right-radius: 22%;
+  border-bottom-left-radius: 22%;
 }
 
 /* ---------- Main Page Links ---------- */
-.main-links .link-card {
+.link-card {
   /* Teal gradient background for the 4 link buttons */
   background: linear-gradient(66deg, #20c997, #17a2b8);
-  color: var(--bs-body-bg);
+  color: var(--bs-body-color);
   border: none;
   padding: 1rem;
   text-align: center;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-blend-mode: soft-light;
-  filter: contrast(1.2) blur(0.5px);
 }
 .main-links .link-card:hover {
   transform: translateY(-3px);
@@ -580,15 +620,14 @@ main,
 }
 
 /* ---------- Sections ---------- */
-section {
+article {
   margin-bottom: 2rem;
   padding: 2rem 0;
   border-radius: 6px;
 }
 
-section,
-.hero,
-.page-footer {
+article,
+.hero {
   min-width: 320px;
 }
 /* ---------- About Section ---------- */
@@ -624,6 +663,9 @@ section,
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.testimonial-card:hover,
+.team-card:hover,
+.about-card:hover,
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
@@ -642,19 +684,8 @@ section,
   gap: 2rem;
   margin-top: 2rem;
 }
-.testimonial {
+.testimonial-card {
   border-radius: 6px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-.testimonial .quote {
-  font-style: italic;
-  margin-bottom: 1rem;
-}
-.testimonial .author {
-  color: var(--bs-body-color);
-  font-size: 0.9rem;
-  font-weight: 700;
 }
 
 /* ---------- Team Section ---------- */
@@ -714,7 +745,7 @@ section,
   padding: 1.5rem 0;
   border-top: 1px solid var(--bs-body-color);
   text-align: center;
-  color: var(--bs-body-bg);
+  color: var(--bs-body-color);
   background-color: #0078d499;
   background: linear-gradient(
       66deg,
@@ -726,16 +757,4 @@ section,
     ),
     linear-gradient(66deg, #20c997ee, #17a2b8ee);
   background-blend-mode: soft-light;
-  filter: contrast(1.2) blur(0.5px);
-}
-
-.section-fade {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.section-fade.section-show {
-  opacity: 1;
-  transform: translateY(0);
 }
