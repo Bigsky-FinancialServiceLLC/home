@@ -1,24 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
   class ModeToggle {
     constructor() {
-      this.body = document.body;
-      this.toggleButton = document.getElementById("mode-toggle");
-      this.stylesheet = document.getElementById("topcoat-stylesheet");
-
-      // Clone shadow template and append it to the body
-      this.shadowContainer = document.getElementById("shadow-template").content.cloneNode(true).firstElementChild;
-      this.body.appendChild(this.shadowContainer);
-
-      this.shadowStylesheet = this.shadowContainer.querySelector('link');
+      this.elements = {
+        body: document.body,
+        toggleButton: document.getElementById("mode-toggle"),
+        stylesheet: document.getElementById("topcoat-stylesheet"),
+        shadowContainer: document.getElementById("shadow-template").content.cloneNode(true).firstElementChild
+      };
+      this.elements.body.appendChild(this.elements.shadowContainer);
+      this.elements.shadowStylesheet = this.elements.shadowContainer.querySelector('link');
 
       this.currentMode = ModeToggle.getCurrentMode();
-      this.body.setAttribute("data-bs-theme", this.currentMode);
-      this.shadowContainer.setAttribute("data-bs-theme", ModeToggle.reverseMode(this.currentMode));
+      this.elements.body.setAttribute("data-bs-theme", this.currentMode);
+      this.elements.shadowContainer.setAttribute("data-bs-theme", ModeToggle.reverseMode(this.currentMode));
 
-      this.prepareShadowContainer(); // 🛠️ Ensure no duplicate IDs in shadow body
+      this.prepareShadowContainer();
 
-      // ✅ Apply fixed styles ONCE for the shadow container
-      Object.assign(this.shadowContainer.style, {
+      Object.assign(this.elements.shadowContainer.style, {
         position: "fixed",
         top: "0",
         left: "0",
@@ -30,21 +28,20 @@ document.addEventListener("DOMContentLoaded", function () {
         clipPath: "circle(0% at bottom right)",
       });
 
-      ModeToggle.hide(this.shadowContainer);
+      ModeToggle.hide(this.elements.shadowContainer);
       this.init();
     }
 
-    /** Ensure all elements in the shadow body have unique IDs */
     prepareShadowContainer() {
-      const clonedChildren = [...this.body.children].map(el => {
+      const clonedChildren = [...this.elements.body.children].map(el => {
         const clone = el.cloneNode(true);
         clone.querySelectorAll("[id]").forEach(child => {
-          child.setAttribute("id", "shadow-" + child.id); // Prefix all IDs
+          child.setAttribute("id", "shadow-" + child.id);
         });
         return clone;
       });
 
-      this.shadowContainer.replaceChildren(...clonedChildren);
+      this.elements.shadowContainer.replaceChildren(...clonedChildren);
     }
 
     static getCurrentMode() {
@@ -56,16 +53,14 @@ document.addEventListener("DOMContentLoaded", function () {
         return "light";
       }
     }
-    
 
     init() {
-      this.installClickListener();
-      this.installScrollListener();
-      this.installResizeListener();
+      this.installClickListener(this.elements.toggleButton);
+      this.installScrollListener(document);
+      this.installResizeListener(window);
       this.updateStylesheets();
     }
 
-    /** Utility Methods */
     static reverseMode(mode) {
       return mode === "light" ? "dark" : "light";
     }
@@ -86,99 +81,109 @@ document.addEventListener("DOMContentLoaded", function () {
       return `https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-${device}-${mode}.min.css`;
     }
 
-    installClickListener() {
-      this.toggleButton.addEventListener("click", () => this.animateModeSwitch());
+    installClickListener(btn) {
+      btn.addEventListener("click", () => this.animateModeSwitch());
     }
 
-    installScrollListener() {
-      document.addEventListener("scroll", () => {
+    installScrollListener(doc) {
+      doc.addEventListener("scroll", () => {
         requestAnimationFrame(() => this.syncScroll());
       });
     }
 
-    installResizeListener() {
-      window.addEventListener("resize", () => {
+    installResizeListener(win) {
+      win.addEventListener("resize", () => {
         requestAnimationFrame(() => this.updateStylesheets());
       });
     }
 
+    static sqr(num) {
+      return num * num;
+    }
+
     updateStylesheets() {
-      const isMobile = window.innerWidth < 768;
-      this.stylesheet.href = ModeToggle.generateTopcoatHref(isMobile ? "mobile" : "desktop", ModeToggle.getCurrentMode);
+      this.elements.stylesheet.href = ModeToggle.generateTopcoatHref(ModeToggle.currentDeviceString(), ModeToggle.getCurrentMode());
     }
 
     animateModeSwitch() {
-      ModeToggle.show(this.shadowContainer);
-      this.shadowContainer.setAttribute("data-bs-theme", ModeToggle.reverseMode(ModeToggle.getCurrentMode));
-      this.shadowStylesheet.href = this.getNextModeStylesheet();
-
-      // ✅ Calculate the correct max radius for the viewport
+      this.currentMode = ModeToggle.reverseMode(ModeToggle.getCurrentMode());
+    
+      ModeToggle.show(this.elements.shadowContainer);
+      this.elements.shadowContainer.setAttribute("data-bs-theme", this.currentMode);
+      this.elements.shadowStylesheet.href = this.getNextModeStylesheet();
+    
+      // 🚀 Ensure shadow DOM is correctly scrolled BEFORE animation starts
+      this.syncScroll(); 
+    
       const vw = window.innerWidth;
       const vh = window.innerHeight;
-      const maxRadius = Math.sqrt(vw * vw + vh * vh); // Use hypotenuse
-
-      // ✅ Start animation with `requestAnimationFrame()`
+      const maxRadius = Math.sqrt(ModeToggle.sqr(vw) + ModeToggle.sqr(vh));
+    
       let animationStart = null;
-      const duration = 500; // Animation duration in milliseconds
-
+      const duration = 600;
+    
       const animate = (timestamp) => {
         if (!animationStart) animationStart = timestamp;
         const progress = (timestamp - animationStart) / duration;
-        
+    
+        // 🚀 Continuously sync scroll position throughout animation
+        this.syncScroll(); 
+    
         if (progress < 1) {
           const size = Math.min(maxRadius, progress * maxRadius);
-          this.shadowContainer.style.clipPath = `circle(${size}px at bottom right)`;
+          this.elements.shadowContainer.style.clipPath = `circle(${size}px at bottom right)`;
           requestAnimationFrame(animate);
         } else {
-          this.shadowContainer.style.clipPath = `circle(${maxRadius}px at bottom right)`;
-
+          this.elements.shadowContainer.style.clipPath = `circle(${maxRadius}px at bottom right)`;
+    
           setTimeout(() => {
             this.toggleMode();
-            ModeToggle.hide(this.shadowContainer);
+            ModeToggle.hide(this.elements.shadowContainer);
           }, 50);
         }
       };
-
+    
       requestAnimationFrame(animate);
     }
+   
 
-    currentDeviceString() {
+    static currentDeviceString() {
       return ModeToggle.isMobile(window.innerWidth) ? "mobile" : "desktop";
     }
 
     getNextModeStylesheet() {
-      return `https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-${this.currentDeviceString()}-${ModeToggle.reverseMode(this.currentMode)}.min.css`;
+      return `https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-${ModeToggle.currentDeviceString()}-${this.currentMode}.min.css`;
     }
 
     toggleMode() {
       this.currentMode = ModeToggle.reverseMode(ModeToggle.getCurrentMode());
       localStorage.setItem("mode", this.currentMode);
-      this.body.setAttribute("data-bs-theme", this.currentMode);
+      this.elements.body.setAttribute("data-bs-theme", this.currentMode);
       this.updateStylesheets();
     }
 
     syncScroll() {
-      this.shadowContainer.scrollTo(0, window.scrollY);
-      if (Math.abs(this.shadowContainer.scrollTop - window.scrollY) > 1) {
-        console.warn("Scroll events are desynchronized. Resyncing...");
-        this.shadowContainer.scrollTo(0, window.scrollY);
-      }
+      if (!this.elements.shadowContainer) return;
+      
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        if (this.elements.shadowContainer.scrollTop !== scrollY) {
+          this.elements.shadowContainer.scrollTo(0, scrollY);
+        }
+      });
     }
+    
   }
 
   new ModeToggle();
 
-  /*** 🛠️ Bootstrap Tooltips Initialization ***/
   function initializeTooltips() {
-    const tooltipTriggerList = document.querySelectorAll("[data-bs-toggle='tooltip']");
-    tooltipTriggerList.forEach(tooltipTriggerEl => {
-      const instance = bootstrap.Tooltip.getInstance(tooltipTriggerEl);
-      if (instance) instance.dispose(); // Destroy existing tooltips
-      new bootstrap.Tooltip(tooltipTriggerEl);
+    document.querySelectorAll("[data-bs-toggle='tooltip']").forEach(el => {
+      const instance = bootstrap.Tooltip.getInstance(el);
+      if (instance) instance.dispose();
+      new bootstrap.Tooltip(el);
     });
   }
 
-  initializeTooltips(); // Run once on page load
-
-
+  initializeTooltips();
 });

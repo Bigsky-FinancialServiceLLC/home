@@ -380,13 +380,13 @@
                     data-bs-toggle="tooltip"
                     data-bs-title="How should we refer to yourself?"
                   />
-                  <label for="name-input" class="form-label pridi-regular">Name</label>
+                  <label for="name-input" class="form-label pridi-regular" required>Name</label>
                 </div>
                 <div class="mb-3 form-floating">
                   <input
                     type="email"
                     id="email-input"
-                    class="topcoat-text-input form-control bg-body border border border-primary"
+                    class="topcoat-text-input form-control"
                     placeholder="Email"
                   />
                   <label for="email-input" class="form-label pridi-regular">Email</label>
@@ -418,7 +418,7 @@
                 <div class="mb-3 form-floating">
                   <textarea
                     id="comments-input"
-                    class="topcoat-text-input form-control bg-body border-primary"
+                    class="topcoat-text-input form-control"
                     style="height: 6rem"
                     data-bs-toggle="tooltip"
                     data-bs-title="What's on your mind?"
@@ -483,7 +483,7 @@
       <!-- ABOUT SECTION -->
       <hr id="about" class="my-5 p-2 mx-auto" />
       <article
-        class="border border-primary-subtle border-bottom-0 border-start-0 bg-gradient shadow-lg container my-5 p-3"
+        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container my-5 p-1"
       >
         <div class="container-fluid p-4">
           <hgroup class="bg-body-tertiary shadow-sm card m-5">
@@ -500,21 +500,7 @@
             <div class="container-fluid p-0">
               <div class="row no-gutters my-5">
                 <div
-                  class="col-lg-6 order-lg-2 showcase-img shadow-sm text-center"
-                >
-                  <figure class="figure p-5">
-                    <img
-                      class="border figure-img img-fluid placeholder"
-                      src="https://placehold.co/360x240/99999999/0078d4"
-                      alt=""
-                    />
-                    <figcaption
-                      class="figure-caption placeholder-glow"
-                    ></figcaption>
-                  </figure>
-                </div>
-                <div
-                  class="col-lg-6 order-lg-1 my-auto showcase-text my-5 py-5"
+                  class="col-lg-6 order-lg-2 showcase-img text-center"
                 >
                   <!-- Our Story -->
                   <hgroup
@@ -528,19 +514,35 @@
                     </p>
                   </hgroup>
                 </div>
+                <div
+                class="col-lg-6 order-lg-2 showcase-img text-center"
+              >
+                <figure class="figure p-5">
+                  <img
+                    class="border figure-img img-fluid placeholder"
+                    src="https://placehold.co/360x240/99999999/0078d4"
+                    alt=""
+                  />
+                  <figcaption
+                    class="figure-caption placeholder-glow"
+                  ><cite>Citation</cite> - Caption for image 1</figcaption>
+                </figure>
+              </div>
               </div>
               <div class="row no-gutters my-5">
-                <div class="col-lg-6 text-white showcase-img text-center">
-                  <figure class="figure">
+                <div class="col-lg-6 order-lg-2 showcase-img text-center">
+                  <figure class="figure p-5">
                     <img
-                      class="rounded border figure-img img-fluid"
+                      class="border figure-img img-fluid placeholder"
                       src="https://placehold.co/360x240/99999999/0078d4"
                       alt=""
                     />
-                    <figcaption class="figure-caption">Caption</figcaption>
+                    <figcaption
+                      class="figure-caption placeholder-glow"
+                    ><cite>Citation</cite> - Caption for image 2</figcaption>
                   </figure>
                 </div>
-                <div class="col-lg-6 my-auto showcase-text my-5 py-5">
+                <div class="col-lg-6 order-lg-2 showcase-img text-center">
                   <!-- Our Mission -->
                   <hgroup
                     id="mission"
@@ -557,13 +559,15 @@
               </div>
               <div class="row no-gutters my-5">
                 <div class="col-lg-6 order-lg-2 showcase-img text-center">
-                  <figure class="figure">
+                  <figure class="figure p-5">
                     <img
-                      class="rounded figure-img img-fluid"
+                      class="border figure-img img-fluid placeholder"
                       src="https://placehold.co/360x240/99999999/0078d4"
                       alt=""
                     />
-                    <figcaption class="figure-caption">Caption</figcaption>
+                    <figcaption
+                      class="figure-caption placeholder-glow"
+                    ><cite>Citation</cite> - Caption for image 3</figcaption>
                   </figure>
                 </div>
 
@@ -607,7 +611,7 @@
 
       <!-- SERVICES SECTION -->
       <hr id="services" class="my-5 p-2 mx-auto" />
-      <article class="border border-primary-subtle border-bottom-0 border-start-0 bg-gradient rounded-5 shadow-lg container my-5 p-3">
+      <article class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container my-5 p-1">
         <div class="container-fluid p-4">
           <hgroup class="bg-body-tertiary shadow-sm card">
             <h2 class="card-header">Our Services</h2>
@@ -653,7 +657,7 @@
       <!-- TESTIMONIALS SECTION -->
       <hr id="testimonials" />
       <article
-        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container my-5 p-5"
+        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container my-5 p-1"
       >
         <div class="container-fluid">
           <hgroup>
@@ -717,7 +721,7 @@
       <!-- TEAM SECTION -->
       <hr id="team" />
       <article
-        class="border border-primary-subtle border-bottom-0 border-start-0 bg-gradient rounded-5 shadow-lg container my-5 p-5"
+        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container my-5 p-1"
       >
         <div class="container">
           <h2>Meet the Team</h2>
@@ -761,7 +765,7 @@
       <hr id="faq" />
       <article
         id="faqs"
-        class="border border-primary-subtle border-bottom-0 border-start-0 bg-gradient rounded-5 shadow-lg container my-5 p-5"
+        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container my-5 p-1"
       >
         <div class="container">
           <h2>Frequently Asked Questions</h2>
@@ -890,7 +894,7 @@
       <!-- CONTACT SECTION -->
       <hr id="contact" />
       <article
-        class="border border-primary-subtle border-bottom-0 border-start-0 bg-gradient rounded-5 shadow-lg container my-5 p-5"
+        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container my-5 p-1"
       >
         <div class="container">
           <h2>Ready to Get Started?</h2>
