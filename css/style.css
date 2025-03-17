@@ -448,6 +448,9 @@ body,
 .sticky-secondary .nav-item {
   position: relative;
 }
+.sticky-secondary .nav-item[disabled] {
+  color: var(--bs-secondary-color);
+}
 .sticky-secondary .nav-link {
   text-decoration: none;
   padding: 0.5rem 1rem;

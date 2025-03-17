@@ -35,13 +35,12 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300&Source+Code+Pro" rel="stylesheet">
   <!-- Normalize.css Reset-->
-  <link rel="stylesheet" href="./css/vendor/normalize/normalize.min.css" crossorigin="anonymous"
-    referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="./css/vendor/normalize/normalize.min.css">
 
   <!--<link type="text/css" rel="stylesheet" href="https://wmeredith.github.io/MercuryCSS/css/min/mercury.min.css">--->
 
   <!-- Halfmoon CSS Framework -->
-  <link rel="stylesheet" href="./css/vendor/halfmoon/halfmoon.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/vendor/halfmoon/halfmoon.min.css">
   <!-- Halfmoon Cores -->
   <link rel="stylesheet" href="./css/vendor/halfmoon/halfmoon.cores.css" crossorigin="anonymous">
   <!-- Topcoat UI Styles -->
@@ -50,7 +49,7 @@
   <link rel="stylesheet" href="./css/vendor/icomatic/icomatic.css">
 
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
 
   <!-- Web App Manifest -->
   <link rel="manifest" href="site.webmanifest">
@@ -112,7 +111,7 @@
       <div class="container-fluid topcoat-tab-bar pridi-regular">
         <menu class="nav topcoat-tab-bar__item border-top">
           <li class="nav-item toapcoat-tab-bar__item">
-            <a class="rounded-start-pill bg-primary-subtle bg-gradient nav-link topcoat-tab-bar__button h-100" href="#home">Home</a>
+            <a class="rounded-pill rounded-top-0 rounded-end-0 bg-primary-subtle bg-gradient nav-link topcoat-tab-bar__button h-100 ps-4" href="#home">Home</a>
           </li>
           <li class="nav-item dropdown toapcoat-tab-bar__item">
             <a class="bg-primary-subtle bg-gradient nav-link dropdown-toggle topcoat-tab-bar__button h-100" href="#about" id="about-dropdown"
@@ -171,8 +170,8 @@
               </li>
             </menu>
           </li>
-          <li class="nav-item dropdown toapcoat-tab-bar__item">
-            <a class="bg-primary-subtle bg-gradient nav-link dropdown-toggle topcoat-tab-bar__button h-100" href="#" data-bs-toggle="tooltip" data-bs-title="Coming soon!" id="resourcesDropdown"
+          <li class="nav-item dropdown toapcoat-tab-bar__item user-select-none" disabled data-bs-toggle="tooltip" data-bs-title="Coming soon!">
+            <a class="btn topcoat-button bg-primary-subtle bg-gradient nav-link dropdown-toggle topcoat-tab-bar__button h-100" href="#" id="resourcesDropdown" disabled
               role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Resources
             </a>

@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
       this.updateStylesheets();
     }
 
-    static reverseMode(mode) {
-      return mode === "light" ? "dark" : "light";
+    static reverseMode() {
+      return ModeToggle.getCurrentMode() === "light" ? "dark" : "light";
     }
 
     static isMobile(width) {
@@ -114,10 +114,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     animateModeSwitch() {
-      this.currentMode = ModeToggle.reverseMode(ModeToggle.getCurrentMode());
+      this.currentMode = ModeToggle.reverseMode();
     
       ModeToggle.show(this.shadowContainer);
-      this.shadowContainer.setAttribute("data-bs-theme", this.currentMode);
+      this.shadowContainer.setAttribute("data-bs-theme", ModeToggle.reverseMode());
       this.shadowStylesheet.href = ModeToggle.getNextModeStylesheet();
     
       // 🚀 Ensure shadow DOM is correctly scrolled BEFORE animation starts
