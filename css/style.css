@@ -284,7 +284,7 @@ textarea {
   }
 }
  * {
-  --nav-height: px;
+  --nav-height: 40px;
     /* Teal gradient overlay behind the (placeholder) splash image */
     --bg-color: #0078d499;
     --bg-image: url("https://placehold.co/1440x900/00000000/00000000");
@@ -559,7 +559,7 @@ body,
   font-weight: 700;
   font-size: 1rem;
   transition: background-color 0.3s ease;
-  background-blend-mode: soft-light;
+  background-blend-mode: var(--bg-blend-mode);
 }
 .hero .cta-btn:hover {
   background-color: #005bb5;
@@ -571,7 +571,6 @@ body,
 }
 
 main {
-
   border-radius: 5%;
   border-top-right-radius: 55%;
   border-bottom-left-radius: 55%;
@@ -581,7 +580,13 @@ img, .showcase-img, mark, .hero-title {
   border-top-right-radius: 22%;
   border-bottom-left-radius: 22%;
 }
-.hero form {
+.hero form,
+article,
+article div,
+article div footer,
+article div header,
+article div header h2,
+article div footer h2 {
   border-radius: 2%;
   border-top-right-radius: 22%;
   border-bottom-left-radius: 22%;
@@ -609,7 +614,6 @@ img, .showcase-img, mark, .hero-title {
 article {
   margin-bottom: 2rem;
   padding: 2rem 0;
-  border-radius: 6px;
 }
 
 article,
@@ -662,13 +666,15 @@ section>header{
 article div header {
   transform: translateY(-20px);
 }
+article div footer {
+  transform: translateY(20px);
+}
 .testimonial-card:hover,
 .team-card:hover,
 .about-card:hover,
 .service-card:hover,
 .card:hover, 
-.team-member:hover,
-article div header:hover {
+.team-member:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
@@ -749,14 +755,6 @@ article div header:hover {
   text-align: center;
   color: var(--bs-body-color);
   background-color: #0078d499;
-  background: linear-gradient(
-      66deg,
-      #00000000 11%,
-      #ffffff11 33%,
-      #00000022 44%,
-      #ffffff11 55%,
-      #00000000 88%
-    ),
-    linear-gradient(66deg, #20c997ee, #17a2b8ee);
-  background-blend-mode: soft-light;
+  background: var(--bg);
+  background-blend-mode: var(--bg-blend-mode);
 }

@@ -42,7 +42,7 @@
   <!-- Halfmoon CSS Framework -->
   <link rel="stylesheet" href="./css/vendor/halfmoon/halfmoon.min.css">
   <!-- Halfmoon Cores -->
-  <link rel="stylesheet" href="./css/vendor/halfmoon/halfmoon.cores.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/vendor/halfmoon/halfmoon.cores.css">
   <!-- Topcoat UI Styles -->
   <link id="topcoat-stylesheet" rel="stylesheet" href="#">
   <!-- Icomatic Icon Font -->
@@ -62,32 +62,35 @@
     data-bs-title="Toggle Dark Mode">
     <span class="icomatic icon fs-4 mx-auto">view</span>
   </button>
-<!-- Site Header -->
+  <!-- Site Header -->
   <header id="site-header">
     <!-- PRIMARY NAVIGATION (Top Nav with Teal Gradient) for Large Screens -->
     <nav class="bg-primary-subtle top-nav d-none d-lg-block">
       <div class="bg-brand container-fluid pridi-light">
         <div class="row">
           <!-- Social Links -->
-          <div class="col-2 text-start nav-social">
+          <div class="col-2 text-start nav-social p-1">
             <!-- Facebook -->
-            <a href="https://www.facebook.com/share/1G5VN3C3oE/?mibextid=wwXIfr" class="text-decoration-none me-3">
-              <span class="icomatic icon">facebook</span>
+            <a href="https://www.facebook.com/share/1G5VN3C3oE/?mibextid=wwXIfr" class="text-decoration-none p-1 btn topcoat-button topcoat-icon-button">
+              <span class="icomatic icon" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-title="Facebook"
+                data-bs-content="Bigsky Financial Service LLC">facebook</span>
             </a>
             <!-- Twitter -->
-            <a href="https://x.com/bigskyfinsrvllc?s=11" class="text-decoration-none me-3">
-              <span class="icomatic icon">twitter</span>
+            <a href="https://x.com/bigskyfinsrvllc?s=11" class="text-decoration-none p-1 btn topcoat-button topcoat-icon-button">
+              <span class="icomatic icon" 8703701703data-bs-toggle="popover" data-bs-placement="bottom"
+                data-bs-title="Twitter" data-bs-content="bigskyfinsrvllc">twitter</span>
             </a>
             <!-- Linkedin -->
             <a href="https://www.linkedin.com/in/brandon-l-363119184?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-              class="text-decoration-none me-3">
-              <span class="icomatic icon">linkedin</span>
+              class="text-decoration-none p-1 btn topcoat-button topcoat-icon-button">
+              <span class="icomatic icon" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-title="Call Us!"
+                data-bs-content="( 406 ) 475 - 2009">linkedin</span>
             </a>
           </div>
-          <div class="col-4 text-center branding">
+          <div class="col-5 text-center branding">
             <h3 class="m-0 user-select-none pridi-extralight">Big Sky Financial LLC.</h3>
           </div>
-          <div class="col-6 text-end nav-contact">
+          <div class="col-5 text-end nav-contact">
             <a href="#" class="text-decoration-none d-none">
               <span class="icomatic icon">user</span>
               <span class="icon-label">Login</span>
@@ -104,93 +107,98 @@
           </div>
         </div>
       </div>
+      <!-- SECONDARY NAVIGATION (Branding & Dropdown Page Links) for Large Screens -->
+      <nav class="sticky-secondary topcoat-tab-bar d-none d-lg-block text-end text-teal border-0">
+        <div class="container-fluid topcoat-tab-bar pridi-regular">
+          <menu class="nav topcoat-tab-bar__item border-top">
+            <li class="nav-item toapcoat-tab-bar__item">
+              <a class="rounded-pill rounded-top-0 rounded-end-0 bg-primary-subtle bg-gradient nav-link topcoat-tab-bar__button h-100 ps-4"
+                href="#home">Home</a>
+            </li>
+            <li class="nav-item dropdown toapcoat-tab-bar__item">
+              <a class="bg-primary-subtle bg-gradient nav-link dropdown-toggle topcoat-tab-bar__button h-100"
+                href="#about" id="about-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About
+              </a>
+              <menu class="dropdown-menu bg-primary-subtle border border-secondary border-top-0 vstack"
+                aria-labelledby="aboutDropdown">
+                <li class="">
+                  <a class="btn dropdown-item" href="#story">Our Story</a>
+                </li>
+                <li class="">
+                  <a class="btn dropdown-item" href="#mission">Our Mission</a>
+                </li>
+                <li class="">
+                  <a class="btn dropdown-item" href="#values">Our Values</a>
+                </li>
+                <li class="">
+                  <a class="btn dropdown-item" href="#team">Our Team</a>
+                </li>
+              </menu>
+            </li>
+            <li class="nav-item dropdown toapcoat-tab-bar__item">
+              <a class="bg-primary-subtle bg-gradient nav-link dropdown-toggle topcoat-tab-bar__button h-100" href="#"
+                id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Services
+              </a>
+              <menu class="dropdown-menu bg-primary-subtle border border-secondary border-top-0 vstack"
+                aria-labelledby="servicesDropdown">
+                <li>
+                  <a class="btn dropdown-item" href="#bookkeeping">Bookkeeping</a>
+                </li>
+                <li>
+                  <a class="btn dropdown-item" href="#accounting">Accounting</a>
+                </li>
+                <li>
+                  <a class="btn dropdown-item" href="#payroll">Payroll</a>
+                </li>
+                <li>
+                  <a class="btn dropdown-item" href="#consulting">Consulting</a>
+                </li>
+              </menu>
+            </li>
+            <li class="nav-item dropdown toapcoat-tab-bar__item user-select-none" disabled data-bs-toggle="tooltip"
+              data-bs-title="We're working on it...">
+              <a class="bg-primary-subtle bg-gradient nav-link dropdown-toggle topcoat-tab-bar__button h-100" href="#"
+                id="taxDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Tax Center
+              </a>
+              <menu class="dropdown-menu bg-primary-subtle border border-secondary border-top-0 vstack"
+                aria-labelledby="taxDropdown">
+                <li>
+                  <a class="btn dropdown-item pe-none" href="tax-prep.html">Tax Preparation</a>
+                </li>
+                <li>
+                  <a class="btn dropdown-item pe-none" href="tax-resources.html">Tax Resources</a>
+                </li>
+              </menu>
+            </li>
+            <li class="nav-item dropdown toapcoat-tab-bar__item user-select-none" disabled data-bs-toggle="tooltip"
+              data-bs-title="Coming soon!">
+              <a class="btn topcoat-button bg-primary-subtle bg-gradient nav-link dropdown-toggle topcoat-tab-bar__button h-100"
+                href="#" id="resourcesDropdown" disabled role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Resources
+              </a>
+              <menu class="dropdown-menu bg-primary-subtle border border-secondary border-top-0 vstack"
+                aria-labelledby="resourcesDropdown">
+                <li>
+                  <a class="btn dropdown-item pe-none" href="blog.html">Blog</a>
+                </li>
+                <li>
+                  <a class="btn dropdown-item pe-none" href="guides.html">Guides</a>
+                </li>
+              </menu>
+            </li>
+            <li class="nav-item toapcoat-tab-bar__item rounded-pill rounded-top-0 rounded-start-0">
+              <a class="bg-primary-subtle bg-gradient nav-link topcoat-tab-bar__button h-100"
+                href="contact.html">Contact</a>
+            </li>
+          </menu>
+        </div>
+      </nav>  
     </nav>
 
-    <!-- SECONDARY NAVIGATION (Branding & Dropdown Page Links) for Large Screens -->
-    <nav class="sticky-secondary topcoat-tab-bar d-none d-lg-block text-end text-teal border-0">
-      <div class="container-fluid topcoat-tab-bar pridi-regular">
-        <menu class="nav topcoat-tab-bar__item border-top">
-          <li class="nav-item toapcoat-tab-bar__item">
-            <a class="rounded-pill rounded-top-0 rounded-end-0 bg-primary-subtle bg-gradient nav-link topcoat-tab-bar__button h-100 ps-4" href="#home">Home</a>
-          </li>
-          <li class="nav-item dropdown toapcoat-tab-bar__item">
-            <a class="bg-primary-subtle bg-gradient nav-link dropdown-toggle topcoat-tab-bar__button h-100" href="#about" id="about-dropdown"
-              role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              About
-            </a>
-            <menu class="dropdown-menu bg-primary-subtle border border-secondary border-top-0 vstack"
-              aria-labelledby="aboutDropdown">
-              <li class="">
-                <a class="btn dropdown-item" href="#story">Our Story</a>
-              </li>
-              <li class="">
-                <a class="btn dropdown-item" href="#mission">Our Mission</a>
-              </li>
-              <li class="">
-                <a class="btn dropdown-item" href="#values">Our Values</a>
-              </li>
-              <li class="">
-                <a class="btn dropdown-item" href="#team">Our Team</a>
-              </li>
-            </menu>
-          </li>
-          <li class="nav-item dropdown toapcoat-tab-bar__item">
-            <a class="bg-primary-subtle bg-gradient nav-link dropdown-toggle topcoat-tab-bar__button h-100" href="#" id="servicesDropdown"
-              role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Services
-            </a>
-            <menu class="dropdown-menu bg-primary-subtle border border-secondary border-top-0 vstack"
-              aria-labelledby="servicesDropdown">
-              <li>
-                <a class="btn dropdown-item" href="#bookkeeping">Bookkeeping</a>
-              </li>
-              <li>
-                <a class="btn dropdown-item" href="#accounting">Accounting</a>
-              </li>
-              <li>
-                <a class="btn dropdown-item" href="#payroll">Payroll</a>
-              </li>
-              <li>
-                <a class="btn dropdown-item" href="#consulting">Consulting</a>
-              </li>
-            </menu>
-          </li>
-          <li class="nav-item dropdown toapcoat-tab-bar__item user-select-none" disabled data-bs-toggle="tooltip" data-bs-title="We're working on it...">
-            <a class="bg-primary-subtle bg-gradient nav-link dropdown-toggle topcoat-tab-bar__button h-100" href="#" id="taxDropdown" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              Tax Center
-            </a>
-            <menu class="dropdown-menu bg-primary-subtle border border-secondary border-top-0 vstack"
-              aria-labelledby="taxDropdown">
-              <li>
-                <a class="btn dropdown-item pe-none" href="tax-prep.html">Tax Preparation</a>
-              </li>
-              <li>
-                <a class="btn dropdown-item pe-none" href="tax-resources.html">Tax Resources</a>
-              </li>
-            </menu>
-          </li>
-          <li class="nav-item dropdown toapcoat-tab-bar__item user-select-none" disabled data-bs-toggle="tooltip" data-bs-title="Coming soon!">
-            <a class="btn topcoat-button bg-primary-subtle bg-gradient nav-link dropdown-toggle topcoat-tab-bar__button h-100" href="#" id="resourcesDropdown" disabled
-              role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Resources
-            </a>
-            <menu class="dropdown-menu bg-primary-subtle border border-secondary border-top-0 vstack"
-              aria-labelledby="resourcesDropdown">
-              <li>
-                <a class="btn dropdown-item pe-none" href="blog.html">Blog</a>
-              </li>
-              <li>
-                <a class="btn dropdown-item pe-none" href="guides.html">Guides</a>
-              </li>
-            </menu>
-          </li>
-          <li class="nav-item toapcoat-tab-bar__item">
-            <a class="bg-primary-subtle bg-gradient nav-link topcoat-tab-bar__button h-100" href="contact.html">Contact</a>
-          </li>
-        </menu>
-      </div>
-    </nav>
+
 
     <!-- MOBILE NAVIGATION (for Medium & Small Screens) -->
     <nav class="mobile-nav d-lg-none bg-brand">
@@ -345,7 +353,7 @@
                       <!-- Our Story -->
                       <hgroup id="story" class="shadow-sm card my-5">
                         <header class="card-header">
-                        <h3 class="">Our Story</h3>
+                          <h3 class="">Our Story</h3>
                         </header>
                         <div class="card-body">
                           Battle-tested combat veteran with 10+ years experience in
@@ -367,7 +375,8 @@
                           entrepreneurs, streamlines operations, and fosters growth
                           in the local business community.
                         </div>
-                      </hgroup></figcaption>
+                      </hgroup>
+                    </figcaption>
                   </figure>
                 </div>
               </div>
@@ -378,7 +387,7 @@
                     <figcaption class="figure-caption"><!-- Our Values -->
                       <hgroup class="text-start shadow-sm card my-0">
                         <header class="card-header">
-                        <h3 class="card-title py-2">Our Values</h3>
+                          <h3 class="card-title py-2">Our Values</h3>
                         </header>
                         <dl class="list-group card-body m-auto">
                           <dt class="">
@@ -400,7 +409,8 @@
                           <dd class="">We tailor our
                             services to suit your unique needs and goals.</dd>
                         </dl>
-                      </hgroup></figcaption>
+                      </hgroup>
+                    </figcaption>
                   </figure>
                 </div>
 
@@ -422,19 +432,17 @@
     <!-- SERVICES SECTION -->
     <hr id="services" class="my-5 p-2 mx-auto">
     <article
-      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container mx-auto my-5">
+      class="border border-primary-subtle bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5">
       <div
-        class="container-fluid bg-body bg-opacity-10 rounded-5 border border-primary border-bottom-0 border-top-0 shadow">
+        class="container-fluid bg-body bg-opacity-10 border border-primary border-top-0 border-top-0 shadow p-2">
 
-        <header class="bg-secondary rounded-pill border border-primary border-bottom-0 p-1 mb-5 shadow-sm">
+        <header class="bg-secondary border border-primary border-bottom-0 border-start-0 border-end-0 p-1 mb-5 shadow-sm">
           <h2 class="ps-5">Our Services</h2>
         </header>
         <p class="card-body article-intro">
           We offer tailored bookkeeping and accounting services to help you
           focus on growing your business instead of managing the numbers.
         </p>
-
-
         <div class="service-cards">
           <hgroup id="bookkeeping" class="card service-card p-0 my-5 shadow-sm">
             <header class="card-header">
@@ -469,13 +477,16 @@
             </p>
           </div>
         </div>
+        <footer class="bg-secondary border border-primary border-top-0 border-start-0 border-end-0 p-1 mt-auto shadow-sm">
+          <h2 class="ps-5">&nbsp;</h2>
+        </footer>
       </div>
     </article>
 
     <!-- TESTIMONIALS SECTION -->
     <hr id="testimonials">
     <article
-      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container mx-auto my-5">
+      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5">
       <div
         class="container-fluid bg-body bg-opacity-10 rounded-5 border border-primary border-bottom-0 border-end-0 shadow">
         <hgroup>
@@ -527,7 +538,7 @@
     <!-- TEAM SECTION -->
     <hr id="team">
     <article
-      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container mx-auto my-5">
+      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5">
       <div
         class="container-fluid bg-body bg-opacity-10 rounded-5 border border-primary border-bottom-0 border-end-0 shadow">
         <header class="bg-secondary rounded-pill border border-primary border-bottom-0 border-end-0 p-1 mb-5 shadow-sm">
@@ -551,11 +562,13 @@
     <!-- FAQ SECTION -->
     <hr id="faq">
     <article id="faqs"
-      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container mx-auto my-5">
+      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5">
       <div
-        class="container-fluid bg-body bg-opacity-10 rounded-5 border border-primary border-bottom-0 border-end-0 shadow">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faqs">
+        class="container-fluid bg-body bg-opacity-10 border border-primary border-bottom-0 border-end-0 shadow">
+        <header class="border border-start-0 border-end-0 border-primary-subtle">
+          <h2 class="text-bg-secondary border p-2 ps-5">Frequently Asked Questions</h2>
+        </header>
+          <div class="faqs">
           <div id="faq-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators btn-group">
               <button type="button" data-bs-target="#faq-carousel" data-bs-slide-to="0" class="btn topcoat-icon-button"
@@ -643,10 +656,12 @@
     <!-- CONTACT SECTION -->
     <hr id="contact">
     <article
-      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container mx-auto my-5">
+      class="border border-primary-subtle border-5 border-top-0 border-start-0 bg-secondary bg-gradient shadow-lg container mx-auto my-5 pt-4 ps-4 my-5">
       <div
-        class="container-fluid bg-body bg-opacity-10 rounded-5 border border-primary border-bottom-0 border-end-0 shadow">
-        <h2>Ready to Get Started?</h2>
+        class="container-fluid bg-body border border-primary-subtle border-5 border-bottom-0 border-end-0 shadow">
+        <header class="border border-start-0 border-end-0 border-primary-subtle">
+        <h2 class="text-bg-secondary border p-2 ps-5">Ready to Get Started?</h2>
+        </header>
         <p>
           Contact us or schedule an appointment to discuss your accounting and
           bookkeeping needs.
