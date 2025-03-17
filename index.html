@@ -27,26 +27,23 @@
   <link type="text/plain" rel="author" href="https://www.bigskyfinancialservicellc.com/humans.txt">
 
   <!-- Favicon and Theme Color -->
-  <link rel="icon" href="https://www.bigskyfinancialservicellc.com/favicon.ico" sizes="any">
-  <link rel="icon" href="https://www.bigskyfinancialservicellc.com/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="https://www.bigskyfinancialservicellc.com/icon.png">
+  <link rel="icon" href="./favicon.ico" sizes="any">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icon.png">
   <meta name="theme-color" content="#0078d4">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300&Source+Code+Pro" rel="stylesheet">
   <!-- Normalize.css Reset-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="./css/vendor/normalize/normalize.min.css" crossorigin="anonymous"
+    referrerpolicy="no-referrer">
 
   <!--<link type="text/css" rel="stylesheet" href="https://wmeredith.github.io/MercuryCSS/css/min/mercury.min.css">--->
 
   <!-- Halfmoon CSS Framework -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/halfmoon.min.css"
-    integrity="sha256-SsJizWSIG9JT9Qxbiy8xnYJfjCAkhEQ0hihxRn7jt2M=" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/vendor/halfmoon/halfmoon.min.css" crossorigin="anonymous">
   <!-- Halfmoon Cores -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/cores/halfmoon.cores.css"
-    integrity="sha256-MAzAVJMU/ze52ZHcA8CeqRrCOVndMZlHwNeS2c73vP4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/vendor/halfmoon/halfmoon.cores.css" crossorigin="anonymous">
   <!-- Topcoat UI Styles -->
   <link id="topcoat-stylesheet" rel="stylesheet" href="#">
   <!-- Icomatic Icon Font -->
@@ -59,18 +56,18 @@
   <link rel="manifest" href="site.webmanifest">
 </head>
 
-<body data-bs-theme="" data-bs-core="modern" class="bg-body bg-gradient subpixel-antialiased">
-  
-  <!-- Mode Toggle -->
-  <button id="mode-toggle" class="btn topcoat-button topcoat-icon-button" data-bs-toggle="tooltip"
-    data-bs-title="Toggle Dark Mode">
-    <span class="icomatic icon fs-4 mx-auto text-primary">view</span>
-  </button>
+<body data-bs-theme="" data-bs-core="modern" class=" bg-gradient subpixel-antialiased">
 
-  <header>
+  <!-- Mode Toggle -->
+  <button id="mode-toggle" class="btn topcoat-button topcoat-icon-button bg-primary-subtle" data-bs-toggle="tooltip"
+    data-bs-title="Toggle Dark Mode">
+    <span class="icomatic icon fs-4 mx-auto">view</span>
+  </button>
+<!-- Site Header -->
+  <header id="site-header">
     <!-- PRIMARY NAVIGATION (Top Nav with Teal Gradient) for Large Screens -->
-    <nav class="top-nav d-none d-lg-block">
-      <div class="container-fluid pridi-light">
+    <nav class="bg-primary-subtle top-nav d-none d-lg-block">
+      <div class="bg-brand container-fluid pridi-light">
         <div class="row">
           <!-- Social Links -->
           <div class="col-2 text-start nav-social">
@@ -83,7 +80,8 @@
               <span class="icomatic icon">twitter</span>
             </a>
             <!-- Linkedin -->
-            <a href="https://www.linkedin.com/in/brandon-l-363119184?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-decoration-none me-3">
+            <a href="https://www.linkedin.com/in/brandon-l-363119184?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              class="text-decoration-none me-3">
               <span class="icomatic icon">linkedin</span>
             </a>
           </div>
@@ -100,31 +98,25 @@
               <span class="icon-label">Subscribe</span>
             </a>
 
-            <button 
-            type="button"
-            class="btn btn-primary topcoat-button topcoat-icon-button"
-            data-bs-toggle="popover"
-            data-bs-placement="top"
-            data-bs-title="Call Us!"
-            data-bs-content="( 406 ) 475 - 2009"
-          >
-          <span class="icomatic icon">call</span>
-          </button>
+            <button type="button" class="btn btn-primary topcoat-button topcoat-icon-button" data-bs-toggle="popover"
+              data-bs-placement="top" data-bs-title="Call Us!" data-bs-content="( 406 ) 475 - 2009">
+              <span class="icomatic icon">call</span>
+            </button>
           </div>
         </div>
       </div>
     </nav>
 
     <!-- SECONDARY NAVIGATION (Branding & Dropdown Page Links) for Large Screens -->
-    <nav class="bg-primary-subtle sticky-secondary text-primary d-none d-lg-block text-end text-teal shadow-lg lh-1">
-      <div class="container-fluid bg-secondary bg-opacity-10 p-0 pridi-regular">
-        <menu class="nav bg-secondary bg-opacity-10 w-100 m-0">
-          <li class="nav-item">
-            <a class="nav-link" href="#home">Home</a>
+    <nav class="sticky-secondary topcoat-tab-bar d-none d-lg-block text-end text-teal border-0">
+      <div class="container-fluid topcoat-tab-bar pridi-regular">
+        <menu class="nav topcoat-tab-bar__item border-top">
+          <li class="nav-item toapcoat-tab-bar__item">
+            <a class="rounded-start-pill bg-primary-subtle bg-gradient nav-link topcoat-tab-bar__button h-100" href="#home">Home</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#about" id="about-dropdown" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
+          <li class="nav-item dropdown toapcoat-tab-bar__item">
+            <a class="bg-primary-subtle bg-gradient nav-link dropdown-toggle topcoat-tab-bar__button h-100" href="#about" id="about-dropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
               About
             </a>
             <menu class="dropdown-menu bg-primary-subtle border border-secondary border-top-0 vstack"
@@ -143,9 +135,9 @@
               </li>
             </menu>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
+          <li class="nav-item dropdown toapcoat-tab-bar__item">
+            <a class="bg-primary-subtle bg-gradient nav-link dropdown-toggle topcoat-tab-bar__button h-100" href="#" id="servicesDropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Services
             </a>
             <menu class="dropdown-menu bg-primary-subtle border border-secondary border-top-0 vstack"
@@ -164,45 +156,45 @@
               </li>
             </menu>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="taxDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
+          <li class="nav-item dropdown toapcoat-tab-bar__item user-select-none" disabled data-bs-toggle="tooltip" data-bs-title="We're working on it...">
+            <a class="bg-primary-subtle bg-gradient nav-link dropdown-toggle topcoat-tab-bar__button h-100" href="#" id="taxDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
               Tax Center
             </a>
             <menu class="dropdown-menu bg-primary-subtle border border-secondary border-top-0 vstack"
               aria-labelledby="taxDropdown">
               <li>
-                <a class="btn dropdown-item" href="tax-prep.html">Tax Preparation</a>
+                <a class="btn dropdown-item pe-none" href="tax-prep.html">Tax Preparation</a>
               </li>
               <li>
-                <a class="btn dropdown-item" href="tax-resources.html">Tax Resources</a>
+                <a class="btn dropdown-item pe-none" href="tax-resources.html">Tax Resources</a>
               </li>
             </menu>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
+          <li class="nav-item dropdown toapcoat-tab-bar__item">
+            <a class="bg-primary-subtle bg-gradient nav-link dropdown-toggle topcoat-tab-bar__button h-100" href="#" data-bs-toggle="tooltip" data-bs-title="Coming soon!" id="resourcesDropdown"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Resources
             </a>
             <menu class="dropdown-menu bg-primary-subtle border border-secondary border-top-0 vstack"
               aria-labelledby="resourcesDropdown">
               <li>
-                <a class="btn dropdown-item" href="blog.html">Blog</a>
+                <a class="btn dropdown-item pe-none" href="blog.html">Blog</a>
               </li>
               <li>
-                <a class="btn dropdown-item" href="guides.html">Guides</a>
+                <a class="btn dropdown-item pe-none" href="guides.html">Guides</a>
               </li>
             </menu>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+          <li class="nav-item toapcoat-tab-bar__item">
+            <a class="bg-primary-subtle bg-gradient nav-link topcoat-tab-bar__button h-100" href="contact.html">Contact</a>
           </li>
         </menu>
       </div>
     </nav>
 
     <!-- MOBILE NAVIGATION (for Medium & Small Screens) -->
-    <nav class="mobile-nav d-lg-none">
+    <nav class="mobile-nav d-lg-none bg-brand">
       <div class="container">
         <div class="row text-center align-items-center">
           <div class="col-3 nav-icon d-none">
@@ -258,7 +250,7 @@
     <!-- HERO / SPLASH SECTION -->
     <hr id="home">
     <header
-      class="hero border border-primary-subtle border-5 border-start-0 border-end-0 py-1 mb-5 w-100 mx-auto text-center px-sm-1 px-md-2 px-lg-3">
+      class="hero border bg-brand border-primary-subtle border-5 border-start-0 border-end-0 py-1 mb-5 w-100 mx-auto text-center px-sm-1 px-md-2 px-lg-3">
       <div class="hero-content container mx-auto py-2 px-sm-1 px-md-2 px-lg-3">
         <div
           class="row cta bg-primary-subtle bg-gradient shadow-lg border border-body border-5 border-start-0 border-end-0 py-3 px-sm-0 px-md-1 px-lg-2 mx-auto">
@@ -268,7 +260,7 @@
             <h2
               class="hero-title text-body p-1 mt-1 pridi-extralight bg-body border border-primary border-start-0 border-end-0 border-5">
               Making <mark
-                class="text-teal bg-teal border border-primary-subtle border-start-0 border-end-0 pridi-medium py-0">sense</mark>
+                class="text-teal bg-brand border border-primary-subtle border-start-0 border-end-0 pridi-medium py-0">sense</mark>
               of your cents
             </h2>
           </div>
@@ -282,25 +274,6 @@
               <div class="mb-3 form-floating">
                 <input type="email" id="email-input" class="topcoat-text-input form-control" placeholder="Email">
                 <label for="email-input" class="form-label pridi-regular">Email</label>
-              </div>
-              <div class="mb-3 form-floating d-none">
-                <select id="service-input" class="form-select bg-body border-primary">
-                  <optgroup label="Accounting">
-                    <option>Budgeting</option>
-                    <option>Income Statement</option>
-                    <option>Expense Analysis</option>
-                    <option>Payroll Services</option>
-                    <option>Asset Depreciation</option>
-                  </optgroup>
-                  <optgroup label="Tax Services">
-                    <option>Simple Return</option>
-                    <option>Itemized Return</option>
-                    <option>Ammended Tax Return</option>
-                    <option>Tax Planning</option>
-                    <option>Tax Consultation</option>
-                  </optgroup>
-                </select>
-                <label for="service-input" class="form-label">Service Desired</label>
               </div>
               <div class="mb-3 form-floating">
                 <textarea id="comments-input" class="topcoat-text-input form-control" style="height: 6rem"
@@ -351,93 +324,95 @@
     <!-- ABOUT SECTION -->
     <hr id="about" class="my-5 p-2 mx-auto">
     <article
-      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container my-5 p-1">
-      <div class="container-fluid p-4">
-        <hgroup class="bg-body-tertiary shadow-sm card m-5">
-          <h2 class="card-header">About Us</h2>
-          <p class="card-body">
-            At <strong class="text-teal fs-5">Big Sky Financial</strong>, we
+      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container mx-auto my-5">
+      <div
+        class="container-fluid bg-body bg-opacity-10 rounded-5 border border-primary border-bottom-0 border-end-0 shadow">
+        <header class="bg-secondary rounded-pill border border-primary border-bottom-0 border-end-0 p-1 mb-5 shadow-sm">
+          <h2 class="ps-5">About Us</h2>
+        </header>
+        <div class="container-fluid p-4 ">
+          <p class="fs-5 text-center p-2">
+            At <strong class="text-teal fs-4">Big Sky Financial</strong>, we
             pride ourselves on delivering comprehensive accounting and
             bookkeeping solutions for small and medium-sized businesses.
           </p>
-        </hgroup>
-      </div>
-      <div class="container-fluid p-4">
-        <div class="row justify-content-center">
-          <div class="container-fluid p-0">
-            <div class="row no-gutters my-5">
-              <div class="col-lg-6 order-lg-2 showcase-img text-center">
-                <!-- Our Story -->
-                <hgroup id="story" class="bg-body-tertiary shadow-sm card my-5">
-                  <h3 class="card-header text-center">Our Story</h3>
-                  <p class="card-body">
-                    Battle-tested combat veteran with 10+ years experience in
-                    small business accounting.
-                  </p>
-                </hgroup>
-              </div>
-              <div class="col-lg-6 order-lg-2 showcase-img text-center">
-                <figure class="figure p-5">
-                  <img class="border figure-img img-fluid placeholder"
-                    src="https://placehold.co/360x240/99999999/0078d4" alt="">
-                  <figcaption class="figure-caption placeholder-glow"><cite>Citation</cite> - Caption for image 1
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-            <div class="row no-gutters my-5">
-              <div class="col-lg-6 order-lg-2 showcase-img text-center">
-                <figure class="figure p-5">
-                  <img class="border figure-img img-fluid placeholder"
-                    src="https://placehold.co/360x240/99999999/0078d4" alt="">
-                  <figcaption class="figure-caption placeholder-glow"><cite>Citation</cite> - Caption for image 2
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="col-lg-6 order-lg-2 showcase-img text-center">
-                <!-- Our Mission -->
-                <hgroup id="mission" class="bg-body-tertiary shadow-sm card my-5">
-                  <h3 class="card-header text-center">Our Mission</h3>
-                  <p class="card-body">
-                    To provide reliable financial expertise that empowers
-                    entrepreneurs, streamlines operations, and fosters growth
-                    in the local business community.
-                  </p>
-                </hgroup>
-              </div>
-            </div>
-            <div class="row no-gutters my-5">
-              <div class="col-lg-6 order-lg-2 showcase-img text-center">
-                <figure class="figure p-5">
-                  <img class="border figure-img img-fluid placeholder"
-                    src="https://placehold.co/360x240/99999999/0078d4" alt="">
-                  <figcaption class="figure-caption placeholder-glow"><cite>Citation</cite> - Caption for image 3
-                  </figcaption>
-                </figure>
-              </div>
+          <div class="justify-content-center">
+            <div class="p-0">
+              <div class="row no-gutters my-5">
+                <div class="col-lg-6 ccol-md-8 col-sm-12 order-lg-2 showcase-img">
+                  <figure class="figure p-5">
+                    <img class="border figure-img img-fluid" src="./img/1000000157.jpg" alt="">
+                    <figcaption class="figure-caption">
+                      <!-- Our Story -->
+                      <hgroup id="story" class="shadow-sm card my-5">
+                        <header class="card-header">
+                        <h3 class="">Our Story</h3>
+                        </header>
+                        <div class="card-body">
+                          Battle-tested combat veteran with 10+ years experience in
+                          small business accounting.
+                        </div>
+                      </hgroup>
+                    </figcaption>
+                  </figure>
+                </div>
 
-              <div id="values" class="col-lg-6 order-lg-1 my-auto showcase-text my-5 py-5">
-                <!-- Our Values -->
-                <hgroup class="bg-body-tertiary shadow-sm card my-5">
-                  <h3 class="card-header text-center">Our Values</h3>
-                  <ul class="list-group">
-                    <li class="list-group-item">
-                      <span class="icon icomatic text-success fs-1">checkmark</span>
-                      <strong>Integrity:</strong><br>We prioritize honesty
-                      and transparency in every interaction.
-                    </li>
-                    <li class="list-group-item">
-                      <span class="icon icomatic text-success fs-1">checkmark</span>
-                      <strong>Quality:</strong><br>Meticulous attention to
-                      detail ensures your books are accurate and compliant.
-                    </li>
-                    <li class="list-group-item">
-                      <span class="icon icomatic text-success fs-1">checkmark</span>
-                      <strong>Client Focus:</strong><br>We tailor our
-                      services to suit your unique needs and goals.
-                    </li>
-                  </ul>
-                </hgroup>
+                <div class="col-lg-6 order-lg-2 showcase-img text-center">
+                  <figure class="figure p-5">
+                    <img class="border figure-img img-fluid" src="./img/1000002103.jpg" alt="">
+                    <figcaption class="figure-caption"> <!-- Our Mission -->
+                      <hgroup id="mission" class="bg-body-tertiary shadow-sm card my-5">
+                        <h3 class="card-header text-center">Our Mission</h3>
+                        <div class="card-body">
+                          To provide reliable financial expertise that empowers
+                          entrepreneurs, streamlines operations, and fosters growth
+                          in the local business community.
+                        </div>
+                      </hgroup></figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="row no-gutters my-5">
+                <div class="col-lg-6 order-lg-2 showcase-img text-center">
+                  <figure class="figure p-5">
+                    <img class="border figure-img img-fluid" src="./img/1000000287.jpg" alt="">
+                    <figcaption class="figure-caption"><!-- Our Values -->
+                      <hgroup class="text-start shadow-sm card my-0">
+                        <header class="card-header">
+                        <h3 class="card-title py-2">Our Values</h3>
+                        </header>
+                        <dl class="list-group card-body m-auto">
+                          <dt class="">
+                            <span class="icon icomatic text-success fs-1">checkmark</span>
+                            <strong>Integrity:</strong>
+                          </dt>
+                          <dd class="">We prioritize honesty
+                            and transparency in every interaction.</dd>
+                          <dt class="">
+                            <span class="icon icomatic text-success fs-1">checkmark</span>
+                            <strong>Quality:</strong>
+                          </dt>
+                          <dd class="">Meticulous attention to
+                            detail ensures your books are accurate and compliant.</dd>
+                          <dt class="">
+                            <span class="icon icomatic text-success fs-1">checkmark</span>
+                            <strong>Client Focus:</strong>
+                          </dt>
+                          <dd class="">We tailor our
+                            services to suit your unique needs and goals.</dd>
+                        </dl>
+                      </hgroup></figcaption>
+                  </figure>
+                </div>
+
+                <div id="values" class="col-lg-6 order-lg-1 my-auto showcase-text my-5 py-5">
+                  <p>
+                    We prioritize honesty and transparency in every interaction.
+                    Meticulous attention to detail ensures your books are
+                    accurate and compliant. We tailor our services to suit
+                    your unique needs and goals.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -448,24 +423,31 @@
     <!-- SERVICES SECTION -->
     <hr id="services" class="my-5 p-2 mx-auto">
     <article
-      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container my-5 p-1">
-      <div class="container-fluid p-4">
-        <hgroup class="bg-body-tertiary shadow-sm card">
-          <h2 class="card-header">Our Services</h2>
-          <p class="card-body article-intro">
-            We offer tailored bookkeeping and accounting services to help you
-            focus on growing your business instead of managing the numbers.
-          </p>
-        </hgroup>
+      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container mx-auto my-5">
+      <div
+        class="container-fluid bg-body bg-opacity-10 rounded-5 border border-primary border-bottom-0 border-top-0 shadow">
+
+        <header class="bg-secondary rounded-pill border border-primary border-bottom-0 p-1 mb-5 shadow-sm">
+          <h2 class="ps-5">Our Services</h2>
+        </header>
+        <p class="card-body article-intro">
+          We offer tailored bookkeeping and accounting services to help you
+          focus on growing your business instead of managing the numbers.
+        </p>
+
 
         <div class="service-cards">
-          <div id="bookkeeping" class="service-card bg-body-tertiary">
-            <h3>Bookkeeping</h3>
-            <p>
-              Keep your financial records up-to-date with daily/monthly
-              bookkeeping, reconciliations, and detailed reporting.
-            </p>
-          </div>
+          <hgroup id="bookkeeping" class="card service-card p-0 my-5 shadow-sm">
+            <header class="card-header">
+              <h3 class="">Bookkeeping</h3>
+            </header>
+            <div class="card-body">
+              <p class="card-text">
+                Keep your financial records up-to-date with daily/monthly
+                bookkeeping, reconciliations, and detailed reporting.
+              </p>
+            </div>
+          </hgroup>
           <div id="accounting" class="service-card bg-body-tertiary">
             <h3>Tax Preparation</h3>
             <p>
@@ -494,10 +476,15 @@
     <!-- TESTIMONIALS SECTION -->
     <hr id="testimonials">
     <article
-      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container my-5 p-1">
-      <div class="container-fluid">
+      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container mx-auto my-5">
+      <div
+        class="container-fluid bg-body bg-opacity-10 rounded-5 border border-primary border-bottom-0 border-end-0 shadow">
         <hgroup>
-          <h2>What Our Clients Say</h2>
+          <header
+            class="bg-secondary rounded-pill border border-primary border-bottom-0 border-end-0 p-1 mb-5 mt-2 shadow-sm">
+            <h2 class="ps-5">What Our Clients Say</h2>
+          </header>
+
           <div class="row">
             <div class="col-sm-12 col-md-5 col-sm-4 testimonial-card border bg-body mx-auto my-5 shadow-lg p-4">
               <figure class="row">
@@ -541,30 +528,20 @@
     <!-- TEAM SECTION -->
     <hr id="team">
     <article
-      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container my-5 p-1">
-      <div class="container">
-        <h2>Meet the Team</h2>
-        <div class="team-grid">
-          <div class="team-member">
-            <figure class="figure">
-              <img class="rounded-circle figure-img placeholder" src="https://placehold.co/64x64/99999999/0078d4" alt=""
-                height="64" width="64">
-              <figcaption class="figure-caption placeholder-glow row">
-                <h4 class="placeholder-glow col-6"></h4>
-                <p class="placeholder-glow col-12"></p>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="team-member">
-            <figure class="figure">
-              <img class="rounded-circle figure-img img-fluid" src="https://placehold.co/240x240/99999999/0078d4"
-                alt="">
-              <figcaption class="figure-caption">
-                <h4>[Name, Title]</h4>
-                <p>
-                  [CPA with 10+ years experience in small business
-                  accounting.]
-                </p>
+      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container mx-auto my-5">
+      <div
+        class="container-fluid bg-body bg-opacity-10 rounded-5 border border-primary border-bottom-0 border-end-0 shadow">
+        <header class="bg-secondary rounded-pill border border-primary border-bottom-0 border-end-0 p-1 mb-5 shadow-sm">
+          <h2 class="ps-5">Meet the Team</h2>
+        </header>
+        <div class="team-grid row">
+          <div class="team-member col-12 col-md-6 col-lg-4">
+            <figure class="figure bg-primary-subtle rounded-pill">
+              <img class="rounded-circle figure-img img-fluid" src="./img/lake__river.jpg" alt="" height="64"
+                width="64">
+              <figcaption class="figure-caption row">
+                <h4 class="col-12">Brandon Lake</h4>
+                <p class="col-12">CEO</p>
               </figcaption>
             </figure>
           </div>
@@ -575,8 +552,9 @@
     <!-- FAQ SECTION -->
     <hr id="faq">
     <article id="faqs"
-      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container my-5 p-1">
-      <div class="container">
+      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container mx-auto my-5">
+      <div
+        class="container-fluid bg-body bg-opacity-10 rounded-5 border border-primary border-bottom-0 border-end-0 shadow">
         <h2>Frequently Asked Questions</h2>
         <div class="faqs">
           <div id="faq-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -666,8 +644,9 @@
     <!-- CONTACT SECTION -->
     <hr id="contact">
     <article
-      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container my-5 p-1">
-      <div class="container">
+      class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient rounded-5 shadow-lg container mx-auto my-5">
+      <div
+        class="container-fluid bg-body bg-opacity-10 rounded-5 border border-primary border-bottom-0 border-end-0 shadow">
         <h2>Ready to Get Started?</h2>
         <p>
           Contact us or schedule an appointment to discuss your accounting and
@@ -741,23 +720,26 @@
       </div>
     </article>
 
-    <!-- FOOTER -->
-    <hr id="footer">
-
   </main>
-  <footer class="footer page-footer">
+
+  <!-- Site footer -->
+  <footer id="side-footer" class="fixed-bottom footer page-footer fs-1 py-2">
     <section class="container">
       <h5 class="container-fluid pridi-extralight">
         © 2025 Big Sky Financial LLC. All Rights Reserved.
       </h5>
     </section>
   </footer>
+
+  <!-- Beginning of not rendered -->
+  <!-- SHADOW TEMPLATE -->
   <template id="shadow-template">
     <div data-bs-theme="">
-      <link rel="stylesheet" href="">
+      <link rel="stylesheet" href="#">
       <div class="shadow-body"></div>
     </div>
   </template>
+
   <!-- Popper.js -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script>

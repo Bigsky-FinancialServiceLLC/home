@@ -1,61 +1,269 @@
 <!doctype html>
-<html lang="en">
+<html class="no-js container-fluid p-0 m-0 w-100 d-block" lang="en-us">
 
 <head>
   <meta charset="utf-8">
-  <title>Page Not Found</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    * {
-      line-height: 1.2;
-      margin: 0;
-    }
+  <title>404 - Page Not Found | Big Sky Financial</title>
+  
+  <meta name="description" content="Oops! The page you're looking for doesn't exist. Return home or contact support.">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300&Source+Code+Pro" rel="stylesheet">
+  
+  <!-- Normalize.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
-    html {
-      color: #888;
-      display: table;
-      font-family: sans-serif;
-      height: 100%;
-      text-align: center;
-      width: 100%;
-    }
+  <!-- Halfmoon CSS Framework -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/halfmoon.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.2/css/cores/halfmoon.cores.css">
 
-    body {
-      display: table-cell;
-      vertical-align: middle;
-      margin: 2em auto;
-    }
-
-    h1 {
-      color: #555;
-      font-size: 2em;
-      font-weight: 400;
-    }
-
-    p {
-      margin: 0 auto;
-      width: 280px;
-    }
-
-    @media only screen and (max-width: 280px) {
-
-      body,
-      p {
-        width: 95%;
-      }
-
-      h1 {
-        font-size: 1.5em;
-        margin: 0 0 0.3em;
-      }
-
-    }
-  </style>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+ 
 </head>
 
-<body>
-  <h1>Page Not Found</h1>
-  <p>Sorry, but the page you were trying to view does not exist.</p>
+<body data-bs-theme="" data-bs-core="modern" class="with-custom-scrollbar bg-gradient subpixel-antialiased">
+  <!-- Mode Toggle -->
+  <button id="mode-toggle" class="btn topcoat-button topcoat-icon-button" data-bs-toggle="tooltip"
+    data-bs-title="Toggle Dark Mode">
+    <span class="icomatic icon fs-4 mx-auto text-primary">view</span>
+  </button>
+  <header>
+    <!-- PRIMARY NAVIGATION (Top Nav with Teal Gradient) for Large Screens -->
+    <nav class="top-nav d-none d-lg-block">
+      <div class="container-fluid pridi-light">
+        <div class="row">
+          <div class="col-3 text-start nav-social">
+            <a href="https://www.facebook.com/share/1G5VN3C3oE/?mibextid=wwXIfr" class="text-decoration-none me-3">
+              <span class="icomatic icon">facebook</span>
+            </a>
+            <a href="https://x.com/bigskyfinsrvllc?s=11" class="text-decoration-none me-3">
+              <span class="icomatic icon">twitter</span>
+            </a>
+            <a href="https://www.linkedin.com/in/brandon-l-363119184?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="text-decoration-none me-3">
+              <span class="icomatic icon">linkedin</span>
+            </a>
+          </div>
+          <div class="col-4 text-center branding">
+            <h3 class="m-0 user-select-none pridi-extralight">Big Sky Financial LLC.</h3>
+          </div>
+          <div class="col-5 text-end nav-contact">
+            <a href="#" class="text-decoration-none d-none">
+              <span class="icomatic icon">user</span>
+              <span class="icon-label">Login</span>
+            </a>
+            <a href="#" class="text-decoration-none ms-5">
+              <span class="icomatic icon">email</span>
+              <span class="icon-label">Subscribe</span>
+            </a>
+
+            <button 
+            type="button"
+            class="btn btn-primary topcoat-button topcoat-icon-button"
+            data-bs-toggle="popover"
+            data-bs-placement="top"
+            data-bs-title="Call Us!"
+            data-bs-content="( 406 ) 475 - 2009"
+          >
+          <span class="icomatic icon">call</span>
+          </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- SECONDARY NAVIGATION (Branding & Dropdown Page Links) for Large Screens -->
+    <nav class="bg-primary-subtle sticky-secondary text-primary d-none d-lg-block text-end text-teal shadow-lg lh-1">
+      <div class="container-fluid bg-secondary bg-opacity-10 p-0 pridi-regular">
+        <menu class="nav bg-secondary bg-opacity-10 w-100 m-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#about" id="about-dropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              About
+            </a>
+            <menu class="dropdown-menu bg-primary-subtle border border-secondary border-top-0 vstack"
+              aria-labelledby="aboutDropdown">
+              <li class="">
+                <a class="btn dropdown-item" href="#story">Our Story</a>
+              </li>
+              <li class="">
+                <a class="btn dropdown-item" href="#mission">Our Mission</a>
+              </li>
+              <li class="">
+                <a class="btn dropdown-item" href="#values">Our Values</a>
+              </li>
+              <li class="">
+                <a class="btn dropdown-item" href="#team">Our Team</a>
+              </li>
+            </menu>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Services
+            </a>
+            <menu class="dropdown-menu bg-primary-subtle border border-secondary border-top-0 vstack"
+              aria-labelledby="servicesDropdown">
+              <li>
+                <a class="btn dropdown-item" href="#bookkeeping">Bookkeeping</a>
+              </li>
+              <li>
+                <a class="btn dropdown-item" href="#accounting">Accounting</a>
+              </li>
+              <li>
+                <a class="btn dropdown-item" href="#payroll">Payroll</a>
+              </li>
+              <li>
+                <a class="btn dropdown-item" href="#consulting">Consulting</a>
+              </li>
+            </menu>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="taxDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Tax Center
+            </a>
+            <menu class="dropdown-menu bg-primary-subtle border border-secondary border-top-0 vstack"
+              aria-labelledby="taxDropdown">
+              <li>
+                <a class="btn dropdown-item" href="tax-prep.html">Tax Preparation</a>
+              </li>
+              <li>
+                <a class="btn dropdown-item" href="tax-resources.html">Tax Resources</a>
+              </li>
+            </menu>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Resources
+            </a>
+            <menu class="dropdown-menu bg-primary-subtle border border-secondary border-top-0 vstack"
+              aria-labelledby="resourcesDropdown">
+              <li>
+                <a class="btn dropdown-item" href="blog.html">Blog</a>
+              </li>
+              <li>
+                <a class="btn dropdown-item" href="guides.html">Guides</a>
+              </li>
+            </menu>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </menu>
+      </div>
+    </nav>
+
+    <!-- MOBILE NAVIGATION (for Medium & Small Screens) -->
+    <nav class="mobile-nav d-lg-none">
+      <div class="container">
+        <div class="row text-center align-items-center">
+          <div class="col-3 nav-icon d-none">
+            <a href="#" class="text-decoration-none">
+              <span class="icomatic icon">user</span>
+              <span class="icon-label d-none d-md-inline-block">Login</span>
+            </a>
+          </div>
+          <div class="col-3 me-auto nav-icon">
+            <a href="#" class="text-decoration-none">
+              <span class="icomatic icon">email</span>
+              <span class="icon-label d-none d-md-inline-block">Subscribe</span>
+            </a>
+          </div>
+          <div class="col-3 mx-auto nav-icon">
+            <a href="#" class="text-decoration-none">
+              <span class="icomatic icon">call</span>
+              <span class="icon-label d-none d-md-inline-block">(&nbsp;406&nbsp;)&nbsp;475&nbsp;-&nbsp;2009</span>
+            </a>
+          </div>
+          <div class="col-3 ms-auto nav-icon">
+            <button class="btn btn-link topcoat-icon-button">
+              <span class="icomatic icon">listview</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hidden Mobile Menu -->
+    <aside id="mobile-menu" class="mobile-menu d-lg-none vstack gap-2">
+      <li>
+        <a href="#home">Home</a>
+      </li>
+      <li>
+        <a href="#about">About</a>
+      </li>
+      <li>
+        <a href="#services">Services</a>
+      </li>
+      <li>
+        <a href="#taxes">Tax Center</a>
+      </li>
+      <li>
+        <a href="#resources">Resources</a>
+      </li>
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+    </aside>
+  </header>
+
+  <main class="text-body border border-primary border-5 border-start-0 border-end-0 w-100 p-1 mx-auto container-fluid">
+    
+
+
+    <section class="hero border border-primary-subtle border-5 border-start-0 border-end-0 py-1 mb-5 w-100 mx-auto text-center px-sm-1 px-md-2 px-lg-3">
+      <div class="hero-content container mx-auto py-2 px-sm-1 px-md-2 px-lg-3">
+      <h1 class="hero-title text-danger">404</h1>
+      <h2 class="text-body">Oops! Page Not Found</h2>
+      <p class="fs-5 text-secondary">The page you're looking for doesn’t exist or has been moved.</p>
+      <div class="mt-4">
+        <a href="index.html" class="btn topcoat-button--cta">Return Home</a>
+        <a href="contact.html" class="btn btn-secondary">Contact Support</a>
+      </div>
+      </div>
+    </section>
+    
+
+
+  </main>
+
+  <footer class="footer page-footer mt-auto">
+    <section class="container">
+      <h5 class="container-fluid pridi-extralight">
+        © 2025 Big Sky Financial LLC. All Rights Reserved.
+      </h5>
+    </section>
+  </footer>
+
+  <template id="shadow-template">
+    <div data-bs-theme="">
+      <link rel="stylesheet" href="">
+      <div class="shadow-body"></div>
+    </div>
+  </template>
+  <!-- Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha256-3gQJhtmj7YnV1fmtbVcnAV6eI4ws0Tr48bVZCThtCGQ=" crossorigin="anonymous"></script>
+
+  <!-- Icomatic.js -->
+  <script defer src="./js/vendor/icomatic.js"></script>
+
+  <!-- Particles.js -->
+  <!--<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    -->
+  <!-- Custom Script -->
+  <script src="./js/app.js" defer></script>
+
 </body>
 
 </html>

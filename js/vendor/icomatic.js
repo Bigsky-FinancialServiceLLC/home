@@ -1,5 +1,4 @@
 var IcomaticUtils = (function () {
-  console.log('IcomaticUtils');
   return {
     fallbacks: [
       { from: 'roundedrectangleoutline', to: '\ue045' },

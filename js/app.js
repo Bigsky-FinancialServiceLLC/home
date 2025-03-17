@@ -1,48 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
   class ModeToggle {
     constructor() {
-      this.elements = {
-        body: document.body,
-        toggleButton: document.getElementById("mode-toggle"),
-        stylesheet: document.getElementById("topcoat-stylesheet"),
-        shadowContainer: document.getElementById("shadow-template").content.cloneNode(true).firstElementChild
-      };
-      this.elements.body.appendChild(this.elements.shadowContainer);
-      this.elements.shadowStylesheet = this.elements.shadowContainer.querySelector('link');
+      
+     
+      this.body = document.body;
+      this.toggleButton = document.getElementById("mode-toggle");
+      this.stylesheet = document.getElementById("topcoat-stylesheet");
+
+      this.shadowContainer = document.getElementById("shadow-template").content.cloneNode(true).firstElementChild;
+      this.shadowStylesheet = this.shadowContainer.querySelector('link');
+
+      this.body.appendChild(this.shadowContainer);
+      this.shadowStylesheet = this.shadowContainer.querySelector('link');
 
       this.currentMode = ModeToggle.getCurrentMode();
-      this.elements.body.setAttribute("data-bs-theme", this.currentMode);
-      this.elements.shadowContainer.setAttribute("data-bs-theme", ModeToggle.reverseMode(this.currentMode));
-
-      this.prepareShadowContainer();
-
-      Object.assign(this.elements.shadowContainer.style, {
-        position: "fixed",
-        top: "0",
-        left: "0",
-        width: "100vw",
-        height: "100vh",
-        overflow: "hidden",
-        zIndex: "9999",
-        pointerEvents: "none",
-        clipPath: "circle(0% at bottom right)",
-      });
-
-      ModeToggle.hide(this.elements.shadowContainer);
+     
       this.init();
     }
 
     prepareShadowContainer() {
-      const clonedChildren = [...this.elements.body.children].map(el => {
-        const clone = el.cloneNode(true);
-        clone.querySelectorAll("[id]").forEach(child => {
-          child.setAttribute("id", "shadow-" + child.id);
+      const clonedChildren = [...this.body.children]
+        .filter(el => el.tagName !== 'SCRIPT' && el.tagName !== 'TEMPLATE') // Skip script and template elements
+        .map(el => {
+          const clone = el.cloneNode(true);
+          clone.querySelectorAll("[id]").forEach(child => {
+            child.setAttribute("id", "shadow-" + child.id);
+          });
+          return clone;
         });
-        return clone;
-      });
-
-      this.elements.shadowContainer.replaceChildren(...clonedChildren);
+    
+      console.log(clonedChildren);
+      this.shadowContainer.replaceChildren(...clonedChildren);
     }
+    
 
     static getCurrentMode() {
       try {
@@ -55,7 +45,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     init() {
-      this.installClickListener(this.elements.toggleButton);
+      this.body.setAttribute("data-bs-theme", this.currentMode);
+      this.shadowContainer.setAttribute("data-bs-theme", ModeToggle.reverseMode(this.currentMode));
+      this.prepareShadowContainer();
+   
+
+      Object.assign(this.shadowContainer.style, {
+        position: "fixed",
+        top: "0",
+        left: "0",
+        width: "100vw",
+        height: "100vh",
+        overflow: "auto",
+        zIndex: "9999",
+        pointerEvents: "none",
+        clipPath: "circle(0% at bottom right)",
+      });
+
+      ModeToggle.hide(this.shadowContainer);
+      this.installClickListener(this.toggleButton);
       this.installScrollListener(document);
       this.installResizeListener(window);
       this.updateStylesheets();
@@ -78,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     static generateTopcoatHref(device, mode) {
-      return `https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-${device}-${mode}.min.css`;
+      return `./../css/vendor/topcoat/topcoat-${device}-${mode}.min.css`;
     }
 
     installClickListener(btn) {
@@ -102,15 +110,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     updateStylesheets() {
-      this.elements.stylesheet.href = ModeToggle.generateTopcoatHref(ModeToggle.currentDeviceString(), ModeToggle.getCurrentMode());
+      this.stylesheet.href = ModeToggle.generateTopcoatHref(ModeToggle.currentDeviceString(), ModeToggle.getCurrentMode());
     }
 
     animateModeSwitch() {
       this.currentMode = ModeToggle.reverseMode(ModeToggle.getCurrentMode());
     
-      ModeToggle.show(this.elements.shadowContainer);
-      this.elements.shadowContainer.setAttribute("data-bs-theme", this.currentMode);
-      this.elements.shadowStylesheet.href = this.getNextModeStylesheet();
+      ModeToggle.show(this.shadowContainer);
+      this.shadowContainer.setAttribute("data-bs-theme", this.currentMode);
+      this.shadowStylesheet.href = ModeToggle.getNextModeStylesheet();
     
       // 🚀 Ensure shadow DOM is correctly scrolled BEFORE animation starts
       this.syncScroll(); 
@@ -131,14 +139,14 @@ document.addEventListener("DOMContentLoaded", function () {
     
         if (progress < 1) {
           const size = Math.min(maxRadius, progress * maxRadius);
-          this.elements.shadowContainer.style.clipPath = `circle(${size}px at bottom right)`;
+          this.shadowContainer.style.clipPath = `circle(${size}px at bottom right)`;
           requestAnimationFrame(animate);
         } else {
-          this.elements.shadowContainer.style.clipPath = `circle(${maxRadius}px at bottom right)`;
+          this.shadowContainer.style.clipPath = `circle(${maxRadius}px at bottom right)`;
     
           setTimeout(() => {
             this.toggleMode();
-            ModeToggle.hide(this.elements.shadowContainer);
+            ModeToggle.hide(this.shadowContainer);
           }, 50);
         }
       };
@@ -151,24 +159,24 @@ document.addEventListener("DOMContentLoaded", function () {
       return ModeToggle.isMobile(window.innerWidth) ? "mobile" : "desktop";
     }
 
-    getNextModeStylesheet() {
-      return `https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-${ModeToggle.currentDeviceString()}-${this.currentMode}.min.css`;
+    static getNextModeStylesheet() {
+      return ModeToggle.generateTopcoatHref(ModeToggle.currentDeviceString(), ModeToggle.reverseMode());
     }
 
     toggleMode() {
       this.currentMode = ModeToggle.reverseMode(ModeToggle.getCurrentMode());
       localStorage.setItem("mode", this.currentMode);
-      this.elements.body.setAttribute("data-bs-theme", this.currentMode);
+      this.body.setAttribute("data-bs-theme", this.currentMode);
       this.updateStylesheets();
     }
 
     syncScroll() {
-      if (!this.elements.shadowContainer) return;
+      if (!this.shadowContainer) return;
       
       requestAnimationFrame(() => {
         const scrollY = window.scrollY;
-        if (this.elements.shadowContainer.scrollTop !== scrollY) {
-          this.elements.shadowContainer.scrollTo(0, scrollY);
+        if (this.shadowContainer.scrollTop !== scrollY) {
+          this.shadowContainer.scrollTo(0, scrollY);
         }
       });
     }
@@ -185,5 +193,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+ function initializePopovers() {
+  const popoverTriggerList = document.querySelectorAll(
+    "[data-bs-toggle='popover']"
+  );
+  const popoverList = [...popoverTriggerList].map(
+    popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl)
+  );  
+ }
+
   initializeTooltips();
+  initializePopovers();
 });
