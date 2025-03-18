@@ -165,9 +165,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     toggleMode() {
       this.currentMode = ModeToggle.reverseMode(ModeToggle.getCurrentMode());
-      localStorage.setItem("mode", this.currentMode);
-      this.body.setAttribute("data-bs-theme", this.currentMode);
       this.updateStylesheets();
+      this.body.setAttribute("data-bs-theme", this.currentMode);
+      localStorage.setItem("mode", this.currentMode);
     }
 
     syncScroll() {
