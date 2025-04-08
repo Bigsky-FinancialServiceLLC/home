@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
       this.body.appendChild(this.shadowContainer);
       this.shadowStylesheet = this.shadowContainer.querySelector('link');
 
-      this.currentMode = ModeToggle.getCurrentMode();
+      //this.currentMode = ModeToggle.getCurrentMode();
      
       this.init();
     }
@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
       this.shadowContainer.replaceChildren(...clonedChildren);
     }
     
-
     static getCurrentMode() {
       try {
         const storedMode = localStorage.getItem("mode");
@@ -45,11 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     init() {
-      this.body.setAttribute("data-bs-theme", this.currentMode);
-      this.shadowContainer.setAttribute("data-bs-theme", ModeToggle.reverseMode(this.currentMode));
+      this.body.setAttribute("data-bs-theme", ModeToggle.getCurrentMode());
+      this.shadowContainer.setAttribute("data-bs-theme", ModeToggle.reverseMode());
       this.prepareShadowContainer();
    
-
       Object.assign(this.shadowContainer.style, {
         position: "fixed",
         top: "0",
@@ -85,8 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
       e.classList.remove("d-none");
     }
 
-    static generateTopcoatHref(device, mode) {
-      return `./../css/vendor/topcoat/topcoat-${device}-${mode}.min.css`;
+    static generateTopcoatHref() {
+      return `./../css/vendor/topcoat/topcoat-${ModeToggle.currentDeviceString()}-${ModeToggle.getCurrentMode()}.min.css`;
     }
 
     installClickListener(btn) {
@@ -110,11 +108,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     updateStylesheets() {
-      this.stylesheet.href = ModeToggle.generateTopcoatHref(ModeToggle.currentDeviceString(), ModeToggle.getCurrentMode());
+      this.stylesheet.href = ModeToggle.generateTopcoatHref();
     }
 
     animateModeSwitch() {
-      this.currentMode = ModeToggle.reverseMode();
+      //this.currentMode = ModeToggle.reverseMode();
     
       ModeToggle.show(this.shadowContainer);
       this.shadowContainer.setAttribute("data-bs-theme", ModeToggle.reverseMode());
@@ -164,10 +162,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     toggleMode() {
-      this.currentMode = ModeToggle.reverseMode(ModeToggle.getCurrentMode());
+      //this.currentMode = ModeToggle.reverseMode(ModeToggle.getCurrentMode());
+      this.body.setAttribute("data-bs-theme", ModeToggle.reverseMode());
       this.updateStylesheets();
-      this.body.setAttribute("data-bs-theme", this.currentMode);
-      localStorage.setItem("mode", this.currentMode);
+      localStorage.setItem("mode", ModeToggle.getCurrentMode());
     }
 
     syncScroll() {
