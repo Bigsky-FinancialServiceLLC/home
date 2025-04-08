@@ -1,53 +1,85 @@
 document.addEventListener("DOMContentLoaded", function () {
+  class Mode {
+    constructor(stylesheet, shadowContainer, shadowStylesheet) {
+      ModeToggle.prepareShadowContainer(shadowContainer);
+      stylesheet.href = ModeToggle.generateTopcoatHref(
+        ModeToggle.currentDeviceString(),
+        ModeToggle.getCurrentMode()
+      );
+      shadowStylesheet.href = ModeToggle.generateTopcoatHref(
+        ModeToggle.currentDeviceString(),
+        ModeToggle.reverseMode()
+      );
+      document.body.setAttribute("data-bs-theme", ModeToggle.getCurrentMode());
+      shadowContainer.setAttribute("data-bs-theme", ModeToggle.reverseMode());
+    }
+  }
   class ModeToggle {
     constructor() {
-      
-     
-      this.body = document.body;
+      this.currentMode = ModeToggle.getCurrentMode();
+      this.nextMode = ModeToggle.reverseMode();
+      this.device = ModeToggle.currentDeviceString();
+
       this.toggleButton = document.getElementById("mode-toggle");
       this.stylesheet = document.getElementById("topcoat-stylesheet");
 
-      this.shadowContainer = document.getElementById("shadow-template").content.cloneNode(true).firstElementChild;
-      this.shadowStylesheet = this.shadowContainer.querySelector('link');
+      this.shadowContainer = document
+        .getElementById("shadow-template")
+        .content.cloneNode(true).firstElementChild;
+      console.log(this.shadowContainer);
+      this.shadowStylesheet = this.shadowContainer.querySelector("link");
 
-      this.body.appendChild(this.shadowContainer);
-      this.shadowStylesheet = this.shadowContainer.querySelector('link');
+      document.body.appendChild(this.shadowContainer);
+      this.shadowStylesheet = this.shadowContainer.querySelector("link");
 
-      //this.currentMode = ModeToggle.getCurrentMode();
-     
       this.init();
     }
 
-    prepareShadowContainer() {
-      const clonedChildren = [...this.body.children]
-        .filter(el => el.tagName !== 'SCRIPT' && el.tagName !== 'TEMPLATE') // Skip script and template elements
-        .map(el => {
+    static prepareShadowContainer(shadowContainer) {
+      const clonedChildren = [...document.body.children]
+        .filter(
+          (el, i) =>
+            (el.id === "site-header" ||
+              el.id === "site-footer" ||
+              el.tagName === "MAIN") &&
+            el.tagName !== "SCRIPT" &&
+            el.tagName !== "TEMPLATE"
+        ) // Skip script and template elements
+        .map((el) => {
           const clone = el.cloneNode(true);
-          clone.querySelectorAll("[id]").forEach(child => {
+          clone.querySelectorAll("[id]").forEach((child) => {
             child.setAttribute("id", "shadow-" + child.id);
           });
           return clone;
         });
-    
-      console.log(clonedChildren);
-      this.shadowContainer.replaceChildren(...clonedChildren);
+
+      console.log(shadowContainer);
+      shadowContainer.replaceChildren(...clonedChildren);
     }
-    
+
     static getCurrentMode() {
+      let res;
       try {
         const storedMode = localStorage.getItem("mode");
-        return storedMode !== null ? storedMode : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        res =
+          storedMode !== null
+            ? storedMode
+            : window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
       } catch (error) {
         console.error("Error: localStorage unavailable", error);
-        return "light";
+        res = "light";
       }
+      console.log(res);
+      return res;
     }
 
     init() {
-      this.body.setAttribute("data-bs-theme", ModeToggle.getCurrentMode());
-      this.shadowContainer.setAttribute("data-bs-theme", ModeToggle.reverseMode());
-      this.prepareShadowContainer();
-   
+      document.body.setAttribute("data-bs-theme", this.currentMode);
+      this.shadowContainer.setAttribute("data-bs-theme", this.nextMode);
+      ModeToggle.prepareShadowContainer(this.shadowContainer);
+
       Object.assign(this.shadowContainer.style, {
         position: "fixed",
         top: "0",
@@ -64,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
       this.installClickListener(this.toggleButton);
       this.installScrollListener(document);
       this.installResizeListener(window);
-      this.updateStylesheets();
+      ModeToggle.updateStylesheet(this.stylesheet);
     }
 
     static reverseMode() {
@@ -83,8 +115,8 @@ document.addEventListener("DOMContentLoaded", function () {
       e.classList.remove("d-none");
     }
 
-    static generateTopcoatHref() {
-      return `./../css/vendor/topcoat/topcoat-${ModeToggle.currentDeviceString()}-${ModeToggle.getCurrentMode()}.min.css`;
+    static generateTopcoatHref(device, mode) {
+      return `./css/vendor/topcoat/topcoat-${device}-${mode}.min.css`;
     }
 
     installClickListener(btn) {
@@ -93,13 +125,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     installScrollListener(doc) {
       doc.addEventListener("scroll", () => {
-        requestAnimationFrame(() => this.syncScroll());
+        requestAnimationFrame(() => ModeToggle.syncScroll());
       });
     }
 
     installResizeListener(win) {
       win.addEventListener("resize", () => {
-        requestAnimationFrame(() => this.updateStylesheets());
+        requestAnimationFrame(() =>
+          ModeToggle.updateStylesheet(this.stylesheet)
+        );
       });
     }
 
@@ -107,99 +141,161 @@ document.addEventListener("DOMContentLoaded", function () {
       return num * num;
     }
 
-    updateStylesheets() {
-      this.stylesheet.href = ModeToggle.generateTopcoatHref();
-    }
+    static updateStylesheet(stylesheet) {
+      const href = stylesheet?.href ?? "";
+      this.currentMode = /-(light|dark)\.min\.css$/.exec(href)?.[1];
+      if (!this.currentMode) return;
 
+      const flippedMode = currentMode === "light" ? "dark" : "light";
+      const newHref = href.replace(
+        /-(light|dark)\.min\.css$/,
+        `-${flippedMode}.min.css`
+      );
+      stylesheet.href = newHref;
+      localStorage.setItem("mode", flippedMode);
+    }
+    static flipBody(nextMode, device) {
+      document.body.setAttribute("data-bs-theme", nextMode);
+      ModeToggle.activateStylesheet(device, nextMode);
+      localStorage.setItem("mode", nextMode);
+    }
     animateModeSwitch() {
-      //this.currentMode = ModeToggle.reverseMode();
-    
+      this.currentMode = ModeToggle.getCurrentMode();
+      this.nextMode = ModeToggle.reverseMode();
+      this.device = ModeToggle.currentDeviceString();
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        ModeToggle.flipBody(this.nextMode, this.device);
+        return;
+      }
+
+      // 1. Shadow container = current mode (the snapshot)
+      this.shadowContainer.setAttribute("data-bs-theme", this.nextMode);
+      ModeToggle.activateShadowStylesheet(
+        this.shadowContainer,
+        this.device,
+        this.nextMode
+      );
+
+      ModeToggle.syncScroll(this.shadowContainer);
       ModeToggle.show(this.shadowContainer);
-      this.shadowContainer.setAttribute("data-bs-theme", ModeToggle.reverseMode());
-      this.shadowStylesheet.href = ModeToggle.getNextModeStylesheet();
-    
-      // 🚀 Ensure shadow DOM is correctly scrolled BEFORE animation starts
-      this.syncScroll(); 
-    
+
+      // 2. Flip real DOM underneath
+      ModeToggle.flipBody(this.nextMode, this.device);
+
+      // 3. Animate clip reveal
       const vw = window.innerWidth;
       const vh = window.innerHeight;
-      const maxRadius = Math.sqrt(ModeToggle.sqr(vw) + ModeToggle.sqr(vh));
-    
+      const maxRadius = Math.sqrt(vw * vw + vh * vh);
       let animationStart = null;
-      const duration = 600;
-    
+      const duration = 900;
+
       const animate = (timestamp) => {
         if (!animationStart) animationStart = timestamp;
         const progress = (timestamp - animationStart) / duration;
-    
-        // 🚀 Continuously sync scroll position throughout animation
-        this.syncScroll(); 
-    
+        const size = Math.min(maxRadius, progress * maxRadius);
+
+        ModeToggle.syncScroll(this.shadowContainer);
+        this.shadowContainer.style.clipPath = `circle(${size}px at bottom right)`;
+
         if (progress < 1) {
-          const size = Math.min(maxRadius, progress * maxRadius);
-          this.shadowContainer.style.clipPath = `circle(${size}px at bottom right)`;
           requestAnimationFrame(animate);
         } else {
           this.shadowContainer.style.clipPath = `circle(${maxRadius}px at bottom right)`;
-    
-          setTimeout(() => {
-            this.toggleMode();
-            ModeToggle.hide(this.shadowContainer);
-          }, 50);
+          ModeToggle.hide(this.shadowContainer);
         }
       };
-    
+
       requestAnimationFrame(animate);
     }
-   
+
+    static activateStylesheet(device, mode, container = document) {
+      const allSheets = container.querySelectorAll("link[id^='topcoat-']");
+      allSheets.forEach((link) => (link.disabled = true));
+
+      const targetId = `topcoat-${device}-${mode}`;
+      const target = container.querySelector(`#${targetId}`);
+      if (target) {
+        target.disabled = false;
+        if (container === document) {
+          localStorage.setItem("mode", mode);
+        }
+      } else {
+        console.warn(`Stylesheet not found: #${targetId}`);
+      }
+    }
+    static activateShadowStylesheet(shadowContainer, device, mode) {
+      const links = shadowContainer.querySelectorAll("link[id^='topcoat-']");
+      links.forEach((link) => (link.disabled = true));
+
+      const targetId = `topcoat-${device}-${mode}`;
+      const match = shadowContainer.querySelector(`#${targetId}`);
+      if (match) match.disabled = false;
+      else console.warn(`Shadow stylesheet not found: #${targetId}`);
+    }
 
     static currentDeviceString() {
       return ModeToggle.isMobile(window.innerWidth) ? "mobile" : "desktop";
     }
 
-    static getNextModeStylesheet() {
-      return ModeToggle.generateTopcoatHref(ModeToggle.currentDeviceString(), ModeToggle.reverseMode());
-    }
-
-    toggleMode() {
-      //this.currentMode = ModeToggle.reverseMode(ModeToggle.getCurrentMode());
-      this.body.setAttribute("data-bs-theme", ModeToggle.reverseMode());
-      this.updateStylesheets();
-      localStorage.setItem("mode", ModeToggle.getCurrentMode());
-    }
-
-    syncScroll() {
-      if (!this.shadowContainer) return;
-      
+    static syncScroll(shadowContainer) {
+      if (!shadowContainer) return;
       requestAnimationFrame(() => {
         const scrollY = window.scrollY;
-        if (this.shadowContainer.scrollTop !== scrollY) {
-          this.shadowContainer.scrollTo(0, scrollY);
+        if (shadowContainer.scrollTop !== scrollY) {
+          shadowContainer.scrollTo(0, scrollY);
         }
       });
     }
-    
   }
 
   new ModeToggle();
 
-  function initializeTooltips() {
-    document.querySelectorAll("[data-bs-toggle='tooltip']").forEach(el => {
+  (function initializeTooltips() {
+    const tooltips = document.querySelectorAll("[data-bs-toggle='tooltip']")
+    console.log(tooltips);
+    tooltips.forEach((el) => {
       const instance = bootstrap.Tooltip.getInstance(el);
       if (instance) instance.dispose();
       new bootstrap.Tooltip(el);
     });
-  }
+  })();
 
- function initializePopovers() {
-  const popoverTriggerList = document.querySelectorAll(
-    "[data-bs-toggle='popover']"
-  );
-  const popoverList = [...popoverTriggerList].map(
-    popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl)
-  );  
- }
+  (function initializePopovers() {
+    const popoverTriggerList = document.querySelectorAll(
+      "[data-bs-toggle='popover']"
+    );
+    console.log(popoverTriggerList);
+    [...popoverTriggerList].forEach(
+      (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+    );
+  })();
 
-  initializeTooltips();
-  initializePopovers();
+
+  const submitButton = document.getElementById("main-form-submit");
+  submitButton.addEventListener("click", async (e) => {
+    console.log('Sending Request.');
+    e.preventDefault();
+  
+    const name = document.getElementById("name-input").value;
+    const email = document.getElementById("email-input").value;
+    const message = document.getElementById("comments-input").value;
+  
+    const formData = { name, email, message };
+  
+    try {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbz7Dn-_I0HuEPnDGLzAPXW7mFdtQSGbvIgmfarC6texmBsB1Q3Iya6wUhyjP67cPbv7/exec", {
+        method: "POST",
+        mode: "no-cors", // Google Apps Script does not support CORS
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+  console.log(response);
+      alert("Email Sent Successfully!");
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("Failed to send email.");
+    }
+  });
+  
 });
