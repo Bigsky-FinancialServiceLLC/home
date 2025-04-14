@@ -47,7 +47,7 @@
     />
     <!-- Favicon and Theme Color -->
     <link rel="icon" href="./favicon.ico" sizes="any" />
-    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./favicon.ico" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="./icon.png" />
     <meta name="theme-color" content="#0078d4" />
     <!-- Google Fonts -->
@@ -93,10 +93,10 @@
     <link rel="stylesheet" href="./css/style.css" />
     <!-- Web App Manifest -->
     <link rel="manifest" href="site.webmanifest" />
-    <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css" />
+
   </head>
 
-  <body class="bg-primary-subtle" data-bs-theme="" data-bs-core="modern">
+  <body class="" data-bs-theme="" data-bs-core="modern">
     <!-- Mode Toggle -->
     <button
       id="mode-toggle"
@@ -107,10 +107,10 @@
       <span class="icomatic icon fs-4 mx-auto">view</span>
     </button>
     <!-- Site Header -->
-    <header id="site-header">
+    <header id="site-header" class="w-100">
       <!-- PRIMARY NAVIGATION (Top Nav with Teal Gradient) for Large Screens -->
-      <nav class="bg-primary-subtle top-nav d-none d-lg-block">
-        <div class="bg-brand container-fluid pridi-light">
+      <hgroup class="bg-primary-subtle top-nav d-none d-lg-block">
+        <nav class="bg-brand container-fluid pridi-light">
           <div class="row">
             <!-- Social Links -->
             <div class="col-2 text-start nav-social py-1">
@@ -174,13 +174,9 @@
                 <span class="icomatic icon">user</span>
                 <span class="icon-label">Login</span>
               </a>
-              <a href="#" class="text-decoration-none ms-5">
-                <span class="icomatic icon">email</span>
-                <span class="icon-label">Subscribe</span>
-              </a>
               <button
                 type="button"
-                class="btn btn-primary topcoat-button topcoat-icon-button"
+                class="btn btn-primary topcoat-button--large topcoat-icon-button--large m-2"
                 data-bs-toggle="popover"
                 data-bs-placement="top"
                 data-bs-title="Call Us!"
@@ -190,7 +186,7 @@
               </button>
             </div>
           </div>
-        </div>
+        </nav>
         <!-- SECONDARY NAVIGATION (Branding & Dropdown Page Links) for Large Screens -->
         <nav
           class="sticky-secondary topcoat-tab-bar d-none d-lg-block text-end text-teal border-0"
@@ -345,7 +341,7 @@
             </menu>
           </div>
         </nav>
-      </nav>
+      </hgroup>
       <!-- MOBILE NAVIGATION (for Medium & Small Screens) -->
       <nav class="mobile-nav d-lg-none bg-brand">
         <div class="container">
@@ -404,18 +400,18 @@
     </header>
     <!-- Main -->
     <main
-      class="bg-brand text-body p-2 border border-primary border-bottom-0 border-end-0 shadow w-100 p-1 mx-auto container-fluid"
+      class="bg-brand text-body p-xs-0 p-sm-1 p-md-2 p-lg-3 p-xl-4 border border-primary border-bottom-0 border-end-0 shadow w-100 mx-auto container-fluid"
     >
       <!-- HERO / SPLASH SECTION -->
       <hr id="home" />
       <header
-        class="hero border bg-brand border-primary-subtle border-5 border-start-0 border-end-0 py-1 mb-5 w-100 mx-auto text-center px-sm-1 px-md-2 px-lg-3"
+        class="hero border bg-brand border-primary-subtle border-5 border-start-0 border-end-0 py-1 mb-5 w-100 mx-auto text-center p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
       >
-        <div
-          class="hero-content container mx-auto py-2 px-sm-1 px-md-2 px-lg-3"
+        <hgroup
+          class="hero-content container mx-auto py-2 p-xs-0 p-sm-0 p-md-0 p-lg-1 p-xl-2"
         >
           <div
-            class="row cta bg-primary-subtle bg-gradient shadow-lg border border-body border-5 border-start-0 border-end-0 py-3 px-sm-0 px-md-1 px-lg-2 mx-auto"
+            class="row cta bg-primary-subtle bg-gradient shadow-lg border border-body border-5 border-start-0 border-end-0 p-xs-0 p-sm-0 p-md-0 p-lg-0 p-xl-1 mx-auto"
           >
             <!-- Two columns on large screens; stacked on smaller screens -->
             <div class="col-lg-5 px-sm-0 px-md-1 px-lg-2 shadow-md">
@@ -445,13 +441,10 @@
                     id="name-input"
                     class="topcoat-text-input form-control"
                     placeholder="Name"
-                    data-bs-toggle="tooltip"
-                    data-bs-title="How should we refer to yourself?"
                   />
                   <label
                     for="name-input"
                     class="form-label pridi-regular"
-                    required
                     >Name</label
                   >
                 </div>
@@ -461,6 +454,7 @@
                     id="email-input"
                     class="topcoat-text-input form-control"
                     placeholder="Email"
+                    required
                   />
                   <label for="email-input" class="form-label pridi-regular"
                     >Email</label
@@ -501,13 +495,13 @@
               
             </div>
           </div>
-        </div>
+        </hgroup>
       </header>
 
       <!-- FOUR MAIN PAGE LINKS SECTION -->
-      <section class="main-links container my-5 py-5">
+      <section class="main-links container p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3">
         <header class="row g-0">
-          <div class="col-lg-3 col-md-6 col-sm-6 col-12 bg-brand">
+          <div class="col-lg-3 col-md-6 col-sm-6 col-12 m-0">
             <a
               href="individual-services.html"
               class="btn rounded-5 subpixel-antialiased rounded-bottom-0 rounded-end-0 link-card d-block shadow"
@@ -516,7 +510,7 @@
               <span class="icon-label pridi-regular">Individual Services</span>
             </a>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-12 bg-brand">
+          <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <a
               href="business-services.html"
               class="btn rounded link-card d-block rounded-0 shadow"
@@ -525,7 +519,7 @@
               <span class="icon-label pridi-regular">Business Services</span>
             </a>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-12 bg-brand">
+          <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <a
               href="tax-services.html"
               class="btn rounded-0 link-card d-block shadow"
@@ -549,7 +543,7 @@
       <!-- ABOUT SECTION -->
       <hr id="about" class="my-5 p-2 mx-auto" />
       <article
-        class="border border-primary border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5"
+        class="border border-primary border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5  p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
       >
         <div
           class="container-fluid bg-secondary bg-opacity-10 border border-primary border-bottom-0 border-end-0 shadow"
@@ -580,27 +574,27 @@
                     class="col-lg-6 col-md-8 col-sm-12 order-lg-2 showcase-img"
                   >
                     <figure class="figure p-5">
-                      <img
-                        class="border figure-img img-fluid"
-                        src="./img/1000000157.jpg"
-                        alt=""
-                      />
                       <figcaption class="figure-caption card">
                         <!-- Our Story -->
                         <header class="card-header">
-                          <hgroup id="story" class="shadow-sm my-5">
-                            <h3 class="card-title">Our Story</h3>
+                          <hgroup id="story" class="card-title">
+                            <h3>Our Story</h3>
                           </hgroup>
                         </header>
                         <div class="card-body">
                           <p
-                            class="fs-5 text-center p-2 border border-primary border-bottom-0 border-end-0 shadow"
+                            class="fs-5 bg-body text-center p-2 border border-primary border-bottom-0 border-end-0 shadow"
                           >
                             Battle-tested combat veteran with 10+ years
                             experience in small business accounting.
                           </p>
                         </div>
                       </figcaption>
+                      <img
+                        class="border figure-img img-fluid"
+                        src="./img/1000002103.jpg"
+                        alt=""
+                      />
                     </figure>
                   </div>
 
@@ -610,7 +604,7 @@
                     <figure class="figure p-5">
                       <img
                         class="border figure-img img-fluid"
-                        src="./img/1000002103.jpg"
+                        src="./img/1000000157.jpg"
                         alt=""
                       />
                       <figcaption class="figure-caption">
@@ -647,9 +641,9 @@
                       <figcaption class="figure-caption card">
                         <!-- Our Values -->
                           <header class="card-header">
-                            <hgroup class="text-start shadow-sm card my-0">
-                            <h3 class="card-title py-2">Our Values</h3>
-                          </hgroup>
+                            <hgroup class="card-title text-start shadow-sm my-0">
+                              <h3 class="">Our Values</h3>
+                            </hgroup>
                           </header>
                           <div class="card-body">
                             <dl class="list-group card-text m-auto px-auto">
@@ -711,7 +705,7 @@
       <!-- SERVICES SECTION -->
       <hr id="services" class="my-5 p-2 mx-auto" />
       <article
-        class="border border-primary-subtle bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5"
+        class="border border-primary-subtle bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5 p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
       >
         <div
           class="container-fluid bg-body bg-opacity-10 border border-primary border-top-0 border-top-0 shadow p-2"
@@ -789,7 +783,7 @@
       <!-- TESTIMONIALS SECTION -->
       <hr id="testimonials" />
       <article
-        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5"
+        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto  p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
       >
         <div
           class="container-fluid bg-body bg-opacity-10 border border-primary border-bottom-0 border-end-0 shadow"
@@ -864,7 +858,7 @@
       <!-- TEAM SECTION -->
       <hr id="team" />
       <article
-        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5"
+        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5  p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
       >
         <div
           class="container-fluid bg-body bg-opacity-10 border border-primary border-bottom-0 border-end-0 shadow"
@@ -902,7 +896,7 @@
       <hr id="faq" />
       <article
         id="faqs"
-        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5"
+        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5  p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
       >
         <div
           class="container-fluid bg-body bg-opacity-75 border border-primary border-bottom-0 border-end-0 shadow"
@@ -1043,7 +1037,7 @@
       <!-- CONTACT SECTION -->
       <hr id="contact" />
       <article
-        class="border border-primary-subtle border-5 border-top-0 border-start-0 bg-secondary bg-gradient shadow-lg container mx-auto my-5 pt-4 ps-4 my-5"
+        class="border border-primary-subtle border-5 border-top-0 border-start-0 bg-secondary bg-gradient shadow-lg container mx-auto my-5 my-5  p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
       >
         <div
           class="container-fluid bg-body border border-primary-subtle border-5 border-bottom-0 border-end-0 shadow"
@@ -1184,46 +1178,14 @@
       </article>
     </main>
     <!-- Site footer -->
-    <footer id="site-footer" class="">
+    <footer id="site-footer" class="p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3">
       <section class="container">
         <h5 class="container-fluid pridi-extralight">
           © 2025 Big Sky Financial LLC. All Rights Reserved.
         </h5>
       </section>
     </footer>
-    <!-- SHADOW TEMPLATE -->
-    <template id="shadow-template">
-      <div data-bs-theme="">
-        <!-- Topcoat UI Styles -->
-        <link
-          disabled
-          id="shadow-desktop-dark"
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-desktop-dark.min.css"
-        />
-        <link
-          disabled
-          id="shadow-desktop-light"
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-desktop-light.min.css"
-        />
-        <link
-          disabled
-          id="shadow-mobile-dark"
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-mobile-dark.min.css"
-        />
-        <link
-          disabled
-          id="shadow-mobile-light"
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-mobile-light.min.css"
-        />
-
-        <div class="shadow-body"></div>
-      </div>
-    </template>
-
+  
     <!-- Popper.js -->
     <script
       src="./js/vendor/popper/popper.min.js"
