@@ -80,7 +80,7 @@ console.log(ModeToggle.getCurrentMode());
         }
       );
       alert(`Confirmation email sent successfully!
-        Make sure to check your spam folder.`);
+Make sure to check your spam folder for an email from noreply@bigskyfinancialllc.com`);
     } catch (error) {
       console.error("Error sending email:", error);
       alert("Failed to send email.");

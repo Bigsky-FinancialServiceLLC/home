@@ -50,18 +50,7 @@
     <link rel="icon" href="./favicon.ico" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="./icon.png" />
     <meta name="theme-color" content="#0078d4" />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300&Source+Code+Pro"
-      rel="stylesheet"
-    />
-    <!-- Normalize.css Reset-->
-    <link rel="stylesheet" href="./css/vendor/normalize/normalize.min.css" />
-    <!--<link type="text/css" rel="stylesheet" href="https://wmeredith.github.io/MercuryCSS/css/min/mercury.min.css">--->
-    <!-- Halfmoon CSS Framework -->
-    <link rel="stylesheet" href="./css/vendor/halfmoon/halfmoon.min.css" />
-    <!-- Halfmoon Cores -->
-    <link rel="stylesheet" href="./css/vendor/halfmoon/halfmoon.cores.css" />
+
     <!-- Topcoat UI Styles -->
     <link
       disabled
@@ -87,13 +76,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-mobile-light.min.css"
     />
-    <!-- Icomatic Icon Font -->
-    <link rel="stylesheet" href="./css/vendor/icomatic/icomatic.css" />
     <!-- Custom Styles -->
     <link rel="stylesheet" href="./css/style.css" />
     <!-- Web App Manifest -->
     <link rel="manifest" href="site.webmanifest" />
-
   </head>
 
   <body class="" data-bs-theme="" data-bs-core="modern">
@@ -442,9 +428,7 @@
                     class="topcoat-text-input form-control"
                     placeholder="Name"
                   />
-                  <label
-                    for="name-input"
-                    class="form-label pridi-regular"
+                  <label for="name-input" class="form-label pridi-regular"
                     >Name</label
                   >
                 </div>
@@ -480,19 +464,25 @@
                     <h2>Tell Us More</h2>
                     <form id="detailed-form">
                       <label for="business-type">Business Type:</label>
-                      <input type="text" id="business-type">
-                
+                      <input type="text" id="business-type" />
+
                       <label for="services-needed">Services Needed:</label>
                       <textarea id="services-needed"></textarea>
-                
-                      <button id="more-details-submit" type="button">Submit Full Inquiry</button>
+
+                      <button id="more-details-submit" type="button">
+                        Submit Full Inquiry
+                      </button>
                     </form>
                   </div>
-                </div></fieldset>
-                <button id="main-form-submit" type="submit" class="btn topcoat-button--cta cta-btn">
-                  <span class="pridi-light">Submit</span>
-                </button>
-              
+                </div>
+              </fieldset>
+              <button
+                id="main-form-submit"
+                type="submit"
+                class="btn topcoat-button--cta cta-btn"
+              >
+                <span class="pridi-light">Submit</span>
+              </button>
             </div>
           </div>
         </hgroup>
@@ -540,10 +530,109 @@
         </header>
       </section>
 
+      <!-- SERVICES SECTION -->
+      <hr id="services" class="my-5 p-2 mx-auto" />
+      <article
+        class="border border-primary-subtle bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5 p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
+      >
+        <div
+          class="container-fluid bg-body bg-opacity-10 border border-primary border-top-0 border-top-0 shadow p-2"
+        >
+          <header
+            class="bg-secondary border border-primary border-bottom-0 border-start-0 border-end-0 p-1 mb-5 shadow-sm"
+          >
+            <h2 class="ps-5 pb-1">Our Services</h2>
+          </header>
+          <div class="bg-primary-subtle">
+            <p
+              class="fs-5 text-center p-2 border border-primary border-bottom-0 border-end-0 bg-info bg-opacity-50 shadow article-intro"
+            >
+              We offer tailored bookkeeping and accounting services to help you
+              focus on growing your business instead of managing the numbers.
+            </p>
+            <div class="service-cards">
+              <div id="bookkeeping" class="card service-card p-0 my-5 shadow">
+                <header
+                  class="card-header bg-primary-subtle border border-primary border-start-0 border-bottom-0"
+                >
+                  <hgroup class="card-title">
+                    <h3 class="card-text">Bookkeeping</h3>
+                  </hgroup>
+                </header>
+                <div class="card-body">
+                  <p
+                    class="fs-5 text-center p-2 border border-primary border-bottom-0 border-end-0 bg-body shadow card-text"
+                  >
+                    Keep your financial records up-to-date with daily/monthly
+                    bookkeeping, reconciliations, and detailed reporting.
+                  </p>
+                </div>
+              </div>
+              <div id="accounting" class="card service-card p-0 my-5 shadow">
+                <header
+                  class="card-header bg-primary-subtle border border-primary border-start-0 border-bottom-0"
+                >
+                  <hgroup class="card-title">
+                    <h3 class="card-text">Tax Preparation</h3>
+                  </hgroup>
+                </header>
+                <div class="card-body">
+                  <p
+                    class="fs-5 text-center p-2 border border-primary border-bottom-0 border-end-0 bg-body shadow card-text"
+                  >
+                    Ensure compliance and maximize savings with professional tax
+                    planning, filing, and advisory services.
+                  </p>
+                </div>
+              </div>
+              <div id="payroll" class="card service-card p-0 my-5 shadow">
+                <header
+                  class="card-header bg-primary-subtle border border-primary border-start-0 border-bottom-0"
+                >
+                  <hgroup class="card-title">
+                    <h3 class="card-text">Payroll Management</h3>
+                  </hgroup>
+                </header>
+                <div class="card-body">
+                  <p
+                    class="fs-5 text-center p-2 border border-primary border-bottom-0 border-end-0 bg-body shadow card-text"
+                  >
+                    Streamline payroll and stay compliant with federal and state
+                    regulations, including tax forms and employee records.
+                  </p>
+                </div>
+              </div>
+              <div id="consulting" class="card service-card p-0 my-5 shadow">
+                <header
+                  class="card-header bg-primary-subtle border border-primary border-start-0 border-bottom-0"
+                >
+                  <hgroup class="card-title">
+                    <h3 class="card-text">Financial Consulting</h3>
+                  </hgroup>
+                </header>
+                <div class="card-body">
+                  <p
+                    class="fs-5 text-center p-2 border border-primary border-bottom-0 border-end-0 bg-body shadow card-text"
+                  >
+                    Gain insights with customized financial analysis, budgeting,
+                    and forecasting for sustainable growth.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <footer
+              class="bg-secondary border border-primary border-top-0 border-start-0 border-end-0 p-1 mt-auto shadow-sm"
+            >
+              <hr />
+            </footer>
+          </div>
+        </div>
+      </article>
+
       <!-- ABOUT SECTION -->
       <hr id="about" class="my-5 p-2 mx-auto" />
       <article
-        class="border border-primary border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5  p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
+        class="border border-primary border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5 p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
       >
         <div
           class="container-fluid bg-secondary bg-opacity-10 border border-primary border-bottom-0 border-end-0 shadow"
@@ -640,45 +729,45 @@
                       />
                       <figcaption class="figure-caption card">
                         <!-- Our Values -->
-                          <header class="card-header">
-                            <hgroup class="card-title text-start shadow-sm my-0">
-                              <h3 class="">Our Values</h3>
-                            </hgroup>
-                          </header>
-                          <div class="card-body">
-                            <dl class="list-group card-text m-auto px-auto">
-                              <dt class="">
-                                <span class="icon icomatic text-success fs-1"
-                                  >checkmark</span
-                                >
-                                <strong>Integrity:</strong>
-                              </dt>
-                              <dd class="">
-                                We prioritize honesty and transparency in every
-                                interaction.
-                              </dd>
-                              <dt class="">
-                                <span class="icon icomatic text-success fs-1"
-                                  >checkmark</span
-                                >
-                                <strong>Quality:</strong>
-                              </dt>
-                              <dd class="">
-                                Meticulous attention to detail ensures your
-                                books are accurate and compliant.
-                              </dd>
-                              <dt class="">
-                                <span class="icon icomatic text-success fs-1"
-                                  >checkmark</span
-                                >
-                                <strong>Client Focus:</strong>
-                              </dt>
-                              <dd class="">
-                                We tailor our services to suit your unique needs
-                                and goals.
-                              </dd>
-                            </dl>
-                          </div>
+                        <header class="card-header">
+                          <hgroup class="card-title text-start shadow-sm my-0">
+                            <h3 class="">Our Values</h3>
+                          </hgroup>
+                        </header>
+                        <div class="card-body">
+                          <dl class="list-group card-text m-auto px-auto">
+                            <dt class="">
+                              <span class="icon icomatic text-success fs-1"
+                                >checkmark</span
+                              >
+                              <strong>Integrity:</strong>
+                            </dt>
+                            <dd class="">
+                              We prioritize honesty and transparency in every
+                              interaction.
+                            </dd>
+                            <dt class="">
+                              <span class="icon icomatic text-success fs-1"
+                                >checkmark</span
+                              >
+                              <strong>Quality:</strong>
+                            </dt>
+                            <dd class="">
+                              Meticulous attention to detail ensures your books
+                              are accurate and compliant.
+                            </dd>
+                            <dt class="">
+                              <span class="icon icomatic text-success fs-1"
+                                >checkmark</span
+                              >
+                              <strong>Client Focus:</strong>
+                            </dt>
+                            <dd class="">
+                              We tailor our services to suit your unique needs
+                              and goals.
+                            </dd>
+                          </dl>
+                        </div>
                       </figcaption>
                     </figure>
                   </div>
@@ -702,98 +791,21 @@
         </div>
       </article>
 
-      <!-- SERVICES SECTION -->
-      <hr id="services" class="my-5 p-2 mx-auto" />
-      <article
-        class="border border-primary-subtle bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5 p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
-      >
-        <div
-          class="container-fluid bg-body bg-opacity-10 border border-primary border-top-0 border-top-0 shadow p-2"
-        >
-          <header
-            class="bg-secondary border border-primary border-bottom-0 border-start-0 border-end-0 p-1 mb-5 shadow-sm"
-          >
-            <h2 class="ps-5 pb-1">Our Services</h2>
-          </header>
-          <div class="card-body bg-primary-subtle">
-            <p
-              class="fs-5 text-center p-2 border border-primary border-bottom-0 border-end-0 bg-info bg-opacity-50 shadow card-text article-intro"
-            >
-              We offer tailored bookkeeping and accounting services to help you
-              focus on growing your business instead of managing the numbers.
-            </p>
-            <div class="service-cards">
-              <hgroup
-                id="bookkeeping"
-                class="card service-card p-0 my-5 shadow"
-              >
-                <header
-                  class="card-header bg-primary-subtle border border-primary border-start-0 border-bottom-0"
-                >
-                  <h3 class="card-title">Bookkeeping</h3>
-                </header>
-                <div class="card-body">
-                  <p
-                    class="fs-5 text-center p-2 border border-primary border-bottom-0 border-end-0 bg-body shadow card-text"
-                  >
-                    Keep your financial records up-to-date with daily/monthly
-                    bookkeeping, reconciliations, and detailed reporting.
-                  </p>
-                </div>
-              </hgroup>
-              <div id="accounting" class="card service-card bg-body-tertiary">
-                <header class="card-header">
-                  <h3 class="card-title">Tax Preparation</h3>
-                </header>
-                <p
-                  class="fs-5 text-center p-2 border border-primary border-bottom-0 border-end-0 bg-body shadow"
-                >
-                  Ensure compliance and maximize savings with professional tax
-                  planning, filing, and advisory services.
-                </p>
-              </div>
-              <div id="payroll" class="service-card bg-body-tertiary">
-                <h3>Payroll Management</h3>
-                <p
-                  class="fs-5 text-center p-2 border border-primary border-bottom-0 border-end-0 bg-body shadow"
-                >
-                  Streamline payroll and stay compliant with federal and state
-                  regulations, including tax forms and employee records.
-                </p>
-              </div>
-              <div class="service-card bg-body-tertiary">
-                <h3>Financial Consulting</h3>
-                <p
-                  class="fs-5 text-center p-2 border border-primary border-bottom-0 border-end-0 bg-body shadow"
-                >
-                  Gain insights with customized financial analysis, budgeting,
-                  and forecasting for sustainable growth.
-                </p>
-              </div>
-            </div>
-            <footer
-              class="bg-secondary border border-primary border-top-0 border-start-0 border-end-0 p-1 mt-auto shadow-sm"
-            >
-              <hr />
-            </footer>
-          </div>
-        </div>
-      </article>
-
       <!-- TESTIMONIALS SECTION -->
       <hr id="testimonials" />
       <article
-        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto  p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
+        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
       >
         <div
           class="container-fluid bg-body bg-opacity-10 border border-primary border-bottom-0 border-end-0 shadow"
         >
-          <hgroup class="bg-primary-subtle bg-gradient">
-            <header
+          <header class="bg-primary-subtle bg-gradient">
+            <hgroup
               class="bg-secondary border border-primary border-bottom-0 border-end-0 p-1 mb-5 mt-2 shadow-sm"
             >
               <h2 class="ps-5">What Our Clients Say</h2>
-            </header>
+            </hgroup>
+</header>
 
             <div class="row">
               <div
@@ -823,42 +835,39 @@
                 </figure>
               </div>
               <div
-                class="col-sm-12 col-md-5 col-sm-4 testimonial-card border bg-body mx-auto my-5 shadow-lg p-4"
-              >
-                <figure class="row">
-                  <blockquote class="blockquote col-12">
-                    <p
-                      class="fs-5 text-center p-2 border border-primary border-bottom-0 border-end-0 bg-body shadow text-primary"
-                    >
-                      “Their team genuinely cares about my success. My finances
-                      are finally organized, and I can focus on growing my
-                      business.”
-                    </p>
-                  </blockquote>
-                  <img
-                    class="rounded placeholder border col-4 col-md-2 me-auto"
-                    src="https://placehold.co/64x64/99999999/0078d4"
-                    alt=""
-                    height="64"
-                    width="64"
-                  />
-                  <figcaption
-                    class="blockquote-footer col-8 text-end text-secondary ms-auto"
+              class="col-sm-12 col-md-5 col-sm-4 testimonial-card border bg-body mx-auto my-5 shadow-lg p-4"
+            >
+              <figure class="row">
+                <img
+                  class="placeholder border col-2"
+                  src="https://placehold.co/64x64/99999999/0078d4"
+                  alt=""
+                  height="64"
+                  width="64"
+                />
+                <blockquote class="blockquote col-10">
+                  <p
+                    class="fs-5 text-center p-2 border border-primary border-bottom-0 border-end-0 bg-body shadow subpixel-antialiased"
                   >
-                    [Client Name],
-                    <cite title="Source Title">[Business Name/Title]</cite>
-                  </figcaption>
-                </figure>
-              </div>
+                    “I used to dread doing the books each month, but Big Sky
+                    Financial made the process easy and stress-free. They're
+                    lifesavers!”
+                  </p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                  [Client Name],
+                  <cite title="Source Title">[Business Name/Title]</cite>
+                </figcaption>
+              </figure>
             </div>
-          </hgroup>
+            </div>
         </div>
       </article>
 
       <!-- TEAM SECTION -->
       <hr id="team" />
       <article
-        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5  p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
+        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5 p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
       >
         <div
           class="container-fluid bg-body bg-opacity-10 border border-primary border-bottom-0 border-end-0 shadow"
@@ -896,7 +905,7 @@
       <hr id="faq" />
       <article
         id="faqs"
-        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5  p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
+        class="border border-primary-subtle border-bottom-0 border-start-0 bg-primary-subtle bg-gradient shadow-lg container mx-auto my-5 p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
       >
         <div
           class="container-fluid bg-body bg-opacity-75 border border-primary border-bottom-0 border-end-0 shadow"
@@ -1037,7 +1046,7 @@
       <!-- CONTACT SECTION -->
       <hr id="contact" />
       <article
-        class="border border-primary-subtle border-5 border-top-0 border-start-0 bg-secondary bg-gradient shadow-lg container mx-auto my-5 my-5  p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
+        class="border border-primary-subtle border-5 border-top-0 border-start-0 bg-secondary bg-gradient shadow-lg container mx-auto my-5 my-5 p-xs-0 p-sm-0 p-md-1 p-lg-2 p-xl-3"
       >
         <div
           class="container-fluid bg-body border border-primary-subtle border-5 border-bottom-0 border-end-0 shadow"
@@ -1060,7 +1069,7 @@
           >
             <strong>Email:</strong>
             <a href="mailto:Brandon.lake@bigskyfinancialservicellc.com"
-              >Brandon.lake@bigskyfinancialservicellc.com</a
+              >Brandonlake@bigskyfinancialservicellc.com</a
             ><br />
             <strong>Phone:</strong> 406-475-2009
           </p>
@@ -1185,7 +1194,7 @@
         </h5>
       </section>
     </footer>
-  
+
     <!-- Popper.js -->
     <script
       src="./js/vendor/popper/popper.min.js"
